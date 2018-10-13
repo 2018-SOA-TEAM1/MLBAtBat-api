@@ -2,33 +2,39 @@ require 'http'
 require 'yaml'
 
 config = YAML.safe_load(File.read('../config/secrets.yml'))
-channel_id = 'UCllMvuz1DIPIoqNnur7_Pig' # https://www.youtube.com/channel/UCllMvuz1DIPIoqNnur7_Pig
+channel_id = 'UCkELMMBdy4gPj6ooQwYJ-yg' # https://www.youtube.com/channel/UCkELMMBdy4gPj6ooQwYJ-yg
 
-def gh_api_path(channel_id, config)
-  'https://www.googleapis.com/youtube/v3/activities?' \
-  'part=snippet,contentDetails&' \
-  'channelId=' + channel_id.to_s + '&' \
-  'key=' + config['API_KEY'].to_s + '&' \
-  'maxResults=50'
+def yt_api_path_GetPlayList(channel_id, config)
+  'https://www.googleapis.com/youtube/v3/channels?' \
+  'part=contentDetails&' \
+  'id=' + channel_id.to_s + '&' \
+  'key=' + config['API_KEY'].to_s
 end
 
-def call_gh_url(url)
+def yt_api_path_GetVideos(playlist_id, config)
+  'https://www.googleapis.com/youtube/v3/playlistItems?' \
+  'playlistId=' + playlist_id.to_s + '&' \
+  'part=contentDetails,snippet' + '&' \
+  'maxResults=3' + '&' \
+  'key=' + config['API_KEY'].to_s
+end
+
+def call_yt_url(url)
   HTTP.get(url)
 end
 
-gh_response = {}
-gh_results = {}
+yt_response = {}
+yt_results = {}
 
-project_url = gh_api_path(channel_id, config)
-gh_response[project_url] = call_gh_url(project_url)
-project = gh_response[project_url].parse
+project_url = yt_api_path_GetPlayList(channel_id, config)
+playlist_response = call_yt_url(project_url)
+project = playlist_response.parse
+yt_results['first playlist'] = project['items'][0]['contentDetails']['relatedPlaylists']['uploads']
 
-gh_results['page informations'] = project['pageInfo']
+videos_url = yt_api_path_GetVideos(yt_results['first playlist'], config)
+yt_response[videos_url] = call_yt_url(videos_url)
+videos = yt_response[videos_url].parse
+yt_results['first video'] = videos['items'][0]['snippet']
 
-gh_results['first video'] = project['items'][0]
-
-gh_results['last video'] = project['items'][49]
-
-
-File.write('../spec/fixtures/gh_response.yml', gh_response.to_yaml)
-File.write('../spec/fixtures/gh_results.yml', gh_results.to_yaml)
+File.write('../spec/fixtures/yt_response.yml', yt_response.to_yaml)
+File.write('../spec/fixtures/yt_results.yml', yt_results.to_yaml)
