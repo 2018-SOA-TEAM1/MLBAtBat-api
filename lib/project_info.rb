@@ -1,40 +1,26 @@
 require 'http'
 require 'yaml'
 
-config = YAML.safe_load(File.read('../config/secrets.yml'))
-channel_id = 'UCkELMMBdy4gPj6ooQwYJ-yg' # https://www.youtube.com/channel/UCkELMMBdy4gPj6ooQwYJ-yg
+GAME_PK = '563402'.freeze # gamePk can get from https://statsapi.mlb.com/api/v1/schedule?sportId=1
 
-def yt_api_path_GetPlayList(channel_id, config)
-  'https://www.googleapis.com/youtube/v3/channels?' \
-  'part=contentDetails&' \
-  'id=' + channel_id.to_s + '&' \
-  'key=' + config['API_KEY'].to_s
+def mlb_api_path(game_pk)
+  'https://statsapi.mlb.com/api/v1.1/game/' << game_pk << '/feed/live'
 end
 
-def yt_api_path_GetVideos(playlist_id, config)
-  'https://www.googleapis.com/youtube/v3/playlistItems?' \
-  'playlistId=' + playlist_id.to_s + '&' \
-  'part=contentDetails,snippet' + '&' \
-  'maxResults=3' + '&' \
-  'key=' + config['API_KEY'].to_s
-end
-
-def call_yt_url(url)
+def call_mlb_url(url)
   HTTP.get(url)
 end
 
-yt_response = {}
-yt_results = {}
+mlb_response = {}
+mlb_results = {}
 
-project_url = yt_api_path_GetPlayList(channel_id, config)
-playlist_response = call_yt_url(project_url)
-project = playlist_response.parse
-yt_results['first playlist'] = project['items'][0]['contentDetails']['relatedPlaylists']['uploads']
+mlb_live_url = mlb_api_path(GAME_PK)
+mlb_response[mlb_live_url] = call_mlb_url(mlb_live_url)
+live_data = mlb_response[mlb_live_url].parse
 
-videos_url = yt_api_path_GetVideos(yt_results['first playlist'], config)
-yt_response[videos_url] = call_yt_url(videos_url)
-videos = yt_response[videos_url].parse
-yt_results['first video'] = videos['items'][0]['snippet']
+mlb_results['detailed_state'] = live_data['gameData']['status']['detailedState']
+mlb_results['current_player'] = live_data['liveData']['plays']['currentPlay'] \
+                                          ['matchup']['batter']['fullName']
 
-File.write('../spec/fixtures/yt_response.yml', yt_response.to_yaml)
-File.write('../spec/fixtures/yt_results.yml', yt_results.to_yaml)
+File.write('../spec/fixtures/mlb_response.yml', mlb_response.to_yaml)
+File.write('../spec/fixtures/mlb_results.yml', mlb_results.to_yaml)
