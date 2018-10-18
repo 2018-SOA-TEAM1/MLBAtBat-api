@@ -1,2 +1,4 @@
 config/secrets.yml
-spec/fixtures/
+spec/fixtures/mlb_response.yml
+spec/fixtures/mlb_results.yml
+coverage/
