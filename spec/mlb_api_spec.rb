@@ -1,6 +1,20 @@
 require_relative 'spec_helper.rb'
 
 describe 'Tests MLBAtBat libiary' do
+  VCR.configure do |c|
+    c.cassette_library_dir = CASSETTES_FOLDER
+    c.hook_into :webmock
+  end
+
+  before do
+    VCR.insert_cassette CASSETTE_FILE, record: :new_episodes
+  end
+
+  after do
+    VCR.eject_cassette
+  end
+
+
   describe 'Schedule information' do
     it 'HAPPY: shoud provide correct game schedule information' do
       schedule = MLBAtBat::MLBAPI.new.schedule
