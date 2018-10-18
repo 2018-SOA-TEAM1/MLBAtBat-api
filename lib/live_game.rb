@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module MLBAtBat
   # Store information about videos from channel's playlist
   class LiveGame

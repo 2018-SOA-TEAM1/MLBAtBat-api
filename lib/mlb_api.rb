@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'http'
 require_relative 'schedule.rb'
 require_relative 'live_game.rb'

@@ -1,4 +1,5 @@
-# frozen_string_literal: false
+# frozen_string_literal: true
+
 require 'simplecov'
 SimpleCov.start
 
@@ -9,11 +10,10 @@ require 'yaml'
 require 'vcr'
 require 'webmock'
 
-
 require_relative '../lib/mlb_api.rb'
 
 CORRECT = YAML.safe_load(File.read('spec/fixtures/mlb_results.yml'))
 RESPONSE = YAML.load(File.read('spec/fixtures/mlb_response.yml'))
 
-CASSETTES_FOLDER = 'spec/fixtures/cassettes'.freeze
-CASSETTE_FILE = 'github_api'.freeze
+CASSETTES_FOLDER = 'spec/fixtures/cassettes'
+CASSETTE_FILE = 'github_api'

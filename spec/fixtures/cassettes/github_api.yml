@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 18 Oct 2018 06:34:12 GMT
+      - Thu, 18 Oct 2018 06:52:47 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Transfer-Encoding:
@@ -27,8 +27,8 @@ http_interactions:
       Connection:
       - close
       Set-Cookie:
-      - __cfduid=d173d8be41d8d8f42b158dc84f35274ec1539844452; expires=Fri, 18-Oct-19
-        06:34:12 GMT; path=/; domain=.mlb.com; HttpOnly
+      - __cfduid=da33b68975d0410f47be95b19ac8db1081539845566; expires=Fri, 18-Oct-19
+        06:52:46 GMT; path=/; domain=.mlb.com; HttpOnly
       Access-Control-Allow-Credentials:
       - 'true'
       Access-Control-Allow-Headers:
@@ -50,7 +50,7 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 46b8fa55cea34590-TPE
+      - 46b91587bc6245d8-TPE
     body:
       encoding: UTF-8
       string: |-
@@ -213,7 +213,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Thu, 18 Oct 2018 06:34:12 GMT
+  recorded_at: Thu, 18 Oct 2018 06:52:47 GMT
 - request:
     method: get
     uri: https://statsapi.mlb.com/api/v1.1/game/563404/feed/live
@@ -233,7 +233,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 18 Oct 2018 06:34:14 GMT
+      - Thu, 18 Oct 2018 06:52:48 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Transfer-Encoding:
@@ -241,8 +241,8 @@ http_interactions:
       Connection:
       - close
       Set-Cookie:
-      - __cfduid=dd399b95faae8d4bf169e63d174be52231539844453; expires=Fri, 18-Oct-19
-        06:34:13 GMT; path=/; domain=.mlb.com; HttpOnly
+      - __cfduid=d76320d45f6aa0cbf00e1afb1d31c89a51539845567; expires=Fri, 18-Oct-19
+        06:52:47 GMT; path=/; domain=.mlb.com; HttpOnly
       Access-Control-Allow-Credentials:
       - 'true'
       Access-Control-Allow-Headers:
@@ -256,7 +256,7 @@ http_interactions:
       Cache-Control:
       - max-age=10, public, stale-while-revalidate=30, stale-if-error=86400
       Expires:
-      - Thu, 18 Oct 2018 06:34:17 GMT
+      - Thu, 18 Oct 2018 06:52:52 GMT
       Vary:
       - Accept-Encoding
       Cf-Cache-Status:
@@ -266,7 +266,7 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 46b8fa579e7045c6-TPE
+      - 46b9158d3ef3458a-TPE
     body:
       encoding: UTF-8
       string: |-
@@ -10337,8 +10337,8 @@ http_interactions:
                     "startSpeed" : 88.1,
                     "endSpeed" : 81.3,
                     "nastyFactor" : 59.82,
-                    "strikeZoneTop" : 3.41,
-                    "strikeZoneBottom" : 1.56,
+                    "strikeZoneTop" : 3.6,
+                    "strikeZoneBottom" : 1.65,
                     "coordinates" : {
                       "aY" : 25.51,
                       "aZ" : -20.18,
@@ -10583,8 +10583,8 @@ http_interactions:
                     "startSpeed" : 73.2,
                     "endSpeed" : 67.8,
                     "nastyFactor" : 74.11,
-                    "strikeZoneTop" : 3.37,
-                    "strikeZoneBottom" : 1.53,
+                    "strikeZoneTop" : 3.58,
+                    "strikeZoneBottom" : 1.61,
                     "coordinates" : {
                       "aY" : 20.26,
                       "aZ" : -41.46,
@@ -10769,8 +10769,8 @@ http_interactions:
                     "startSpeed" : 87.7,
                     "endSpeed" : 81.5,
                     "nastyFactor" : 61.62,
-                    "strikeZoneTop" : 3.55,
-                    "strikeZoneBottom" : 1.63,
+                    "strikeZoneTop" : 3.74,
+                    "strikeZoneBottom" : 1.77,
                     "coordinates" : {
                       "aY" : 23.31,
                       "aZ" : -24.88,
@@ -10829,8 +10829,8 @@ http_interactions:
                     "startSpeed" : 89.4,
                     "endSpeed" : 81.6,
                     "nastyFactor" : 65.32,
-                    "strikeZoneTop" : 3.55,
-                    "strikeZoneBottom" : 1.63,
+                    "strikeZoneTop" : 3.59,
+                    "strikeZoneBottom" : 1.68,
                     "coordinates" : {
                       "aY" : 27.49,
                       "aZ" : -16.49,
@@ -11306,8 +11306,8 @@ http_interactions:
                     "startSpeed" : 95.0,
                     "endSpeed" : 87.1,
                     "nastyFactor" : 35.83,
-                    "strikeZoneTop" : 3.49,
-                    "strikeZoneBottom" : 1.6,
+                    "strikeZoneTop" : 3.93,
+                    "strikeZoneBottom" : 1.8,
                     "coordinates" : {
                       "aY" : 29.44,
                       "aZ" : -19.14,
@@ -11552,8 +11552,8 @@ http_interactions:
                     "startSpeed" : 96.8,
                     "endSpeed" : 88.9,
                     "nastyFactor" : 42.8,
-                    "strikeZoneTop" : 3.37,
-                    "strikeZoneBottom" : 1.53,
+                    "strikeZoneTop" : 3.34,
+                    "strikeZoneBottom" : 1.61,
                     "coordinates" : {
                       "aY" : 30.48,
                       "aZ" : -13.93,
@@ -11612,8 +11612,8 @@ http_interactions:
                     "startSpeed" : 88.3,
                     "endSpeed" : 82.0,
                     "nastyFactor" : 56.14,
-                    "strikeZoneTop" : 3.37,
-                    "strikeZoneBottom" : 1.53,
+                    "strikeZoneTop" : 3.27,
+                    "strikeZoneBottom" : 1.58,
                     "coordinates" : {
                       "aY" : 24.23,
                       "aZ" : -24.47,
@@ -11852,8 +11852,8 @@ http_interactions:
                     "startSpeed" : 89.3,
                     "endSpeed" : 81.5,
                     "nastyFactor" : 60.35,
-                    "strikeZoneTop" : 3.37,
-                    "strikeZoneBottom" : 1.53,
+                    "strikeZoneTop" : 3.62,
+                    "strikeZoneBottom" : 1.72,
                     "coordinates" : {
                       "aY" : 27.96,
                       "aZ" : -12.64,
@@ -11972,8 +11972,8 @@ http_interactions:
                     "startSpeed" : 88.9,
                     "endSpeed" : 82.7,
                     "nastyFactor" : 74.8,
-                    "strikeZoneTop" : 3.37,
-                    "strikeZoneBottom" : 1.53,
+                    "strikeZoneTop" : 3.72,
+                    "strikeZoneBottom" : 1.75,
                     "coordinates" : {
                       "aY" : 23.89,
                       "aZ" : -20.13,
@@ -12152,8 +12152,8 @@ http_interactions:
                     "startSpeed" : 91.0,
                     "endSpeed" : 84.2,
                     "nastyFactor" : 69.64,
-                    "strikeZoneTop" : 3.55,
-                    "strikeZoneBottom" : 1.63,
+                    "strikeZoneTop" : 3.91,
+                    "strikeZoneBottom" : 1.75,
                     "coordinates" : {
                       "aY" : 25.27,
                       "aZ" : -11.63,
@@ -12212,8 +12212,8 @@ http_interactions:
                     "startSpeed" : 73.4,
                     "endSpeed" : 68.6,
                     "nastyFactor" : 85.17,
-                    "strikeZoneTop" : 3.55,
-                    "strikeZoneBottom" : 1.63,
+                    "strikeZoneTop" : 3.77,
+                    "strikeZoneBottom" : 1.8,
                     "coordinates" : {
                       "aY" : 19.3,
                       "aZ" : -41.85,
@@ -12471,8 +12471,8 @@ http_interactions:
                     "startSpeed" : 92.1,
                     "endSpeed" : 84.4,
                     "nastyFactor" : 75.44,
-                    "strikeZoneTop" : 3.47,
-                    "strikeZoneBottom" : 1.59,
+                    "strikeZoneTop" : 3.96,
+                    "strikeZoneBottom" : 1.72,
                     "coordinates" : {
                       "aY" : 28.42,
                       "aZ" : -13.02,
@@ -12531,8 +12531,8 @@ http_interactions:
                     "startSpeed" : 89.2,
                     "endSpeed" : 82.5,
                     "nastyFactor" : 74.35,
-                    "strikeZoneTop" : 3.47,
-                    "strikeZoneBottom" : 1.59,
+                    "strikeZoneTop" : 3.74,
+                    "strikeZoneBottom" : 1.91,
                     "coordinates" : {
                       "aY" : 25.33,
                       "aZ" : -19.12,
@@ -12871,8 +12871,8 @@ http_interactions:
                     "startSpeed" : 95.1,
                     "endSpeed" : 87.4,
                     "nastyFactor" : 64.51,
-                    "strikeZoneTop" : 3.41,
-                    "strikeZoneBottom" : 1.56,
+                    "strikeZoneTop" : 3.55,
+                    "strikeZoneBottom" : 1.65,
                     "coordinates" : {
                       "aY" : 29.59,
                       "aZ" : -16.13,
@@ -13140,8 +13140,8 @@ http_interactions:
                     "startSpeed" : 86.0,
                     "endSpeed" : 80.3,
                     "nastyFactor" : 74.02,
-                    "strikeZoneTop" : 3.32,
-                    "strikeZoneBottom" : 1.51,
+                    "strikeZoneTop" : 2.65,
+                    "strikeZoneBottom" : 1.22,
                     "coordinates" : {
                       "aY" : 21.32,
                       "aZ" : -28.62,
@@ -13219,8 +13219,8 @@ http_interactions:
                     "startSpeed" : 95.9,
                     "endSpeed" : 87.7,
                     "nastyFactor" : 48.59,
-                    "strikeZoneTop" : 3.32,
-                    "strikeZoneBottom" : 1.51,
+                    "strikeZoneTop" : 3.29,
+                    "strikeZoneBottom" : 1.58,
                     "coordinates" : {
                       "aY" : 31.32,
                       "aZ" : -14.74,
@@ -13493,8 +13493,8 @@ http_interactions:
                     "startSpeed" : 86.6,
                     "endSpeed" : 80.3,
                     "nastyFactor" : 72.2,
-                    "strikeZoneTop" : 3.3,
-                    "strikeZoneBottom" : 1.5,
+                    "strikeZoneTop" : 3.24,
+                    "strikeZoneBottom" : 1.49,
                     "coordinates" : {
                       "aY" : 23.5,
                       "aZ" : -32.35,
@@ -13827,8 +13827,8 @@ http_interactions:
                     "startSpeed" : 85.0,
                     "endSpeed" : 78.2,
                     "nastyFactor" : 57.23,
-                    "strikeZoneTop" : 3.55,
-                    "strikeZoneBottom" : 1.63,
+                    "strikeZoneTop" : 4.01,
+                    "strikeZoneBottom" : 1.7,
                     "coordinates" : {
                       "aY" : 24.26,
                       "aZ" : -26.57,
@@ -13887,8 +13887,8 @@ http_interactions:
                     "startSpeed" : 96.6,
                     "endSpeed" : 88.5,
                     "nastyFactor" : 40.64,
-                    "strikeZoneTop" : 3.55,
-                    "strikeZoneBottom" : 1.63,
+                    "strikeZoneTop" : 3.91,
+                    "strikeZoneBottom" : 1.65,
                     "coordinates" : {
                       "aY" : 31.25,
                       "aZ" : -16.35,
@@ -14259,8 +14259,8 @@ http_interactions:
                     "startSpeed" : 89.1,
                     "endSpeed" : 81.4,
                     "nastyFactor" : 57.32,
-                    "strikeZoneTop" : 3.47,
-                    "strikeZoneBottom" : 1.59,
+                    "strikeZoneTop" : 3.77,
+                    "strikeZoneBottom" : 1.89,
                     "coordinates" : {
                       "aY" : 28.04,
                       "aZ" : -12.04,
@@ -14319,8 +14319,8 @@ http_interactions:
                     "startSpeed" : 90.5,
                     "endSpeed" : 83.1,
                     "nastyFactor" : 80.55,
-                    "strikeZoneTop" : 3.47,
-                    "strikeZoneBottom" : 1.59,
+                    "strikeZoneTop" : 3.77,
+                    "strikeZoneBottom" : 1.89,
                     "coordinates" : {
                       "aY" : 27.01,
                       "aZ" : -12.24,
@@ -14379,8 +14379,8 @@ http_interactions:
                     "startSpeed" : 88.3,
                     "endSpeed" : 81.7,
                     "nastyFactor" : 50.77,
-                    "strikeZoneTop" : 3.47,
-                    "strikeZoneBottom" : 1.59,
+                    "strikeZoneTop" : 3.77,
+                    "strikeZoneBottom" : 1.87,
                     "coordinates" : {
                       "aY" : 24.5,
                       "aZ" : -16.66,
@@ -14439,8 +14439,8 @@ http_interactions:
                     "startSpeed" : 90.4,
                     "endSpeed" : 83.2,
                     "nastyFactor" : 56.43,
-                    "strikeZoneTop" : 3.47,
-                    "strikeZoneBottom" : 1.59,
+                    "strikeZoneTop" : 3.79,
+                    "strikeZoneBottom" : 1.77,
                     "coordinates" : {
                       "aY" : 26.52,
                       "aZ" : -13.58,
@@ -14685,8 +14685,8 @@ http_interactions:
                     "startSpeed" : 88.9,
                     "endSpeed" : 82.3,
                     "nastyFactor" : 58.73,
-                    "strikeZoneTop" : 3.49,
-                    "strikeZoneBottom" : 1.6,
+                    "strikeZoneTop" : 3.79,
+                    "strikeZoneBottom" : 1.77,
                     "coordinates" : {
                       "aY" : 24.72,
                       "aZ" : -17.92,
@@ -14937,8 +14937,8 @@ http_interactions:
                     "startSpeed" : 90.1,
                     "endSpeed" : 82.3,
                     "nastyFactor" : 80.45,
-                    "strikeZoneTop" : 3.49,
-                    "strikeZoneBottom" : 1.6,
+                    "strikeZoneTop" : 3.89,
+                    "strikeZoneBottom" : 1.82,
                     "coordinates" : {
                       "aY" : 28.07,
                       "aZ" : -12.06,
@@ -15134,8 +15134,8 @@ http_interactions:
                     "startSpeed" : 86.6,
                     "endSpeed" : 80.3,
                     "nastyFactor" : 48.33,
-                    "strikeZoneTop" : 3.32,
-                    "strikeZoneBottom" : 1.51,
+                    "strikeZoneTop" : 3.72,
+                    "strikeZoneBottom" : 1.61,
                     "coordinates" : {
                       "aY" : 23.34,
                       "aZ" : -28.22,
@@ -15194,8 +15194,8 @@ http_interactions:
                     "startSpeed" : 94.7,
                     "endSpeed" : 87.6,
                     "nastyFactor" : 74.1,
-                    "strikeZoneTop" : 3.32,
-                    "strikeZoneBottom" : 1.51,
+                    "strikeZoneTop" : 3.7,
+                    "strikeZoneBottom" : 1.65,
                     "coordinates" : {
                       "aY" : 27.79,
                       "aZ" : -18.61,
@@ -15254,8 +15254,8 @@ http_interactions:
                     "startSpeed" : 95.7,
                     "endSpeed" : 88.6,
                     "nastyFactor" : 61.25,
-                    "strikeZoneTop" : 3.32,
-                    "strikeZoneBottom" : 1.51,
+                    "strikeZoneTop" : 3.65,
+                    "strikeZoneBottom" : 1.65,
                     "coordinates" : {
                       "aY" : 27.59,
                       "aZ" : -19.85,
@@ -15774,8 +15774,8 @@ http_interactions:
                     "startSpeed" : 95.2,
                     "endSpeed" : 87.4,
                     "nastyFactor" : 67.14,
-                    "strikeZoneTop" : 3.49,
-                    "strikeZoneBottom" : 1.6,
+                    "strikeZoneTop" : 3.72,
+                    "strikeZoneBottom" : 1.65,
                     "coordinates" : {
                       "aY" : 29.82,
                       "aZ" : -20.05,
@@ -16052,7 +16052,7 @@ http_interactions:
                     "startSpeed" : 88.1,
                     "endSpeed" : 81.6,
                     "nastyFactor" : 77.29,
-                    "strikeZoneTop" : 3.37,
+                    "strikeZoneTop" : 3.29,
                     "strikeZoneBottom" : 1.53,
                     "coordinates" : {
                       "aY" : 24.15,
@@ -16112,8 +16112,8 @@ http_interactions:
                     "startSpeed" : 87.7,
                     "endSpeed" : 82.0,
                     "nastyFactor" : 89.19,
-                    "strikeZoneTop" : 3.37,
-                    "strikeZoneBottom" : 1.53,
+                    "strikeZoneTop" : 3.39,
+                    "strikeZoneBottom" : 1.56,
                     "coordinates" : {
                       "aY" : 22.81,
                       "aZ" : -30.81,
@@ -16456,8 +16456,8 @@ http_interactions:
                     "startSpeed" : 94.7,
                     "endSpeed" : 87.8,
                     "nastyFactor" : 53.85,
-                    "strikeZoneTop" : 3.41,
-                    "strikeZoneBottom" : 1.56,
+                    "strikeZoneTop" : 3.51,
+                    "strikeZoneBottom" : 1.65,
                     "coordinates" : {
                       "aY" : 26.07,
                       "aZ" : -17.73,
@@ -16516,8 +16516,8 @@ http_interactions:
                     "startSpeed" : 93.8,
                     "endSpeed" : 87.5,
                     "nastyFactor" : 59.13,
-                    "strikeZoneTop" : 3.41,
-                    "strikeZoneBottom" : 1.56,
+                    "strikeZoneTop" : 3.51,
+                    "strikeZoneBottom" : 1.65,
                     "coordinates" : {
                       "aY" : 24.89,
                       "aZ" : -23.05,
@@ -16576,8 +16576,8 @@ http_interactions:
                     "startSpeed" : 93.7,
                     "endSpeed" : 87.3,
                     "nastyFactor" : 71.51,
-                    "strikeZoneTop" : 3.41,
-                    "strikeZoneBottom" : 1.56,
+                    "strikeZoneTop" : 3.51,
+                    "strikeZoneBottom" : 1.65,
                     "coordinates" : {
                       "aY" : 24.91,
                       "aZ" : -22.44,
@@ -16849,8 +16849,8 @@ http_interactions:
                     "startSpeed" : 96.4,
                     "endSpeed" : 89.3,
                     "nastyFactor" : 44.22,
-                    "strikeZoneTop" : 3.47,
-                    "strikeZoneBottom" : 1.59,
+                    "strikeZoneTop" : 3.7,
+                    "strikeZoneBottom" : 1.65,
                     "coordinates" : {
                       "aY" : 28.15,
                       "aZ" : -15.72,
@@ -16969,8 +16969,8 @@ http_interactions:
                     "startSpeed" : 95.9,
                     "endSpeed" : 88.0,
                     "nastyFactor" : 40.29,
-                    "strikeZoneTop" : 3.47,
-                    "strikeZoneBottom" : 1.59,
+                    "strikeZoneTop" : 3.6,
+                    "strikeZoneBottom" : 1.61,
                     "coordinates" : {
                       "aY" : 29.78,
                       "aZ" : -22.83,
@@ -17212,8 +17212,8 @@ http_interactions:
                     "startSpeed" : 87.6,
                     "endSpeed" : 80.4,
                     "nastyFactor" : 70.18,
-                    "strikeZoneTop" : 3.41,
-                    "strikeZoneBottom" : 1.56,
+                    "strikeZoneTop" : 3.67,
+                    "strikeZoneBottom" : 1.82,
                     "coordinates" : {
                       "aY" : 25.91,
                       "aZ" : -19.1,
@@ -17518,8 +17518,8 @@ http_interactions:
                     "startSpeed" : 72.2,
                     "endSpeed" : 66.5,
                     "nastyFactor" : 82.8,
-                    "strikeZoneTop" : 3.37,
-                    "strikeZoneBottom" : 1.53,
+                    "strikeZoneTop" : 3.55,
+                    "strikeZoneBottom" : 1.63,
                     "coordinates" : {
                       "aY" : 18.29,
                       "aZ" : -41.74,
@@ -17638,8 +17638,8 @@ http_interactions:
                     "startSpeed" : 86.7,
                     "endSpeed" : 80.9,
                     "nastyFactor" : 79.15,
-                    "strikeZoneTop" : 3.37,
-                    "strikeZoneBottom" : 1.53,
+                    "strikeZoneTop" : 3.79,
+                    "strikeZoneBottom" : 1.84,
                     "coordinates" : {
                       "aY" : 21.86,
                       "aZ" : -25.31,
@@ -17824,8 +17824,8 @@ http_interactions:
                     "startSpeed" : 87.8,
                     "endSpeed" : 81.1,
                     "nastyFactor" : 73.96,
-                    "strikeZoneTop" : 3.55,
-                    "strikeZoneBottom" : 1.63,
+                    "strikeZoneTop" : 3.72,
+                    "strikeZoneBottom" : 1.67,
                     "coordinates" : {
                       "aY" : 24.31,
                       "aZ" : -18.57,
@@ -18108,8 +18108,8 @@ http_interactions:
                     "startSpeed" : 67.9,
                     "endSpeed" : 61.9,
                     "nastyFactor" : 95.11,
-                    "strikeZoneTop" : 3.3,
-                    "strikeZoneBottom" : 1.5,
+                    "strikeZoneTop" : 3.12,
+                    "strikeZoneBottom" : 1.37,
                     "coordinates" : {
                       "aY" : 17.96,
                       "aZ" : -41.9,
@@ -18306,7 +18306,7 @@ http_interactions:
                     "endSpeed" : 85.2,
                     "nastyFactor" : 73.02,
                     "strikeZoneTop" : 3.55,
-                    "strikeZoneBottom" : 1.63,
+                    "strikeZoneBottom" : 1.68,
                     "coordinates" : {
                       "aY" : 28.69,
                       "aZ" : -16.32,
@@ -18425,7 +18425,7 @@ http_interactions:
                     "startSpeed" : 68.7,
                     "endSpeed" : 63.0,
                     "nastyFactor" : 69.0,
-                    "strikeZoneTop" : 3.55,
+                    "strikeZoneTop" : 3.48,
                     "strikeZoneBottom" : 1.63,
                     "coordinates" : {
                       "aY" : 16.67,
@@ -18485,8 +18485,8 @@ http_interactions:
                     "startSpeed" : 90.8,
                     "endSpeed" : 83.6,
                     "nastyFactor" : 48.05,
-                    "strikeZoneTop" : 3.55,
-                    "strikeZoneBottom" : 1.63,
+                    "strikeZoneTop" : 3.59,
+                    "strikeZoneBottom" : 1.65,
                     "coordinates" : {
                       "aY" : 26.81,
                       "aZ" : -14.93,
@@ -18545,8 +18545,8 @@ http_interactions:
                     "startSpeed" : 92.7,
                     "endSpeed" : 85.3,
                     "nastyFactor" : 66.04,
-                    "strikeZoneTop" : 3.55,
-                    "strikeZoneBottom" : 1.63,
+                    "strikeZoneTop" : 3.59,
+                    "strikeZoneBottom" : 1.7,
                     "coordinates" : {
                       "aY" : 27.58,
                       "aZ" : -13.6,
@@ -18699,8 +18699,8 @@ http_interactions:
                     "startSpeed" : 92.2,
                     "endSpeed" : 84.0,
                     "nastyFactor" : 58.88,
-                    "strikeZoneTop" : 3.55,
-                    "strikeZoneBottom" : 1.63,
+                    "strikeZoneTop" : 3.98,
+                    "strikeZoneBottom" : 1.72,
                     "coordinates" : {
                       "aY" : 30.26,
                       "aZ" : -13.56,
@@ -19038,8 +19038,8 @@ http_interactions:
                     "startSpeed" : 93.6,
                     "endSpeed" : 85.4,
                     "nastyFactor" : 50.38,
-                    "strikeZoneTop" : 3.32,
-                    "strikeZoneBottom" : 1.51,
+                    "strikeZoneTop" : 3.7,
+                    "strikeZoneBottom" : 1.65,
                     "coordinates" : {
                       "aY" : 30.43,
                       "aZ" : -11.5,
@@ -19098,8 +19098,8 @@ http_interactions:
                     "startSpeed" : 94.1,
                     "endSpeed" : 86.1,
                     "nastyFactor" : 40.37,
-                    "strikeZoneTop" : 3.32,
-                    "strikeZoneBottom" : 1.51,
+                    "strikeZoneTop" : 3.62,
+                    "strikeZoneBottom" : 1.7,
                     "coordinates" : {
                       "aY" : 29.47,
                       "aZ" : -14.46,
@@ -19441,7 +19441,7 @@ http_interactions:
                     "startSpeed" : 87.5,
                     "endSpeed" : 81.5,
                     "nastyFactor" : 39.32,
-                    "strikeZoneTop" : 3.32,
+                    "strikeZoneTop" : 3.27,
                     "strikeZoneBottom" : 1.51,
                     "coordinates" : {
                       "aY" : 22.69,
@@ -19567,8 +19567,8 @@ http_interactions:
                     "startSpeed" : 87.3,
                     "endSpeed" : 81.0,
                     "nastyFactor" : 49.2,
-                    "strikeZoneTop" : 3.32,
-                    "strikeZoneBottom" : 1.51,
+                    "strikeZoneTop" : 3.17,
+                    "strikeZoneBottom" : 1.46,
                     "coordinates" : {
                       "aY" : 23.46,
                       "aZ" : -27.01,
@@ -19627,8 +19627,8 @@ http_interactions:
                     "startSpeed" : 87.9,
                     "endSpeed" : 82.1,
                     "nastyFactor" : 40.87,
-                    "strikeZoneTop" : 3.32,
-                    "strikeZoneBottom" : 1.51,
+                    "strikeZoneTop" : 3.15,
+                    "strikeZoneBottom" : 1.46,
                     "coordinates" : {
                       "aY" : 22.67,
                       "aZ" : -23.48,
@@ -19687,8 +19687,8 @@ http_interactions:
                     "startSpeed" : 88.3,
                     "endSpeed" : 82.3,
                     "nastyFactor" : 79.26,
-                    "strikeZoneTop" : 3.32,
-                    "strikeZoneBottom" : 1.51,
+                    "strikeZoneTop" : 3.08,
+                    "strikeZoneBottom" : 1.39,
                     "coordinates" : {
                       "aY" : 22.47,
                       "aZ" : -24.36,
@@ -19978,8 +19978,8 @@ http_interactions:
                     "startSpeed" : 77.6,
                     "endSpeed" : 71.6,
                     "nastyFactor" : 83.2,
-                    "strikeZoneTop" : 3.37,
-                    "strikeZoneBottom" : 1.53,
+                    "strikeZoneTop" : 3.55,
+                    "strikeZoneBottom" : 1.72,
                     "coordinates" : {
                       "aY" : 20.65,
                       "aZ" : -40.06,
@@ -20057,8 +20057,8 @@ http_interactions:
                     "startSpeed" : 77.8,
                     "endSpeed" : 71.6,
                     "nastyFactor" : 63.92,
-                    "strikeZoneTop" : 3.37,
-                    "strikeZoneBottom" : 1.53,
+                    "strikeZoneTop" : 3.41,
+                    "strikeZoneBottom" : 1.65,
                     "coordinates" : {
                       "aY" : 20.49,
                       "aZ" : -42.82,
@@ -20117,8 +20117,8 @@ http_interactions:
                     "startSpeed" : 86.9,
                     "endSpeed" : 80.7,
                     "nastyFactor" : 52.08,
-                    "strikeZoneTop" : 3.37,
-                    "strikeZoneBottom" : 1.53,
+                    "strikeZoneTop" : 3.41,
+                    "strikeZoneBottom" : 1.65,
                     "coordinates" : {
                       "aY" : 22.45,
                       "aZ" : -28.57,
@@ -20177,8 +20177,8 @@ http_interactions:
                     "startSpeed" : 77.8,
                     "endSpeed" : 71.7,
                     "nastyFactor" : 89.25,
-                    "strikeZoneTop" : 3.37,
-                    "strikeZoneBottom" : 1.53,
+                    "strikeZoneTop" : 3.36,
+                    "strikeZoneBottom" : 1.56,
                     "coordinates" : {
                       "aY" : 20.54,
                       "aZ" : -42.59,
@@ -20559,8 +20559,8 @@ http_interactions:
                     "startSpeed" : 96.0,
                     "endSpeed" : 88.2,
                     "nastyFactor" : 82.13,
-                    "strikeZoneTop" : 3.55,
-                    "strikeZoneBottom" : 1.63,
+                    "strikeZoneTop" : 3.89,
+                    "strikeZoneBottom" : 1.89,
                     "coordinates" : {
                       "aY" : 30.19,
                       "aZ" : -15.61,
@@ -20619,8 +20619,8 @@ http_interactions:
                     "startSpeed" : 87.2,
                     "endSpeed" : 80.8,
                     "nastyFactor" : 48.13,
-                    "strikeZoneTop" : 3.55,
-                    "strikeZoneBottom" : 1.63,
+                    "strikeZoneTop" : 3.79,
+                    "strikeZoneBottom" : 1.82,
                     "coordinates" : {
                       "aY" : 23.88,
                       "aZ" : -18.8,
@@ -20679,8 +20679,8 @@ http_interactions:
                     "startSpeed" : 85.9,
                     "endSpeed" : 79.4,
                     "nastyFactor" : 42.84,
-                    "strikeZoneTop" : 3.55,
-                    "strikeZoneBottom" : 1.63,
+                    "strikeZoneTop" : 3.91,
+                    "strikeZoneBottom" : 1.8,
                     "coordinates" : {
                       "aY" : 24.25,
                       "aZ" : -21.04,
@@ -20884,8 +20884,8 @@ http_interactions:
                     "startSpeed" : 97.0,
                     "endSpeed" : 89.1,
                     "nastyFactor" : 84.02,
-                    "strikeZoneTop" : 3.58,
-                    "strikeZoneBottom" : 1.68,
+                    "strikeZoneTop" : 3.98,
+                    "strikeZoneBottom" : 1.82,
                     "coordinates" : {
                       "aY" : 30.65,
                       "aZ" : -13.97,
@@ -20944,8 +20944,8 @@ http_interactions:
                     "startSpeed" : 87.6,
                     "endSpeed" : 80.7,
                     "nastyFactor" : 45.41,
-                    "strikeZoneTop" : 3.58,
-                    "strikeZoneBottom" : 1.68,
+                    "strikeZoneTop" : 3.91,
+                    "strikeZoneBottom" : 1.8,
                     "coordinates" : {
                       "aY" : 25.82,
                       "aZ" : -20.31,
@@ -21064,8 +21064,8 @@ http_interactions:
                     "startSpeed" : 96.6,
                     "endSpeed" : 88.8,
                     "nastyFactor" : 62.6,
-                    "strikeZoneTop" : 3.58,
-                    "strikeZoneBottom" : 1.68,
+                    "strikeZoneTop" : 4.01,
+                    "strikeZoneBottom" : 1.87,
                     "coordinates" : {
                       "aY" : 29.63,
                       "aZ" : -12.37,
@@ -21244,8 +21244,8 @@ http_interactions:
                     "startSpeed" : 96.0,
                     "endSpeed" : 88.3,
                     "nastyFactor" : 76.55,
-                    "strikeZoneTop" : 3.47,
-                    "strikeZoneBottom" : 1.59,
+                    "strikeZoneTop" : 3.91,
+                    "strikeZoneBottom" : 1.75,
                     "coordinates" : {
                       "aY" : 29.13,
                       "aZ" : -12.39,
@@ -21304,8 +21304,8 @@ http_interactions:
                     "startSpeed" : 89.2,
                     "endSpeed" : 83.0,
                     "nastyFactor" : 58.45,
-                    "strikeZoneTop" : 3.47,
-                    "strikeZoneBottom" : 1.59,
+                    "strikeZoneTop" : 3.84,
+                    "strikeZoneBottom" : 1.72,
                     "coordinates" : {
                       "aY" : 23.45,
                       "aZ" : -23.39,
@@ -21424,8 +21424,8 @@ http_interactions:
                     "startSpeed" : 88.7,
                     "endSpeed" : 81.3,
                     "nastyFactor" : 67.11,
-                    "strikeZoneTop" : 3.47,
-                    "strikeZoneBottom" : 1.59,
+                    "strikeZoneTop" : 4.01,
+                    "strikeZoneBottom" : 1.77,
                     "coordinates" : {
                       "aY" : 27.29,
                       "aZ" : -19.09,
@@ -21936,8 +21936,8 @@ http_interactions:
                     "startSpeed" : 91.8,
                     "endSpeed" : 83.6,
                     "nastyFactor" : 70.06,
-                    "strikeZoneTop" : 3.47,
-                    "strikeZoneBottom" : 1.59,
+                    "strikeZoneTop" : 3.65,
+                    "strikeZoneBottom" : 1.68,
                     "coordinates" : {
                       "aY" : 29.36,
                       "aZ" : -14.72,
@@ -22116,8 +22116,8 @@ http_interactions:
                     "startSpeed" : 90.7,
                     "endSpeed" : 82.6,
                     "nastyFactor" : 58.04,
-                    "strikeZoneTop" : 3.47,
-                    "strikeZoneBottom" : 1.59,
+                    "strikeZoneTop" : 3.7,
+                    "strikeZoneBottom" : 1.7,
                     "coordinates" : {
                       "aY" : 28.29,
                       "aZ" : -16.26,
@@ -22176,8 +22176,8 @@ http_interactions:
                     "startSpeed" : 78.0,
                     "endSpeed" : 72.1,
                     "nastyFactor" : 68.98,
-                    "strikeZoneTop" : 3.47,
-                    "strikeZoneBottom" : 1.59,
+                    "strikeZoneTop" : 3.7,
+                    "strikeZoneBottom" : 1.63,
                     "coordinates" : {
                       "aY" : 22.3,
                       "aZ" : -41.43,
@@ -22362,8 +22362,8 @@ http_interactions:
                     "startSpeed" : 77.9,
                     "endSpeed" : 71.6,
                     "nastyFactor" : 74.34,
-                    "strikeZoneTop" : 3.3,
-                    "strikeZoneBottom" : 1.5,
+                    "strikeZoneTop" : 3.34,
+                    "strikeZoneBottom" : 1.51,
                     "coordinates" : {
                       "aY" : 21.84,
                       "aZ" : -43.31,
@@ -22422,8 +22422,8 @@ http_interactions:
                     "startSpeed" : 90.8,
                     "endSpeed" : 83.0,
                     "nastyFactor" : 66.88,
-                    "strikeZoneTop" : 3.3,
-                    "strikeZoneBottom" : 1.5,
+                    "strikeZoneTop" : 3.34,
+                    "strikeZoneBottom" : 1.51,
                     "coordinates" : {
                       "aY" : 27.93,
                       "aZ" : -17.29,
@@ -22482,8 +22482,8 @@ http_interactions:
                     "startSpeed" : 77.5,
                     "endSpeed" : 71.8,
                     "nastyFactor" : 92.08,
-                    "strikeZoneTop" : 3.3,
-                    "strikeZoneBottom" : 1.5,
+                    "strikeZoneTop" : 3.34,
+                    "strikeZoneBottom" : 1.51,
                     "coordinates" : {
                       "aY" : 20.6,
                       "aZ" : -42.15,
@@ -22542,8 +22542,8 @@ http_interactions:
                     "startSpeed" : 90.9,
                     "endSpeed" : 83.5,
                     "nastyFactor" : 74.76,
-                    "strikeZoneTop" : 3.3,
-                    "strikeZoneBottom" : 1.5,
+                    "strikeZoneTop" : 3.34,
+                    "strikeZoneBottom" : 1.46,
                     "coordinates" : {
                       "aY" : 26.51,
                       "aZ" : -16.45,
@@ -22886,8 +22886,8 @@ http_interactions:
                     "startSpeed" : 77.6,
                     "endSpeed" : 71.7,
                     "nastyFactor" : 57.59,
-                    "strikeZoneTop" : 3.55,
-                    "strikeZoneBottom" : 1.63,
+                    "strikeZoneTop" : 3.72,
+                    "strikeZoneBottom" : 1.8,
                     "coordinates" : {
                       "aY" : 21.35,
                       "aZ" : -41.29,
@@ -23211,8 +23211,8 @@ http_interactions:
                     "startSpeed" : 91.7,
                     "endSpeed" : 83.5,
                     "nastyFactor" : 79.24,
-                    "strikeZoneTop" : 3.49,
-                    "strikeZoneBottom" : 1.6,
+                    "strikeZoneTop" : 3.55,
+                    "strikeZoneBottom" : 1.64,
                     "coordinates" : {
                       "aY" : 29.35,
                       "aZ" : -14.93,
@@ -23578,8 +23578,8 @@ http_interactions:
                     "startSpeed" : 96.9,
                     "endSpeed" : 88.3,
                     "nastyFactor" : 54.14,
-                    "strikeZoneTop" : 3.49,
-                    "strikeZoneBottom" : 1.6,
+                    "strikeZoneTop" : 3.89,
+                    "strikeZoneBottom" : 1.8,
                     "coordinates" : {
                       "aY" : 33.12,
                       "aZ" : -25.11,
@@ -23834,8 +23834,8 @@ http_interactions:
                     "startSpeed" : 95.0,
                     "endSpeed" : 86.3,
                     "nastyFactor" : 44.88,
-                    "strikeZoneTop" : 3.41,
-                    "strikeZoneBottom" : 1.56,
+                    "strikeZoneTop" : 3.46,
+                    "strikeZoneBottom" : 1.61,
                     "coordinates" : {
                       "aY" : 32.58,
                       "aZ" : -19.58,
@@ -23894,8 +23894,8 @@ http_interactions:
                     "startSpeed" : 95.4,
                     "endSpeed" : 87.1,
                     "nastyFactor" : 52.24,
-                    "strikeZoneTop" : 3.41,
-                    "strikeZoneBottom" : 1.56,
+                    "strikeZoneTop" : 3.53,
+                    "strikeZoneBottom" : 1.61,
                     "coordinates" : {
                       "aY" : 31.51,
                       "aZ" : -22.73,
@@ -23954,8 +23954,8 @@ http_interactions:
                     "startSpeed" : 95.6,
                     "endSpeed" : 87.2,
                     "nastyFactor" : 84.52,
-                    "strikeZoneTop" : 3.41,
-                    "strikeZoneBottom" : 1.56,
+                    "strikeZoneTop" : 3.48,
+                    "strikeZoneBottom" : 1.63,
                     "coordinates" : {
                       "aY" : 31.47,
                       "aZ" : -15.34,
@@ -24014,8 +24014,8 @@ http_interactions:
                     "startSpeed" : 96.3,
                     "endSpeed" : 88.2,
                     "nastyFactor" : 52.11,
-                    "strikeZoneTop" : 3.41,
-                    "strikeZoneBottom" : 1.56,
+                    "strikeZoneTop" : 3.46,
+                    "strikeZoneBottom" : 1.58,
                     "coordinates" : {
                       "aY" : 31.08,
                       "aZ" : -21.59,
@@ -24074,8 +24074,8 @@ http_interactions:
                     "startSpeed" : 96.4,
                     "endSpeed" : 88.3,
                     "nastyFactor" : 77.3,
-                    "strikeZoneTop" : 3.41,
-                    "strikeZoneBottom" : 1.56,
+                    "strikeZoneTop" : 3.43,
+                    "strikeZoneBottom" : 1.61,
                     "coordinates" : {
                       "aY" : 31.46,
                       "aZ" : -15.34,
@@ -24773,8 +24773,8 @@ http_interactions:
                     "startSpeed" : 90.9,
                     "endSpeed" : 83.5,
                     "nastyFactor" : 57.34,
-                    "strikeZoneTop" : 3.37,
-                    "strikeZoneBottom" : 1.53,
+                    "strikeZoneTop" : 3.67,
+                    "strikeZoneBottom" : 1.61,
                     "coordinates" : {
                       "aY" : 27.9,
                       "aZ" : -18.57,
@@ -25574,8 +25574,8 @@ http_interactions:
                     "startSpeed" : 90.9,
                     "endSpeed" : 83.5,
                     "nastyFactor" : 57.34,
-                    "strikeZoneTop" : 3.37,
-                    "strikeZoneBottom" : 1.53,
+                    "strikeZoneTop" : 3.67,
+                    "strikeZoneBottom" : 1.61,
                     "coordinates" : {
                       "aY" : 27.9,
                       "aZ" : -18.57,
@@ -33381,7 +33381,7 @@ http_interactions:
           }
         }
     http_version: 
-  recorded_at: Thu, 18 Oct 2018 06:34:14 GMT
+  recorded_at: Thu, 18 Oct 2018 06:52:48 GMT
 - request:
     method: get
     uri: https://statsapi.mlb.com/api/v1.1/game/600000/feed/live
@@ -33401,7 +33401,7 @@ http_interactions:
       message: Not Found
     headers:
       Date:
-      - Thu, 18 Oct 2018 06:34:19 GMT
+      - Thu, 18 Oct 2018 06:52:54 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Transfer-Encoding:
@@ -33409,8 +33409,8 @@ http_interactions:
       Connection:
       - close
       Set-Cookie:
-      - __cfduid=d17c14769f6b4319508d4383b04dc09a11539844454; expires=Fri, 18-Oct-19
-        06:34:14 GMT; path=/; domain=.mlb.com; HttpOnly
+      - __cfduid=dfb02a7daee9ef84477c0856b2a1820061539845568; expires=Fri, 18-Oct-19
+        06:52:48 GMT; path=/; domain=.mlb.com; HttpOnly
       Access-Control-Allow-Credentials:
       - 'true'
       Access-Control-Allow-Headers:
@@ -33434,7 +33434,7 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 46b8fa607a0d45b4-TPE
+      - 46b9159548d845c6-TPE
     body:
       encoding: UTF-8
       string: |-
@@ -33443,5 +33443,5 @@ http_interactions:
           "message" : "Game data couldn't be found"
         }
     http_version: 
-  recorded_at: Thu, 18 Oct 2018 06:34:19 GMT
+  recorded_at: Thu, 18 Oct 2018 06:52:54 GMT
 recorded_with: VCR 4.0.0

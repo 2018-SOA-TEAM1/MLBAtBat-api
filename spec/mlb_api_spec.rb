@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'spec_helper.rb'
 
 describe 'Tests MLBAtBat libiary' do
@@ -13,7 +15,6 @@ describe 'Tests MLBAtBat libiary' do
   after do
     VCR.eject_cassette
   end
-
 
   describe 'Schedule information' do
     it 'HAPPY: shoud provide correct game schedule information' do
