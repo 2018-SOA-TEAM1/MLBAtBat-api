@@ -1,12 +1,6 @@
-require 'minitest/autorun'
-require 'minitest/rg'
-require 'yaml'
-require_relative '../lib/mlb_api.rb'
+require_relative 'spec_helper.rb'
 
 describe 'Tests MLBAtBat libiary' do
-  CORRECT = YAML.safe_load(File.read('./fixtures/mlb_results.yml'))
-  RESPONSE = YAML.load(File.read('./fixtures/mlb_response.yml'))
-
   describe 'Schedule information' do
     it 'HAPPY: shoud provide correct game schedule information' do
       schedule = MLBAtBat::MLBAPI.new.schedule
