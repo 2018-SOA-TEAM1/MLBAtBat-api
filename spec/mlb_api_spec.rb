@@ -40,7 +40,7 @@ describe 'Tests MLBAtBat libiary' do
     it 'SAD: shoud raise exception if given wrong gamePk' do
       proc do
         @schedule.game_detailed_state('600000')
-      end.must_raise MLBAtBat::MLBAPI::Errors::NotFound
+      end.must_raise MLBAtBat::MLBAPI::Request::Response::NotFound
     end
   end
 end
