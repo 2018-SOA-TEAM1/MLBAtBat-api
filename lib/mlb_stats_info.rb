@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'http'
 require 'yaml'
 
-NON_EXIST_PK = '600000'.freeze
+NON_EXIST_PK = '600000'
 
 def mlb_api_path(path)
   'https://statsapi.mlb.com/api/' + path

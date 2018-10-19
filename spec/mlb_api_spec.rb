@@ -1,11 +1,20 @@
-require 'minitest/autorun'
-require 'minitest/rg'
-require 'yaml'
-require_relative '../lib/mlb_api.rb'
+# frozen_string_literal: true
+
+require_relative 'spec_helper.rb'
 
 describe 'Tests MLBAtBat libiary' do
-  CORRECT = YAML.safe_load(File.read('./fixtures/mlb_results.yml'))
-  RESPONSE = YAML.load(File.read('./fixtures/mlb_response.yml'))
+  VCR.configure do |c|
+    c.cassette_library_dir = CASSETTES_FOLDER
+    c.hook_into :webmock
+  end
+
+  before do
+    VCR.insert_cassette CASSETTE_FILE, record: :new_episodes
+  end
+
+  after do
+    VCR.eject_cassette
+  end
 
   describe 'Schedule information' do
     it 'HAPPY: shoud provide correct game schedule information' do
@@ -31,7 +40,7 @@ describe 'Tests MLBAtBat libiary' do
     it 'SAD: shoud raise exception if given wrong gamePk' do
       proc do
         @schedule.game_detailed_state('600000')
-      end.must_raise MLBAtBat::MLBAPI::Errors::NotFound
+      end.must_raise MLBAtBat::MLBAPI::Request::Response::NotFound
     end
   end
 end

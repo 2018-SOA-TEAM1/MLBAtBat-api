@@ -1,55 +1,65 @@
+# frozen_string_literal: true
+
 require 'http'
 require_relative 'schedule.rb'
 require_relative 'live_game.rb'
 
 module MLBAtBat
-  # Library for Youtube Data API
+  # Library for MLB API
   class MLBAPI
-    module Errors
-      class NotFound < StandardError; end
-    end
-
-    HTTP_ERROR = {
-      404 => Errors::NotFound
-    }.freeze
-
     def initialize(cache = {})
       @cache = cache
     end
 
     def schedule
-      mlb_schedule_url = mlb_api_path('v1/schedule?sportId=1')
-      schedule = call_mlb_url(mlb_schedule_url).parse
+      schedule = Request.new(@cache).data('v1/schedule?sportId=1').parse
       Schedule.new(schedule, self)
     end
 
     def live_game(game_pk)
-      live_api_path = "v1.1/game/#{game_pk}/feed/live"
-      mlb_live_url = mlb_api_path(live_api_path)
-      live_data = call_mlb_url(mlb_live_url).parse
+      live_data = Request.new(@cache).data("v1.1/game/#{game_pk}/feed/live").parse
       LiveGame.new(live_data)
     end
 
-    private
+    # send out HTTP request to MLB stats api
+    class Request
+      MLB_API_PATH = 'https://statsapi.mlb.com/api/'
 
-    def mlb_api_path(path)
-      'https://statsapi.mlb.com/api/' + path
-    end
-
-    def call_mlb_url(url)
-      result = @cache.fetch(url) do
-        HTTP.get(url)
+      def initialize(cache = {})
+        @cache = cache
       end
 
-      successful?(result) ? result : raise_error(result)
-    end
+      def data(path)
+        get(MLB_API_PATH + path)
+      end
 
-    def successful?(result)
-      HTTP_ERROR.key?(result.code) ? false : true
-    end
+      def get(url)
+        http_response = @cache.fetch(url) do
+          HTTP.get(url)
+        end
 
-    def raise_error(result)
-      raise(HTTP_ERROR[result.code])
+        Response.new(http_response).tap do |response|
+          raise(response.error) unless response.successful?
+        end
+      end
+
+      # Decorates HTTP responses from MLB with success/error
+      class Response < SimpleDelegator
+        # Instance a error class for 404 response
+        NotFound = Class.new(StandardError)
+
+        HTTP_ERROR = {
+          404 => NotFound
+        }.freeze
+
+        def successful?
+          HTTP_ERROR.key?(code) ? false : true
+        end
+
+        def error
+          HTTP_ERROR[code]
+        end
+      end
     end
   end
 end
