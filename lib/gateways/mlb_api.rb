@@ -11,14 +11,10 @@ module MLBAtBat
       end
 
       def schedule(sport_id)
-        # schedule = Request.new(@cache).data('v1/schedule?sportId=1').parse
-        # Schedule.new(schedule, self)
         Request.new(@cache).data("v1/schedule?sportId=#{sport_id}").parse
       end
 
       def live_game(game_pk)
-        # live_data = Request.new(@cache).data("v1.1/game/#{game_pk}/feed/live").parse
-        # LiveGame.new(live_data)
         Request.new(@cache).data("v1.1/game/#{game_pk}/feed/live").parse
       end
 
@@ -35,7 +31,6 @@ module MLBAtBat
         end
 
         def get(url)
-          puts(url)
           http_response = @cache.fetch(url) do
             HTTP.get(url)
           end
@@ -44,23 +39,23 @@ module MLBAtBat
             raise(response.error) unless response.successful?
           end
         end
+      end
 
-        # Decorates HTTP responses from MLB with success/error
-        class Response < SimpleDelegator
-          # Instance a error class for 404 response
-          NotFound = Class.new(StandardError)
+      # Decorates HTTP responses from MLB with success/error
+      class Response < SimpleDelegator
+        # Instance a error class for 404 response
+        NotFound = Class.new(StandardError)
 
-          HTTP_ERROR = {
-            404 => NotFound
-          }.freeze
+        HTTP_ERROR = {
+          404 => NotFound
+        }.freeze
 
-          def successful?
-            HTTP_ERROR.key?(code) ? false : true
-          end
+        def successful?
+          HTTP_ERROR.key?(code) ? false : true
+        end
 
-          def error
-            HTTP_ERROR[code]
-          end
+        def error
+          HTTP_ERROR[code]
         end
       end
     end

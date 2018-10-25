@@ -27,6 +27,8 @@ module MLBAtBat
           @member_mapper = LiveGameMapper.new(
             gateway_class
           )
+          # @gateway can't be used Q_Q
+          # Therefore I create a new gateway
           @_gateway = gateway_class.new()
         end
 
@@ -46,8 +48,8 @@ module MLBAtBat
           @data['dates'][0]['games'][0]['gamePk']
         end
 
-        def live_game
-          live_game_data = @_gateway.live_game(@game_pk)
+        def live_game()
+          live_game_data = @_gateway.live_game(game_pk)
           LiveGameMapper.build_entity(live_game_data)
         end
       end
