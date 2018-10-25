@@ -25505,4 +25505,58 @@ http_interactions:
         }
     http_version: 
   recorded_at: Thu, 25 Oct 2018 02:43:22 GMT
+- request:
+    method: get
+    uri: https://statsapi.mlb.com/api/v1.1/game//feed/live
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - statsapi.mlb.com
+      User-Agent:
+      - http.rb/3.3.0
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Thu, 25 Oct 2018 08:54:37 GMT
+      Content-Type:
+      - text/html;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - close
+      Set-Cookie:
+      - __cfduid=de616845d3e4807b023928e21f9567aae1540457676; expires=Fri, 25-Oct-19
+        08:54:36 GMT; path=/; domain=.mlb.com; HttpOnly
+      Content-Language:
+      - en
+      Cf-Cache-Status:
+      - MISS
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 46f3759c4da14650-TPE
+    body:
+      encoding: UTF-8
+      string: '<html><head><title>Apache Tomcat/7.0.50 - Error report</title><style><!--H1
+        {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;}
+        H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;}
+        H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;}
+        BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;}
+        B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;}
+        P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A
+        {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP
+        Status 404 - </h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b>
+        <u></u></p><p><b>description</b> <u>The requested resource is not available.</u></p><HR
+        size="1" noshade="noshade"><h3>Apache Tomcat/7.0.50</h3></body></html>'
+    http_version: 
+  recorded_at: Thu, 25 Oct 2018 08:54:37 GMT
 recorded_with: VCR 4.0.0

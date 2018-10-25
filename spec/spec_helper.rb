@@ -3,15 +3,16 @@
 require 'simplecov'
 SimpleCov.start
 
-require 'minitest/autorun'
-require 'minitest/rg'
 require 'yaml'
 
+require 'minitest/autorun'
+require 'minitest/rg'
 require 'vcr'
 require 'webmock'
 
-require_relative '../lib/mlb_api.rb'
+require_relative '../init.rb'
 
+SPORT_ID = 1.freeze
 CORRECT = YAML.safe_load(File.read('spec/fixtures/mlb_results.yml'))
 RESPONSE = YAML.load(File.read('spec/fixtures/mlb_response.yml'))
 

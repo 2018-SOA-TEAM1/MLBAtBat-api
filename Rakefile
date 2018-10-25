@@ -13,7 +13,7 @@ end
 
 desc 'run tests'
 task :spec do
-  sh 'ruby spec/mlb_api_spec.rb'
+  sh 'ruby spec/gateway_mlb_api_spec.rb'
 end
 
 namespace :vcr do
