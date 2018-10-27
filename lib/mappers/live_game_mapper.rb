@@ -7,10 +7,15 @@ module MLBAtBat
     class LiveGameMapper
       def initialize(gateway_class = MLB::Api)
         @gateway_class = gateway_class
-        @gateway = @gateway_class.new()
+        @gateway = @gateway_class.new
       end
 
-      def self.build_entity(data)
+      def live_game_info(game_pk)
+        build_entity(game_pk)
+      end
+
+      def build_entity(game_pk)
+        data = @gateway.live_game(game_pk)
         DataMapper.new(data).build_entity
       end
 
@@ -26,8 +31,6 @@ module MLBAtBat
             detailed_state: detailed_state
           )
         end
-
-        private
 
         def current_hitter_name
           @data['liveData']['plays']['currentPlay'] \

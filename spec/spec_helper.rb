@@ -12,7 +12,7 @@ require 'webmock'
 
 require_relative '../init.rb'
 
-SPORT_ID = 1.freeze
+SPORT_ID = 1
 WRONG_PK_ID = '600000'
 CORRECT = YAML.safe_load(File.read('spec/fixtures/mlb_results.yml'))
 RESPONSE = YAML.load(File.read('spec/fixtures/mlb_response.yml'))

@@ -8,10 +8,10 @@ module MLBAtBat
     class ScheduleMapper
       def initialize(gateway_class = MLB::Api)
         @gateway_class = gateway_class
-        @gateway = @gateway_class.new()
+        @gateway = @gateway_class.new
       end
 
-      def find(sport_id)
+      def get_schedule(sport_id)
         data = @gateway.schedule(sport_id)
         build_entity(data)
       end
@@ -24,12 +24,9 @@ module MLBAtBat
       class DataMapper
         def initialize(data, gateway_class)
           @data = data
-          @member_mapper = LiveGameMapper.new(
+          @live_game_mapper = LiveGameMapper.new(
             gateway_class
           )
-          # @gateway can't be used Q_Q
-          # Therefore I create a new gateway
-          @_gateway = gateway_class.new()
         end
 
         def build_entity
@@ -48,9 +45,8 @@ module MLBAtBat
           @data['dates'][0]['games'][0]['gamePk']
         end
 
-        def live_game()
-          live_game_data = @_gateway.live_game(game_pk)
-          LiveGameMapper.build_entity(live_game_data)
+        def live_game
+          @live_game_mapper.live_game_info(game_pk)
         end
       end
     end
