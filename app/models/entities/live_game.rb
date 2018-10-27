@@ -6,6 +6,7 @@ module MLBAtBat
     class LiveGame < Dry::Struct
       include Dry::Types.module
 
+      attribute :date,                 Strict::String
       attribute :current_hitter_name,  Strict::String
       attribute :detailed_state,       Strict::String
     end

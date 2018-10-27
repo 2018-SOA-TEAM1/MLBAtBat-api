@@ -27,9 +27,14 @@ module MLBAtBat
 
         def build_entity
           Entity::LiveGame.new(
+            date: date,
             current_hitter_name: current_hitter_name,
             detailed_state: detailed_state
           )
+        end
+
+        def date
+          @data['gameData']['datetime']['originalDate']
         end
 
         def current_hitter_name

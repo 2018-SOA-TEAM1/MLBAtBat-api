@@ -1,0 +1,18 @@
+.container
+  form role="form" action="/game_info" method='POST' id='show-gmae-info'
+    .row.vertical-align.query-bar
+      .col-md-2.col-sm-3
+        .text-right Game Primary Key:
+      .col-md-8.col-sm-6
+        input {
+          type='text' name='game_pk'
+          id='game_pk_input' class="form-control"
+          placeholder="e.g. 563409"
+        }
+      .col-md-2.col-sm-3
+        button {
+          type='submit' id='game-pk-submit' class='submit'
+          value='submit' class="btn btn-success"
+        } Show Game Info.
+    .row
+.col-md-12.blank-row
