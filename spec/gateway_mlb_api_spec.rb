@@ -18,7 +18,7 @@ describe 'Tests MLBAtBat libiary' do
 
   describe 'Schedule information' do
     it 'HAPPY: shoud provide correct game schedule information' do
-      schedule = MLBAtBat::MLBAPI.new.schedule
+      schedule = MLBAtBat::MLB::ScheduleMapper.new.get_schedule(SPORT_ID)
       _(schedule.game_date).must_equal CORRECT['date']
       _(schedule.game_pk).must_equal CORRECT['game_pk']
     end
@@ -26,21 +26,23 @@ describe 'Tests MLBAtBat libiary' do
 
   describe 'Live game information' do
     before do
-      @schedule = MLBAtBat::MLBAPI.new.schedule
+      @schedule = MLBAtBat::MLB::ScheduleMapper.new.get_schedule(SPORT_ID)
+      @live_game = @schedule.live_game
     end
 
     it 'HAPPY: shoud provide correct game state' do
-      _(@schedule.game_detailed_state).must_equal CORRECT['detailed_state']
+      _(@live_game.detailed_state).must_equal CORRECT['detailed_state']
     end
 
     it 'HAPPY: shoud provide correct hitter name' do
-      _(@schedule.current_hitter_name).must_equal CORRECT['current_player']
+      _(@live_game.current_hitter_name).must_equal CORRECT['current_player']
     end
 
     it 'SAD: shoud raise exception if given wrong gamePk' do
       proc do
-        @schedule.game_detailed_state('600000')
-      end.must_raise MLBAtBat::MLBAPI::Request::Response::NotFound
+        @live_game = MLBAtBat::MLB::LiveGameMapper.new
+                                                  .live_game_info(WRONG_PK_ID)
+      end.must_raise MLBAtBat::MLB::Api::Response::NotFound
     end
   end
 end

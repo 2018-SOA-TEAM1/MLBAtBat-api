@@ -6,9 +6,14 @@ task :default do
   puts `rake -T`
 end
 
+desc 'generate correct answer'
+task :gen do
+  sh 'ruby lib/mlb_stats_info.rb'
+end
+
 desc 'run tests'
 task :spec do
-  sh 'ruby spec/mlb_api_spec.rb'
+  sh 'ruby spec/gateway_mlb_api_spec.rb'
 end
 
 namespace :vcr do

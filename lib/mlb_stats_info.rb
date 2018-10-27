@@ -43,5 +43,5 @@ bad_live_url = mlb_api_path(bad_api_path)
 mlb_response[bad_live_url] = call_mlb_url(bad_live_url)
 mlb_response[bad_live_url].parse
 
-File.write('../spec/fixtures/mlb_response.yml', mlb_response.to_yaml)
-File.write('../spec/fixtures/mlb_results.yml', mlb_results.to_yaml)
+File.write('spec/fixtures/mlb_response.yml', mlb_response.to_yaml)
+File.write('spec/fixtures/mlb_results.yml', mlb_results.to_yaml)
