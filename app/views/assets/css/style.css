@@ -8,7 +8,7 @@ h1 {
   font-size: 1.2em;
 }
 
-.project.attribute {
+.game_info.state {
   font-weight: bold;
 }
 
@@ -16,12 +16,12 @@ h1 {
   color: grey;
 }
 
-.project.owner {
-  font-weight: bold
+.game_info.subtitle {
+
 }
 
-.project.name {
-
+.game_info.title {
+  font-weight: bold
 }
 
 .vcenter {
@@ -56,6 +56,6 @@ h1 {
 
 footer {
   padding: 0.5in;
-  font-size:11px;
+  font-size:12px;
   color:rgb(100, 100, 100);
 }
