@@ -29,7 +29,13 @@ module MLBAtBat
           Entity::LiveGame.new(
             date: date,
             current_hitter_name: current_hitter_name,
-            detailed_state: detailed_state
+            detailed_state: detailed_state,
+            home_team_runs: home_team_runs,
+            home_team_hits: home_team_hits,
+            home_team_errors: home_team_errors,
+            away_team_runs: away_team_runs,
+            away_team_hits: away_team_hits,
+            away_team_errors: away_team_errors
           )
         end
 
@@ -44,6 +50,36 @@ module MLBAtBat
 
         def detailed_state
           @data['gameData']['status']['detailedState']
+        end
+
+        def home_team_runs
+          @data['liveData']['linescore']['teams'] \
+               ['home']['runs']
+        end
+
+        def home_team_hits
+          @data['liveData']['linescore']['teams'] \
+               ['home']['hits']
+        end
+
+        def home_team_errors
+          @data['liveData']['linescore']['teams'] \
+               ['home']['errors']
+        end
+
+        def away_team_runs
+          @data['liveData']['linescore']['teams'] \
+               ['away']['runs']
+        end
+
+        def away_team_hits
+          @data['liveData']['linescore']['teams'] \
+               ['away']['hits']
+        end
+
+        def away_team_errors
+          @data['liveData']['linescore']['teams'] \
+               ['away']['errors']
         end
       end
     end

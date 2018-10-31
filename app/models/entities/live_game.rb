@@ -9,6 +9,12 @@ module MLBAtBat
       attribute :date,                 Strict::String
       attribute :current_hitter_name,  Strict::String
       attribute :detailed_state,       Strict::String
+      attribute :home_team_runs,       Strict::Integer
+      attribute :home_team_hits,       Strict::Integer
+      attribute :home_team_errors,     Strict::Integer
+      attribute :away_team_runs,       Strict::Integer
+      attribute :away_team_hits,       Strict::Integer
+      attribute :away_team_errors,     Strict::Integer
     end
   end
 end

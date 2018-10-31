@@ -10,8 +10,9 @@ module MLBAtBat
         @cache = cache
       end
 
-      def schedule(sport_id)
-        Request.new(@cache).data("v1/schedule?sportId=#{sport_id}").parse
+      def schedule(sport_id, game_date)
+        Request.new(@cache).data("v1/schedule?sportId=#{sport_id}" \
+                                 "&date=#{game_date}").parse
       end
 
       def live_game(game_pk)
@@ -45,9 +46,11 @@ module MLBAtBat
       class Response < SimpleDelegator
         # Instance a error class for 404 response
         NotFound = Class.new(StandardError)
+        InternalServerError = Class.new(StandardError)
 
         HTTP_ERROR = {
-          404 => NotFound
+          404 => NotFound,
+          500 => InternalServerError
         }.freeze
 
         def successful?

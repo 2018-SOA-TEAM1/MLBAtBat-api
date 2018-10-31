@@ -8,7 +8,7 @@ end
 
 desc 'generate correct answer'
 task :gen do
-  sh 'ruby lib/mlb_stats_info.rb'
+  sh 'ruby mlb_stats_info.rb'
 end
 
 desc 'run tests'

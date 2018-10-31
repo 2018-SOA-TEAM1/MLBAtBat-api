@@ -10,6 +10,8 @@ module MLBAtBat
 
       attribute :game_date,                Strict::String
       attribute :game_pk,                  Strict::Integer
+      attribute :home_team,                Strict::String
+      attribute :away_team,                Strict::String
       attribute :live_game,                LiveGame
     end
   end
