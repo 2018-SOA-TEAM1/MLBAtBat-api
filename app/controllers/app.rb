@@ -22,19 +22,21 @@ module MLBAtBat
         routing.is do
           # GET /game_info/
           routing.post do
-            game_pk = routing.params['game_pk']
-            routing.halt 400 unless game_pk.to_i.positive?
-
-            routing.redirect "game_info/#{game_pk}"
+            game_date = routing.params['game_date']
+            # routing.halt 400 unless game_pk.to_i.positive?
+            game_date = game_date.split('/').join('_')
+            routing.redirect "game_info/#{game_date}"
           end
         end
 
-        routing.on String do |game_pk|
-          # GET /game_info/game_pk
+        routing.on String do |game_date|
+          # GET /game_info/game_date
+          # puts game_date
           routing.get do
-            live_game_info = MLB::LiveGameMapper.new.live_game_info(game_pk)
+            game_date = game_date.split('_').join('/')
+            game_info = MLB::ScheduleMapper.new.get_schedule(1, game_date)
 
-            view 'game_info', locals: { game_info: live_game_info }
+            view 'game_info', locals: { game_info: game_info }
           end
         end
       end
