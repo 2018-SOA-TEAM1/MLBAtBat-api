@@ -8,6 +8,7 @@ module MLBAtBat
     class Schedule < Dry::Struct
       include Dry::Types.module
 
+      attribute :id,                       Integer.optional
       attribute :game_date,                Strict::String
       attribute :game_pk,                  Strict::Integer
       attribute :home_team,                Strict::String

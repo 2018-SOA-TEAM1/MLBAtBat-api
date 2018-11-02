@@ -1,19 +1,17 @@
 # frozen_string_literal: true
 
 require_relative 'spec_helper.rb'
+require_relative 'helpers/vcr_helper.rb'
 
 describe 'Tests MLBAtBat libiary' do
-  VCR.configure do |c|
-    c.cassette_library_dir = CASSETTES_FOLDER
-    c.hook_into :webmock
-  end
+  VcrHelper.setup_vcr
 
   before do
-    VCR.insert_cassette CASSETTE_FILE, record: :new_episodes
+    VcrHelper.configure_vcr_for_mlb
   end
 
   after do
-    VCR.eject_cassette
+    VcrHelper.eject_vcr
   end
 
   describe 'Schedule information' do

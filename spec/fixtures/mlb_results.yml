@@ -1,0 +1,15 @@
+---
+date: '2018-07-17'
+game_pk: 530856
+away_team: American League All-Stars
+home_team: National League All-Stars
+detailed_state: Final
+current_player: Lorenzo Cain
+home_team_status:
+  runs: 6
+  hits: 7
+  errors: 1
+away_team_status:
+  runs: 8
+  hits: 13
+  errors: 0
