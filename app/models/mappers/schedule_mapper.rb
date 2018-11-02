@@ -31,6 +31,7 @@ module MLBAtBat
 
         def build_entity
           MLBAtBat::Entity::Schedule.new(
+            id: nil,
             game_date: game_date,
             game_pk: game_pk,
             away_team: away_team,
