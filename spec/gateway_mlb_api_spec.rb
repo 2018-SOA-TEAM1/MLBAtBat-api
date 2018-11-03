@@ -22,7 +22,7 @@ describe 'Tests MLBAtBat libiary' do
     end
 
     it 'HAPPY: shoud provide correct game date' do
-      _(@schedule.game_date).must_equal CORRECT['date']
+      _(@schedule.date).must_equal CORRECT['date']
     end
 
     it 'HAPPY: should provide correct game pk' do
