@@ -23,7 +23,8 @@ module MLBAtBat
         temp_hash = entity.to_hash
         temp_pk = temp_hash.delete(:pk)
         temp_hash[:game_pk] = temp_pk
-        puts "temp_hash"
+        
+        puts "Create GameOrm"
         puts temp_hash
 
         Database::GameOrm.find_or_create(temp_hash)
