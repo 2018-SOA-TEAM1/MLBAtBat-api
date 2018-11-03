@@ -18,7 +18,7 @@ https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=07/17/2018: !ruby/object
   headers: !ruby/object:HTTP::Headers
     pile:
     - - Date
-      - Wed, 31 Oct 2018 12:52:56 GMT
+      - Sat, 03 Nov 2018 02:53:00 GMT
     - - Content-Type
       - application/json;charset=UTF-8
     - - Transfer-Encoding
@@ -26,8 +26,8 @@ https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=07/17/2018: !ruby/object
     - - Connection
       - close
     - - Set-Cookie
-      - __cfduid=d1e7420da747ea5d3554d5c2202ce9e551540990375; expires=Thu, 31-Oct-19
-        12:52:55 GMT; path=/; domain=.mlb.com; HttpOnly
+      - __cfduid=d781f1de0dbc36ea0a6213ba5980e64211541213579; expires=Sun, 03-Nov-19
+        02:52:59 GMT; path=/; domain=.mlb.com; HttpOnly
     - - Access-Control-Allow-Credentials
       - 'true'
     - - Access-Control-Allow-Headers
@@ -43,13 +43,13 @@ https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=07/17/2018: !ruby/object
     - - Vary
       - Accept-Encoding
     - - Cf-Cache-Status
-      - EXPIRED
+      - MISS
     - - Expect-Ct
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
     - - Server
       - cloudflare
     - - Cf-Ray
-      - 472642f92b4b4584-TPE
+      - 473b8c466c624644-TPE
   proxy_headers: !ruby/object:HTTP::Headers
     pile: []
   content_type: !ruby/struct:HTTP::ContentType
@@ -199,7 +199,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
   headers: !ruby/object:HTTP::Headers
     pile:
     - - Date
-      - Wed, 31 Oct 2018 12:52:57 GMT
+      - Sat, 03 Nov 2018 02:53:01 GMT
     - - Content-Type
       - application/json;charset=UTF-8
     - - Transfer-Encoding
@@ -207,8 +207,8 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
     - - Connection
       - close
     - - Set-Cookie
-      - __cfduid=d82952a4fcc36174bd5d96c98878850791540990376; expires=Thu, 31-Oct-19
-        12:52:56 GMT; path=/; domain=.mlb.com; HttpOnly
+      - __cfduid=db947038a3f0b75c0b528dfbd076429391541213580; expires=Sun, 03-Nov-19
+        02:53:00 GMT; path=/; domain=.mlb.com; HttpOnly
     - - Access-Control-Allow-Credentials
       - 'true'
     - - Access-Control-Allow-Headers
@@ -222,7 +222,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
     - - Cache-Control
       - max-age=10, public, stale-while-revalidate=30, stale-if-error=86400
     - - Expires
-      - Wed, 31 Oct 2018 12:53:07 GMT
+      - Sat, 03 Nov 2018 02:53:10 GMT
     - - Vary
       - Accept-Encoding
     - - Cf-Cache-Status
@@ -232,7 +232,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
     - - Server
       - cloudflare
     - - Cf-Ray
-      - 472642fe590145d8-TPE
+      - 473b8c4c0eb24572-TPE
   proxy_headers: !ruby/object:HTTP::Headers
     pile: []
   content_type: !ruby/struct:HTTP::ContentType
@@ -497,7 +497,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
               "lastName" : "Harper",
               "primaryNumber" : "34",
               "birthDate" : "1992-10-16",
-              "currentAge" : 25,
+              "currentAge" : 26,
               "birthCity" : "Las Vegas",
               "birthStateProvince" : "NV",
               "birthCountry" : "USA",
@@ -638,7 +638,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
               "lastName" : "Kemp",
               "primaryNumber" : "27",
               "birthDate" : "1984-09-23",
-              "currentAge" : 33,
+              "currentAge" : 34,
               "birthCity" : "Midwest City",
               "birthStateProvince" : "OK",
               "birthCountry" : "USA",
@@ -913,7 +913,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
               "lastName" : "Jansen",
               "primaryNumber" : "74",
               "birthDate" : "1987-09-30",
-              "currentAge" : 30,
+              "currentAge" : 31,
               "birthCity" : "Willemstad",
               "birthCountry" : "Curacao",
               "height" : "6' 5",
@@ -1413,7 +1413,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
               "lastName" : "Foltynewicz",
               "primaryNumber" : "26",
               "birthDate" : "1991-10-07",
-              "currentAge" : 26,
+              "currentAge" : 27,
               "birthCity" : "Sterling",
               "birthStateProvince" : "IL",
               "birthCountry" : "USA",
@@ -2190,7 +2190,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
               "lastName" : "Greinke",
               "primaryNumber" : "21",
               "birthDate" : "1983-10-21",
-              "currentAge" : 34,
+              "currentAge" : 35,
               "birthCity" : "Orlando",
               "birthStateProvince" : "FL",
               "birthCountry" : "USA",
@@ -2554,7 +2554,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
               "lastName" : "Springer",
               "primaryNumber" : "4",
               "birthDate" : "1989-09-19",
-              "currentAge" : 28,
+              "currentAge" : 29,
               "birthCity" : "New Britain",
               "birthStateProvince" : "CT",
               "birthCountry" : "USA",
@@ -2832,7 +2832,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
               "lastName" : "Betts",
               "primaryNumber" : "50",
               "birthDate" : "1992-10-07",
-              "currentAge" : 25,
+              "currentAge" : 26,
               "birthCity" : "Nashville",
               "birthStateProvince" : "TN",
               "birthCountry" : "USA",
@@ -3104,7 +3104,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
               "lastName" : "Jeffress",
               "primaryNumber" : "32",
               "birthDate" : "1987-09-21",
-              "currentAge" : 30,
+              "currentAge" : 31,
               "birthCity" : "South Boston",
               "birthStateProvince" : "VA",
               "birthCountry" : "USA",
@@ -3278,8 +3278,8 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
               "initLastName" : "C Morton",
               "fullFMLName" : "Charles A. Morton",
               "fullLFMName" : "Morton, Charles A.",
-              "strikeZoneTop" : 3.575,
-              "strikeZoneBottom" : 1.681
+              "strikeZoneTop" : 3.46,
+              "strikeZoneBottom" : 1.58
             },
             "ID457918" : {
               "id" : 457918,
@@ -3289,7 +3289,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
               "lastName" : "Happ",
               "primaryNumber" : "34",
               "birthDate" : "1982-10-19",
-              "currentAge" : 35,
+              "currentAge" : 36,
               "birthCity" : "Peru",
               "birthStateProvince" : "IL",
               "birthCountry" : "USA",
@@ -3467,7 +3467,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                 "pitchData" : {
                   "startSpeed" : 95.7,
                   "endSpeed" : 87.3,
-                  "nastyFactor" : 49.61,
+                  "nastyFactor" : 49.6,
                   "strikeZoneTop" : 3.29,
                   "strikeZoneBottom" : 1.49,
                   "coordinates" : {
@@ -3570,13 +3570,13 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                   "description" : "Foul Tip",
                   "code" : "T",
                   "ballColor" : "rgba(170, 21, 11, 1.0)",
-                  "trailColor" : "rgba(152, 0, 101, 1.0)",
+                  "trailColor" : "rgba(0, 0, 254, 1.0)",
                   "isInPlay" : false,
                   "isStrike" : true,
                   "isBall" : false,
                   "type" : {
-                    "code" : "FC",
-                    "description" : "Cutter"
+                    "code" : "SL",
+                    "description" : "Slider"
                   },
                   "hasReview" : false
                 },
@@ -3587,7 +3587,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                 "pitchData" : {
                   "startSpeed" : 88.2,
                   "endSpeed" : 81.6,
-                  "nastyFactor" : 35.44,
+                  "nastyFactor" : 26.54,
                   "strikeZoneTop" : 3.29,
                   "strikeZoneBottom" : 1.49,
                   "coordinates" : {
@@ -3630,13 +3630,13 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                   "description" : "Ball",
                   "code" : "B",
                   "ballColor" : "rgba(39, 161, 39, 1.0)",
-                  "trailColor" : "rgba(152, 0, 101, 1.0)",
+                  "trailColor" : "rgba(0, 0, 254, 1.0)",
                   "isInPlay" : false,
                   "isStrike" : false,
                   "isBall" : true,
                   "type" : {
-                    "code" : "FC",
-                    "description" : "Cutter"
+                    "code" : "SL",
+                    "description" : "Slider"
                   },
                   "hasReview" : false
                 },
@@ -3647,7 +3647,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                 "pitchData" : {
                   "startSpeed" : 88.4,
                   "endSpeed" : 81.9,
-                  "nastyFactor" : 52.42,
+                  "nastyFactor" : 48.91,
                   "strikeZoneTop" : 3.29,
                   "strikeZoneBottom" : 1.49,
                   "coordinates" : {
@@ -3690,13 +3690,13 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                   "description" : "Called Strike",
                   "code" : "C",
                   "ballColor" : "rgba(170, 21, 11, 1.0)",
-                  "trailColor" : "rgba(152, 0, 101, 1.0)",
+                  "trailColor" : "rgba(0, 0, 254, 1.0)",
                   "isInPlay" : false,
                   "isStrike" : true,
                   "isBall" : false,
                   "type" : {
-                    "code" : "FC",
-                    "description" : "Cutter"
+                    "code" : "SL",
+                    "description" : "Slider"
                   },
                   "hasReview" : false
                 },
@@ -3707,7 +3707,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                 "pitchData" : {
                   "startSpeed" : 87.5,
                   "endSpeed" : 81.2,
-                  "nastyFactor" : 31.89,
+                  "nastyFactor" : 28.38,
                   "strikeZoneTop" : 3.1,
                   "strikeZoneBottom" : 1.45,
                   "coordinates" : {
@@ -3810,13 +3810,13 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                   "description" : "Called Strike",
                   "code" : "C",
                   "ballColor" : "rgba(170, 21, 11, 1.0)",
-                  "trailColor" : "rgba(152, 0, 101, 1.0)",
+                  "trailColor" : "rgba(0, 0, 254, 1.0)",
                   "isInPlay" : false,
                   "isStrike" : true,
                   "isBall" : false,
                   "type" : {
-                    "code" : "FC",
-                    "description" : "Cutter"
+                    "code" : "SL",
+                    "description" : "Slider"
                   },
                   "hasReview" : false
                 },
@@ -3827,7 +3827,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                 "pitchData" : {
                   "startSpeed" : 87.7,
                   "endSpeed" : 81.2,
-                  "nastyFactor" : 51.91,
+                  "nastyFactor" : 64.08,
                   "strikeZoneTop" : 3.1,
                   "strikeZoneBottom" : 1.45,
                   "coordinates" : {
@@ -3887,7 +3887,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                 "pitchData" : {
                   "startSpeed" : 98.0,
                   "endSpeed" : 90.2,
-                  "nastyFactor" : 55.89,
+                  "nastyFactor" : 56.72,
                   "strikeZoneTop" : 3.1,
                   "strikeZoneBottom" : 1.45,
                   "coordinates" : {
@@ -4187,13 +4187,13 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                   "description" : "Swinging Strike",
                   "code" : "S",
                   "ballColor" : "rgba(170, 21, 11, 1.0)",
-                  "trailColor" : "rgba(152, 0, 101, 1.0)",
+                  "trailColor" : "rgba(0, 0, 254, 1.0)",
                   "isInPlay" : false,
                   "isStrike" : true,
                   "isBall" : false,
                   "type" : {
-                    "code" : "FC",
-                    "description" : "Cutter"
+                    "code" : "SL",
+                    "description" : "Slider"
                   },
                   "hasReview" : false
                 },
@@ -4204,7 +4204,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                 "pitchData" : {
                   "startSpeed" : 88.6,
                   "endSpeed" : 82.0,
-                  "nastyFactor" : 22.08,
+                  "nastyFactor" : 13.19,
                   "strikeZoneTop" : 3.47,
                   "strikeZoneBottom" : 1.59,
                   "coordinates" : {
@@ -4247,13 +4247,13 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                   "description" : "Ball",
                   "code" : "B",
                   "ballColor" : "rgba(39, 161, 39, 1.0)",
-                  "trailColor" : "rgba(152, 0, 101, 1.0)",
+                  "trailColor" : "rgba(0, 0, 254, 1.0)",
                   "isInPlay" : false,
                   "isStrike" : false,
                   "isBall" : true,
                   "type" : {
-                    "code" : "FC",
-                    "description" : "Cutter"
+                    "code" : "SL",
+                    "description" : "Slider"
                   },
                   "hasReview" : false
                 },
@@ -4264,7 +4264,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                 "pitchData" : {
                   "startSpeed" : 88.7,
                   "endSpeed" : 82.0,
-                  "nastyFactor" : 33.39,
+                  "nastyFactor" : 29.88,
                   "strikeZoneTop" : 3.47,
                   "strikeZoneBottom" : 1.59,
                   "coordinates" : {
@@ -4324,7 +4324,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                 "pitchData" : {
                   "startSpeed" : 97.9,
                   "endSpeed" : 90.2,
-                  "nastyFactor" : 56.94,
+                  "nastyFactor" : 57.77,
                   "strikeZoneTop" : 3.47,
                   "strikeZoneBottom" : 1.59,
                   "coordinates" : {
@@ -6126,13 +6126,13 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                   "description" : "Called Strike",
                   "code" : "C",
                   "ballColor" : "rgba(170, 21, 11, 1.0)",
-                  "trailColor" : "rgba(152, 0, 101, 1.0)",
+                  "trailColor" : "rgba(0, 0, 254, 1.0)",
                   "isInPlay" : false,
                   "isStrike" : true,
                   "isBall" : false,
                   "type" : {
-                    "code" : "FC",
-                    "description" : "Cutter"
+                    "code" : "SL",
+                    "description" : "Slider"
                   },
                   "hasReview" : false
                 },
@@ -6143,7 +6143,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                 "pitchData" : {
                   "startSpeed" : 87.0,
                   "endSpeed" : 81.1,
-                  "nastyFactor" : 51.79,
+                  "nastyFactor" : 63.97,
                   "strikeZoneTop" : 3.49,
                   "strikeZoneBottom" : 1.6,
                   "coordinates" : {
@@ -6186,13 +6186,13 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                   "description" : "Swinging Strike",
                   "code" : "S",
                   "ballColor" : "rgba(170, 21, 11, 1.0)",
-                  "trailColor" : "rgba(152, 0, 101, 1.0)",
+                  "trailColor" : "rgba(0, 0, 254, 1.0)",
                   "isInPlay" : false,
                   "isStrike" : true,
                   "isBall" : false,
                   "type" : {
-                    "code" : "FC",
-                    "description" : "Cutter"
+                    "code" : "SL",
+                    "description" : "Slider"
                   },
                   "hasReview" : false
                 },
@@ -6203,7 +6203,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                 "pitchData" : {
                   "startSpeed" : 88.5,
                   "endSpeed" : 82.5,
-                  "nastyFactor" : 35.42,
+                  "nastyFactor" : 31.91,
                   "strikeZoneTop" : 3.49,
                   "strikeZoneBottom" : 1.6,
                   "coordinates" : {
@@ -6263,7 +6263,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                 "pitchData" : {
                   "startSpeed" : 96.5,
                   "endSpeed" : 88.1,
-                  "nastyFactor" : 30.59,
+                  "nastyFactor" : 31.42,
                   "strikeZoneTop" : 3.49,
                   "strikeZoneBottom" : 1.6,
                   "coordinates" : {
@@ -6366,13 +6366,13 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                   "description" : "Ball",
                   "code" : "B",
                   "ballColor" : "rgba(39, 161, 39, 1.0)",
-                  "trailColor" : "rgba(152, 0, 101, 1.0)",
+                  "trailColor" : "rgba(0, 0, 254, 1.0)",
                   "isInPlay" : false,
                   "isStrike" : false,
                   "isBall" : true,
                   "type" : {
-                    "code" : "FC",
-                    "description" : "Cutter"
+                    "code" : "SL",
+                    "description" : "Slider"
                   },
                   "hasReview" : false
                 },
@@ -6383,7 +6383,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                 "pitchData" : {
                   "startSpeed" : 87.6,
                   "endSpeed" : 81.2,
-                  "nastyFactor" : 71.89,
+                  "nastyFactor" : 84.06,
                   "strikeZoneTop" : 3.55,
                   "strikeZoneBottom" : 1.63,
                   "coordinates" : {
@@ -6443,7 +6443,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                 "pitchData" : {
                   "startSpeed" : 96.4,
                   "endSpeed" : 87.8,
-                  "nastyFactor" : 41.72,
+                  "nastyFactor" : 42.56,
                   "strikeZoneTop" : 3.55,
                   "strikeZoneBottom" : 1.63,
                   "coordinates" : {
@@ -6672,13 +6672,13 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                   "description" : "Foul",
                   "code" : "F",
                   "ballColor" : "rgba(170, 21, 11, 1.0)",
-                  "trailColor" : "rgba(152, 0, 101, 1.0)",
+                  "trailColor" : "rgba(0, 0, 254, 1.0)",
                   "isInPlay" : false,
                   "isStrike" : true,
                   "isBall" : false,
                   "type" : {
-                    "code" : "FC",
-                    "description" : "Cutter"
+                    "code" : "SL",
+                    "description" : "Slider"
                   },
                   "hasReview" : false
                 },
@@ -6689,7 +6689,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                 "pitchData" : {
                   "startSpeed" : 88.2,
                   "endSpeed" : 82.6,
-                  "nastyFactor" : 36.92,
+                  "nastyFactor" : 25.61,
                   "strikeZoneTop" : 3.55,
                   "strikeZoneBottom" : 1.63,
                   "coordinates" : {
@@ -6749,7 +6749,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                 "pitchData" : {
                   "startSpeed" : 78.3,
                   "endSpeed" : 73.7,
-                  "nastyFactor" : 17.57,
+                  "nastyFactor" : 14.04,
                   "strikeZoneTop" : 3.55,
                   "strikeZoneBottom" : 1.63,
                   "coordinates" : {
@@ -8700,13 +8700,13 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                   "description" : "In play, runs(s)",
                   "code" : "E",
                   "ballColor" : "rgba(26, 86, 190, 1.0)",
-                  "trailColor" : "rgba(187, 0, 69, 1.0)",
+                  "trailColor" : "rgba(0, 85, 254, 1.0)",
                   "isInPlay" : true,
                   "isStrike" : false,
                   "isBall" : false,
                   "type" : {
-                    "code" : "FT",
-                    "description" : "Two-Seam Fastball"
+                    "code" : "CH",
+                    "description" : "Changeup"
                   },
                   "hasReview" : false
                 },
@@ -8717,7 +8717,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                 "pitchData" : {
                   "startSpeed" : 91.8,
                   "endSpeed" : 85.2,
-                  "nastyFactor" : 49.2,
+                  "nastyFactor" : 40.51,
                   "strikeZoneTop" : 3.47,
                   "strikeZoneBottom" : 1.59,
                   "coordinates" : {
@@ -10974,13 +10974,13 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                   "description" : "Called Strike",
                   "code" : "C",
                   "ballColor" : "rgba(170, 21, 11, 1.0)",
-                  "trailColor" : "rgba(188, 0, 33, 1.0)",
+                  "trailColor" : "rgba(0, 0, 254, 1.0)",
                   "isInPlay" : false,
                   "isStrike" : true,
                   "isBall" : false,
                   "type" : {
-                    "code" : "FF",
-                    "description" : "Four-Seam Fastball"
+                    "code" : "SL",
+                    "description" : "Slider"
                   },
                   "hasReview" : false
                 },
@@ -10991,7 +10991,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                 "pitchData" : {
                   "startSpeed" : 92.4,
                   "endSpeed" : 85.3,
-                  "nastyFactor" : 41.27,
+                  "nastyFactor" : 34.68,
                   "strikeZoneTop" : 3.76,
                   "strikeZoneBottom" : 1.75,
                   "coordinates" : {
@@ -23699,10 +23699,10 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
               },
               "pitchIndex" : [ 1, 2, 3, 4, 5, 6, 7, 9 ],
               "actionIndex" : [ 0, 8 ],
-              "runnerIndex" : [ 1, 2, 3 ],
+              "runnerIndex" : [ 1, 2 ],
               "runners" : [ {
                 "movement" : {
-                  "start" : "0B",
+                  "start" : null,
                   "end" : "0B"
                 },
                 "details" : {
@@ -23745,23 +23745,6 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "id" : 543807,
                     "fullName" : "George Springer",
                     "link" : "/api/v1/people/543807"
-                  },
-                  "isScoringEvent" : true,
-                  "rbi" : true,
-                  "earned" : false,
-                  "playIndex" : 9
-                }
-              }, {
-                "movement" : {
-                  "start" : null,
-                  "end" : "score"
-                },
-                "details" : {
-                  "event" : "Home Run",
-                  "runner" : {
-                    "id" : 516416,
-                    "fullName" : "Jean Segura",
-                    "link" : "/api/v1/people/516416"
                   },
                   "isScoringEvent" : true,
                   "rbi" : true,
@@ -35479,6 +35462,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                 },
                 "teamStats" : {
                   "batting" : {
+                    "gamesPlayed" : 0,
                     "flyOuts" : 5,
                     "groundOuts" : 7,
                     "runs" : 8,
@@ -35550,6 +35534,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "stats" : {
                       "batting" : {
                         "note" : "e-",
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 2,
@@ -35581,6 +35566,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "702",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 2,
@@ -35706,6 +35692,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "parentTeamId" : 147,
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -35793,6 +35780,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "stats" : {
                       "batting" : {
                         "note" : "d-",
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 1,
                         "runs" : 1,
@@ -35824,6 +35812,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "402",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 0,
                         "groundOuts" : 1,
                         "runs" : 1,
@@ -35915,6 +35904,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 1,
                         "runs" : 0,
@@ -35953,6 +35943,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "301",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 0,
                         "groundOuts" : 1,
                         "runs" : 0,
@@ -36039,6 +36030,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -36077,6 +36069,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "801",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -36163,6 +36156,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -36201,6 +36195,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "900",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -36288,6 +36283,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "stats" : {
                       "batting" : {
                         "note" : "b-",
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 1,
                         "runs" : 1,
@@ -36319,6 +36315,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "501",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 0,
                         "groundOuts" : 1,
                         "runs" : 1,
@@ -36410,6 +36407,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 1,
                         "runs" : 1,
@@ -36448,6 +36446,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "600",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 0,
                         "groundOuts" : 1,
                         "runs" : 1,
@@ -36562,6 +36561,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "parentTeamId" : 111,
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -36648,6 +36648,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 1,
@@ -36686,6 +36687,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "300",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 1,
@@ -36772,6 +36774,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 1,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -36810,6 +36813,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "800",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 1,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -36896,6 +36900,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 1,
                         "runs" : 0,
@@ -36934,6 +36939,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "201",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 0,
                         "groundOuts" : 1,
                         "runs" : 0,
@@ -37020,6 +37026,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 1,
                         "runs" : 0,
@@ -37058,6 +37065,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "901",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 0,
                         "groundOuts" : 1,
                         "runs" : 0,
@@ -37144,6 +37152,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -37175,6 +37184,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "400",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -37261,6 +37271,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 1,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -37299,6 +37310,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "700",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 1,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -37385,6 +37397,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -37423,6 +37436,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "200",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -37544,6 +37558,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "parentTeamId" : 142,
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -37630,6 +37645,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 2,
@@ -37668,6 +37684,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "601",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 2,
@@ -37754,6 +37771,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -37785,6 +37803,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "500",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -37871,6 +37890,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 1,
                         "groundOuts" : 1,
                         "runs" : 0,
@@ -37909,6 +37929,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "101",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 1,
                         "groundOuts" : 1,
                         "runs" : 0,
@@ -37996,6 +38017,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "stats" : {
                       "batting" : {
                         "note" : "c-",
+                        "gamesPlayed" : 0,
                         "flyOuts" : 1,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -38034,6 +38056,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "701",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 1,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -38159,6 +38182,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "parentTeamId" : 136,
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -38245,6 +38269,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 1,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -38283,6 +38308,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "100",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 1,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -38370,6 +38396,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "stats" : {
                       "batting" : {
                         "note" : "a-",
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -38401,6 +38428,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "401",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -38502,6 +38530,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "parentTeamId" : 111,
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -38623,6 +38652,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "parentTeamId" : 139,
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -38742,6 +38772,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "parentTeamId" : 116,
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -38863,6 +38894,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "parentTeamId" : 133,
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -38959,6 +38991,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "parentTeamId" : 117,
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -39074,6 +39107,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "parentTeamId" : 141,
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -39195,6 +39229,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "parentTeamId" : 117,
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -39291,6 +39326,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "parentTeamId" : 114,
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -39415,6 +39451,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                 },
                 "teamStats" : {
                   "batting" : {
+                    "gamesPlayed" : 0,
                     "flyOuts" : 9,
                     "groundOuts" : 7,
                     "runs" : 6,
@@ -39485,6 +39522,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 1,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -39516,6 +39554,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "700",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 1,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -39602,6 +39641,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 1,
                         "runs" : 1,
@@ -39640,6 +39680,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "900",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 0,
                         "groundOuts" : 1,
                         "runs" : 1,
@@ -39726,6 +39767,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 1,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -39764,6 +39806,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "200",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 1,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -39850,6 +39893,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -39888,6 +39932,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "600",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -39974,6 +40019,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 1,
@@ -40012,6 +40058,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "901",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 1,
@@ -40098,6 +40145,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -40136,6 +40184,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "500",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -40222,6 +40271,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 1,
                         "runs" : 1,
@@ -40260,6 +40310,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "501",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 0,
                         "groundOuts" : 1,
                         "runs" : 1,
@@ -40346,6 +40397,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 1,
                         "groundOuts" : 1,
                         "runs" : 0,
@@ -40384,6 +40436,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "100",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 1,
                         "groundOuts" : 1,
                         "runs" : 0,
@@ -40480,6 +40533,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "parentTeamId" : 109,
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -40592,6 +40646,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "parentTeamId" : 158,
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -40711,6 +40766,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "parentTeamId" : 134,
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -40797,6 +40853,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 1,
@@ -40835,6 +40892,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "801",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 1,
@@ -40921,6 +40979,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 1,
                         "groundOuts" : 1,
                         "runs" : 0,
@@ -40959,6 +41018,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "400",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 1,
                         "groundOuts" : 1,
                         "runs" : 0,
@@ -41045,6 +41105,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -41076,6 +41137,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "800",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -41172,6 +41234,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "parentTeamId" : 119,
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -41252,6 +41315,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 1,
                         "groundOuts" : 1,
                         "runs" : 0,
@@ -41290,6 +41354,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "601",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 1,
                         "groundOuts" : 1,
                         "runs" : 0,
@@ -41376,6 +41441,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 1,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -41407,6 +41473,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "701",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 1,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -41493,6 +41560,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -41524,6 +41592,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "300",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -41638,6 +41707,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "parentTeamId" : 120,
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -41724,6 +41794,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 1,
                         "groundOuts" : 1,
                         "runs" : 1,
@@ -41762,6 +41833,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "401",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 1,
                         "groundOuts" : 1,
                         "runs" : 1,
@@ -41881,6 +41953,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "parentTeamId" : 144,
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -41967,6 +42040,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -42005,6 +42079,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "201",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -42124,6 +42199,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "parentTeamId" : 121,
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -42211,6 +42287,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "stats" : {
                       "batting" : {
                         "note" : "c-",
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 1,
@@ -42242,6 +42319,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "102",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 1,
@@ -42333,6 +42411,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     },
                     "stats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 1,
                         "runs" : 0,
@@ -42371,6 +42450,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "101",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 0,
                         "groundOuts" : 1,
                         "runs" : 0,
@@ -42467,6 +42547,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "parentTeamId" : 109,
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -42548,6 +42629,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "stats" : {
                       "batting" : {
                         "note" : "a-",
+                        "gamesPlayed" : 0,
                         "flyOuts" : 1,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -42579,6 +42661,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "301",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 1,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -42704,6 +42787,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "parentTeamId" : 158,
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -42825,6 +42909,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "parentTeamId" : 119,
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -42943,6 +43028,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "parentTeamId" : 143,
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -43062,6 +43148,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "parentTeamId" : 135,
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 0,
                         "flyOuts" : 0,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -43149,6 +43236,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "stats" : {
                       "batting" : {
                         "note" : "b-",
+                        "gamesPlayed" : 0,
                         "flyOuts" : 1,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -43180,6 +43268,7 @@ https://statsapi.mlb.com/api/v1.1/game/530856/feed/live: !ruby/object:HTTP::Resp
                     "battingOrder" : "302",
                     "seasonStats" : {
                       "batting" : {
+                        "gamesPlayed" : 1,
                         "flyOuts" : 1,
                         "groundOuts" : 0,
                         "runs" : 0,
@@ -43438,7 +43527,7 @@ https://statsapi.mlb.com/api/v1.1/game/600000/feed/live: !ruby/object:HTTP::Resp
   headers: !ruby/object:HTTP::Headers
     pile:
     - - Date
-      - Wed, 31 Oct 2018 12:52:58 GMT
+      - Sat, 03 Nov 2018 02:53:02 GMT
     - - Content-Type
       - application/json;charset=UTF-8
     - - Transfer-Encoding
@@ -43446,8 +43535,8 @@ https://statsapi.mlb.com/api/v1.1/game/600000/feed/live: !ruby/object:HTTP::Resp
     - - Connection
       - close
     - - Set-Cookie
-      - __cfduid=d2413fab188ef9f01101f7cf92361b1de1540990378; expires=Thu, 31-Oct-19
-        12:52:58 GMT; path=/; domain=.mlb.com; HttpOnly
+      - __cfduid=dda345ea4e5c553bfe7f4e4eade721de21541213581; expires=Sun, 03-Nov-19
+        02:53:01 GMT; path=/; domain=.mlb.com; HttpOnly
     - - Access-Control-Allow-Credentials
       - 'true'
     - - Access-Control-Allow-Headers
@@ -43461,17 +43550,17 @@ https://statsapi.mlb.com/api/v1.1/game/600000/feed/live: !ruby/object:HTTP::Resp
     - - Cache-Control
       - max-age=30, public, stale-while-revalidate=30, stale-if-error=86400
     - - Expires
-      - Wed, 31 Oct 2018 12:34:09 GMT
+      - Sat, 03 Nov 2018 02:53:12 GMT
     - - Vary
       - Accept-Encoding
     - - Cf-Cache-Status
-      - STALE
+      - MISS
     - - Expect-Ct
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
     - - Server
       - cloudflare
     - - Cf-Ray
-      - 472643069dd1457e-TPE
+      - 473b8c56bf1e464a-TPE
   proxy_headers: !ruby/object:HTTP::Headers
     pile: []
   content_type: !ruby/struct:HTTP::ContentType
@@ -43512,6 +43601,6 @@ https://statsapi.mlb.com/api/v1.1/game/600000/feed/live: !ruby/object:HTTP::Resp
     contents: |-
       {
         "messageNumber" : 1,
-        "message" : "Internal error occurred"
+        "message" : "-1"
       }
     encoding: !ruby/encoding UTF-8

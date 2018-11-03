@@ -3,7 +3,7 @@
 require 'roda'
 require 'econfig'
 
-module CodePraise
+module MLBAtBat
   # Configuration for the App
   class App < Roda
     plugin :environments
