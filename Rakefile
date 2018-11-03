@@ -21,6 +21,7 @@ task :respec do
   sh "rerun -c 'rake spec' --ignore 'coverage/*'"
 end
 
+desc 'Keep restarting web app upon changes'
 task :rerack do
   sh "rerun -c rackup --ignore 'coverage/*'"
 end

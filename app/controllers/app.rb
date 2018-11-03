@@ -36,6 +36,11 @@ module MLBAtBat
             game_date = game_date.split('_').join('/')
             game_info = MLB::ScheduleMapper.new.get_schedule(1, game_date)
 
+            # Add schedule to database
+            # game_info is got from schedule directly
+            Repository::For.entity(game_info).create(game_info)
+            puts("create schedule")
+
             view 'game_info', locals: { game_info: game_info }
           end
         end

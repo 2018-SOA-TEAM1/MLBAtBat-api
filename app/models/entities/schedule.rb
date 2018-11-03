@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'live_game.rb'
+require_relative 'livegame.rb'
 
 module MLBAtBat
   module Entity
@@ -14,6 +14,12 @@ module MLBAtBat
       attribute :home_team,                Strict::String
       attribute :away_team,                Strict::String
       attribute :live_game,                LiveGame
+
+      # those don't want to store in database
+      def to_attr_hash
+        to_hash.reject { |key, _| [:id, :game_date, :live_game].include? key }
+      end
+
     end
   end
 end
