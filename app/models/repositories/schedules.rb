@@ -62,9 +62,10 @@ module MLBAtBat
           # puts "@entity.live_game: "
           # puts @entity.live_game
           # @entity is Entity:Schedule
+          # live_game is GameOrm
           live_game = LiveGames.db_find_or_create(@entity.live_game)
           create_schedule.tap do |db_schedule|
-            db_schedule.game  = live_game
+            db_schedule.game = live_game
           end
         end
       end
