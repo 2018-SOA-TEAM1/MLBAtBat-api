@@ -10,7 +10,7 @@ module MLBAtBat
 
       attribute :id,                       Integer.optional
       # attribute :date,                     Strict::String
-      attribute :game_pk,                  Strict::Integer
+      attribute :pk,                  Strict::Integer
       attribute :home_team,                Strict::String
       attribute :away_team,                Strict::String
       attribute :live_game,                LiveGame

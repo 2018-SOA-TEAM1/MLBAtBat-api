@@ -33,7 +33,7 @@ module MLBAtBat
           MLBAtBat::Entity::Schedule.new(
             id: nil,
             # date: date,
-            game_pk: game_pk,
+            pk: pk,
             away_team: away_team,
             home_team: home_team,
             live_game: live_game
@@ -44,7 +44,7 @@ module MLBAtBat
         #   @data['dates'][0]['date']
         # end
 
-        def game_pk
+        def pk
           @data['dates'][0]['games'][0]['gamePk']
         end
 
@@ -59,7 +59,7 @@ module MLBAtBat
         end
 
         def live_game
-          @live_game_mapper.live_game_info(game_pk)
+          @live_game_mapper.live_game_info(pk)
         end
       end
     end

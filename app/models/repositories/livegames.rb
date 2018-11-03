@@ -8,18 +8,25 @@ module MLBAtBat
         return nil unless db_record
         # puts("Now in repository games")
         # puts(db_record)
-        # puts(db_record.game_pk)
+        # puts(db_record.pk)
         # puts(db_record.date)
         # puts(db_record.current_hitter_name)
         Entity::LiveGame.new(
-          game_pk:             db_record.game_pk,
+          pk:             db_record.pk,
           date:                db_record.date,
           current_hitter_name: db_record.current_hitter_name
         )
       end
 
       def self.db_find_or_create(entity)
-        Database::GameOrm.find_or_create(entity.to_hash)
+        # to make pk -> game_pk
+        temp_hash = entity.to_hash
+        temp_pk = temp_hash.delete(:pk)
+        temp_hash[:game_pk] = temp_pk
+        puts "temp_hash"
+        puts temp_hash
+
+        Database::GameOrm.find_or_create(temp_hash)
       end
     end
   end

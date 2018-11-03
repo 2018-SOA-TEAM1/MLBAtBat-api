@@ -25,7 +25,7 @@ module MLBAtBat
           # GET /game_info/
           routing.post do
             date = routing.params['game_date']
-            # routing.halt 400 unless game_pk.to_i.positive?
+            # routing.halt 400 unless pk.to_i.positive?
             date = date.split('/').join('_')
             routing.redirect "game_info/#{date}"
           end

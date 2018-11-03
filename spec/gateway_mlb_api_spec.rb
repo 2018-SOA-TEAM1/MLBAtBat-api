@@ -26,7 +26,7 @@ describe 'Tests MLBAtBat libiary' do
     end
 
     it 'HAPPY: should provide correct game pk' do
-      _(@schedule.game_pk).must_equal CORRECT['game_pk']
+      _(@schedule.pk).must_equal CORRECT['game_pk']
     end
 
     it 'HAPPY: should provide correct home team name' do
