@@ -17,12 +17,12 @@ module MLBAtBat
           home_team_errors:    db_record.home_team_errors,
           away_team_runs:      db_record.away_team_runs,
           away_team_hits:      db_record.away_team_hits,
-          away_team_errors:    db_record.away_team_errors,
+          away_team_errors:    db_record.away_team_errors
         )
       end
 
       def self.db_find_or_create(entity)
-        #to make pk -> g_pk
+        # to make pk -> g_pk
         temp_hash = entity.to_hash
         temp_pk = temp_hash.delete(:pk)
         temp_hash[:g_pk] = temp_pk

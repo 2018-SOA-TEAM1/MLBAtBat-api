@@ -10,20 +10,20 @@ module MLBAtBat
         @gateway = @gateway_class.new
       end
 
-      def live_game_info(pk)
-        build_entity(pk)
+      def live_game_info(game_pk)
+        build_entity(game_pk)
       end
 
-      def build_entity(pk)
-        data = @gateway.live_game(pk)
-        DataMapper.new(data, pk).build_entity
+      def build_entity(game_pk)
+        data = @gateway.live_game(game_pk)
+        DataMapper.new(data, game_pk).build_entity
       end
 
       # Extracts entity specific elements from data structure
       class DataMapper
-        def initialize(data, pk)
+        def initialize(data, game_pk)
           @data = data
-          @pk = pk
+          @pk = game_pk
         end
 
         def build_entity

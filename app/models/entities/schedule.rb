@@ -18,7 +18,6 @@ module MLBAtBat
       def to_attr_hash
         to_hash.reject { |key, _| [:id, :live_game].include? key }
       end
-
     end
   end
 end

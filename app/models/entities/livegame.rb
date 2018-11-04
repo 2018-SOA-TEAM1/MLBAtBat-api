@@ -2,7 +2,7 @@
 
 module MLBAtBat
   module Entity
-    # Store 
+    # Store
     class LiveGame < Dry::Struct
       include Dry::Types.module
 

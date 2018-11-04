@@ -36,7 +36,9 @@ namespace :db do
     require 'sequel'
     require_relative 'config/environment.rb' # load config info
     require_relative 'spec/helpers/database_helper.rb'
+    # rubocop:disable SingleLineMethods
     def app; MLBAtBat::App; end
+    # rubocop:enable  SingleLineMethods
   end
 
   desc 'Run migrations'
@@ -86,7 +88,7 @@ namespace :quality do
 
   desc 'rubocop all files'
   task :rubocop do
-    sh 'rubocop'
+    sh 'rubocop app/'
   end
 
   task :reek do

@@ -1,10 +1,9 @@
 ---
 AllCops:
   TargetRubyVersion: 2.5
-  Include:
+  Exclude:
     - 'Gemfile'
     - 'Rakefile'
-  Exclude:
     - '_snippets/**/*.rb'
 
 # ignore block length in non-production code

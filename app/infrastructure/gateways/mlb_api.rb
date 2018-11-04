@@ -15,8 +15,8 @@ module MLBAtBat
                                  "&date=#{date}").parse
       end
 
-      def live_game(pk)
-        Request.new(@cache).data("v1.1/game/#{pk}/feed/live").parse
+      def live_game(game_pk)
+        Request.new(@cache).data("v1.1/game/#{game_pk}/feed/live").parse
       end
 
       # send out HTTP request to MLB stats api
