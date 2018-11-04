@@ -8,13 +8,9 @@ module MLBAtBat
     class GameOrm < Sequel::Model(:games)
       many_to_one   :schedule,
                     class: :'MLBAtBat::Database::ScheduleOrm',
-                    key: :pk
+                    key: :g_pk
 
       plugin :timestamps, update_on_create: true
-
-    #   def self.find_or_create(member_info)
-    #     first(username: member_info[:username]) || create(member_info)
-    #   end
     end
   end
 end
