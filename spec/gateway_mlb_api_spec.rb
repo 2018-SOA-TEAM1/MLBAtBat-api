@@ -21,10 +21,6 @@ describe 'Tests MLBAtBat libiary' do
                                                              GAME_DATE)
     end
 
-    it 'HAPPY: shoud provide correct game date' do
-      _(@schedule.date).must_equal CORRECT['date']
-    end
-
     it 'HAPPY: should provide correct game pk' do
       _(@schedule.pk).must_equal CORRECT['game_pk']
     end
@@ -44,6 +40,10 @@ describe 'Tests MLBAtBat libiary' do
                                                .get_schedule(SPORT_ID,
                                                              GAME_DATE)
       @live_game = @schedule.live_game
+    end
+
+    it 'HAPPY: shoud provide correct game date' do
+      _(@live_game.date).must_equal CORRECT['date']
     end
 
     it 'HAPPY: shoud provide correct game state' do

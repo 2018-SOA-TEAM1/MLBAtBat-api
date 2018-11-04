@@ -16,6 +16,11 @@ task :spec do
   sh 'ruby spec/gateway_mlb_api_spec.rb'
 end
 
+desc 'run db tests'
+task :spec_db do
+  sh 'ruby spec/gateway_database_spec.rb'
+end
+
 desc 'Keep rerunning tests upon changes'
 task :respec do
   sh "rerun -c 'rake spec' --ignore 'coverage/*'"
