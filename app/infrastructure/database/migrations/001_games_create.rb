@@ -6,7 +6,7 @@ Sequel.migration do
   change do
     create_table(:games) do
       primary_key :id
-      foreign_key :game_pk, :schedules, key: :pk
+      foreign_key :pk, :schedules, key: :game_pk
 
       String      :date
       String      :current_hitter_name

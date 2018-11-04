@@ -8,7 +8,7 @@ module MLBAtBat
     class ScheduleOrm < Sequel::Model(:schedules)
       one_to_one    :game,
                     class: :'MLBAtBat::Database::GameOrm',
-                    key: :game_pk
+                    key: :pk
 
       plugin :timestamps, update_on_create: true
 

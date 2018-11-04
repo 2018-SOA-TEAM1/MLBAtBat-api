@@ -20,14 +20,14 @@ module MLBAtBat
 
       def self.db_find_or_create(entity)
         # to make pk -> game_pk
-        temp_hash = entity.to_hash
-        temp_pk = temp_hash.delete(:pk)
-        temp_hash[:game_pk] = temp_pk
+        # temp_hash = entity.to_hash
+        # temp_pk = temp_hash.delete(:pk)
+        # temp_hash[:game_pk] = temp_pk
         
         puts "Create GameOrm"
-        puts temp_hash
+        puts entity.to_hash
 
-        Database::GameOrm.find_or_create(temp_hash)
+        Database::GameOrm.find_or_create(entity.to_hash)
       end
     end
   end

@@ -20,16 +20,18 @@ module MLBAtBat
       def self.rebuild_entity(db_record)
         return nil unless db_record
         
-        puts "So tired..."
-        _db_record = Database::ScheduleOrm.first(id: 1)
-        puts _db_record.to_hash
+        puts "Testing"
+        # Do it good
+        # g = Database::GameOrm.first(id: 1)
+        # puts g.schedule
 
         # db_record doesn't contain live_game
         puts ("Try to rebuild_entity")
         puts db_record.to_hash
+        puts db_record.game
         Entity::Schedule.new(
           db_record.to_hash.merge(
-            live_game: LiveGames.rebuild_entity(db_record.live_game)
+            live_game: LiveGames.rebuild_entity(db_record.game)
           )
         ) 
       end
@@ -52,7 +54,12 @@ module MLBAtBat
         def create_schedule
           puts "Create ScheduleOrm"
           puts(@entity.to_attr_hash)
-          Database::ScheduleOrm.create(@entity.to_attr_hash)
+
+          # change pk -> game_pk
+          temp_hash = @entity.to_attr_hash
+          game_pk = temp_hash.delete(:pk)
+          temp_hash[:game_pk] = game_pk
+          Database::ScheduleOrm.create(temp_hash)
         end
 
         def call

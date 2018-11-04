@@ -7,7 +7,7 @@ Sequel.migration do
     create_table(:schedules) do
       primary_key :id
 
-      Integer     :pk, unique: true
+      Integer     :game_pk, unique: true
       String      :home_team
       String      :away_team
 
