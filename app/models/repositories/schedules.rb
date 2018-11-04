@@ -35,6 +35,17 @@ module MLBAtBat
         rebuild_entity(db_record)
       end
 
+      def self.find_date(date)
+        # ex: 06/13/2018 -> 2018-06-13
+        # correspond to database record date format
+        date_split = date.split('/')
+        temp_date = date_split[2] + '-' + date_split[0] + '-' + date_split[1]
+        
+        db_record_game = Database::GameOrm.first(date: temp_date)
+        db_record_schedule = db_record_game.schedule
+        rebuild_entity(db_record_schedule)
+      end
+
         # Helper class to persist project and its members to database
       class PersistProject
         def initialize(entity)

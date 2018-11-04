@@ -25,6 +25,12 @@ module MLBAtBat
           routing.post do
             date = routing.params['game_date']
             # routing.halt 400 unless pk.to_i.positive?
+            
+            # game_info is Entity:Schedule
+            game_info = MLB::ScheduleMapper.new.get_schedule(1, date)
+            # Add schedule to database
+            Repository::For.entity(game_info).create(game_info)
+
             date = date.split('/').join('_')
             routing.redirect "game_info/#{date}"
           end
@@ -35,11 +41,12 @@ module MLBAtBat
           # puts date
           routing.get do
             date = date.split('_').join('/')
-            # game_info is Entity:Schedule
-            game_info = MLB::ScheduleMapper.new.get_schedule(1, date)
 
-            # Add schedule to database
-            Repository::For.entity(game_info).create(game_info)
+            # Get schedule (game_info) from database instead of Github
+            puts date
+            game_info = Repository::For.klass(Entity::Schedule)
+            .find_date(date)
+
             view 'game_info', locals: { game_info: game_info }
           end
         end
