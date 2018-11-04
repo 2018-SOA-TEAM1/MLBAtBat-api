@@ -11,12 +11,12 @@ Sequel.migration do
       String      :date
       String      :current_hitter_name
       String      :detailed_state
-      String      :home_team_runs
-      String      :home_team_hits
-      String      :home_team_errors
-      String      :away_team_runs
-      String      :away_team_hits
-      String      :away_team_errors
+      Integer      :home_team_runs
+      Integer      :home_team_hits
+      Integer      :home_team_errors
+      Integer      :away_team_runs
+      Integer      :away_team_hits
+      Integer      :away_team_errors
 
       DateTime :created_at
       DateTime :updated_at

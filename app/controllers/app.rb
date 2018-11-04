@@ -17,7 +17,6 @@ module MLBAtBat
       routing.root do
         schedules = Repository::For.klass(Entity::Schedule).all
         view 'home', locals: { schedules: schedules }
-        #view 'home'
       end
 
       routing.on 'game_info' do
@@ -40,10 +39,7 @@ module MLBAtBat
             game_info = MLB::ScheduleMapper.new.get_schedule(1, date)
 
             # Add schedule to database
-
             Repository::For.entity(game_info).create(game_info)
-            puts("YA~~ create schedule")
-
             view 'game_info', locals: { game_info: game_info }
           end
         end
