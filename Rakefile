@@ -16,11 +16,17 @@ task :spec do
   sh 'ruby spec/gateway_mlb_api_spec.rb'
 end
 
+desc 'run db tests'
+task :spec_db do
+  sh 'ruby spec/gateway_database_spec.rb'
+end
+
 desc 'Keep rerunning tests upon changes'
 task :respec do
   sh "rerun -c 'rake spec' --ignore 'coverage/*'"
 end
 
+desc 'Keep restarting web app upon changes'
 task :rerack do
   sh "rerun -c rackup --ignore 'coverage/*'"
 end
@@ -30,7 +36,9 @@ namespace :db do
     require 'sequel'
     require_relative 'config/environment.rb' # load config info
     require_relative 'spec/helpers/database_helper.rb'
-    def app; CodePraise::App; end
+    # rubocop:disable SingleLineMethods
+    def app; MLBAtBat::App; end
+    # rubocop:enable  SingleLineMethods
   end
 
   desc 'Run migrations'
@@ -53,8 +61,8 @@ namespace :db do
       return
     end
 
-    FileUtils.rm(CodePraise::App.config.DB_FILENAME)
-    puts "Deleted #{CodePraise::App.config.DB_FILENAME}"
+    FileUtils.rm(MLBAtBat::App.config.DB_FILENAME)
+    puts "Deleted #{MLBAtBat::App.config.DB_FILENAME}"
   end
 end
 
@@ -80,7 +88,7 @@ namespace :quality do
 
   desc 'rubocop all files'
   task :rubocop do
-    sh 'rubocop'
+    sh 'rubocop app/'
   end
 
   task :reek do

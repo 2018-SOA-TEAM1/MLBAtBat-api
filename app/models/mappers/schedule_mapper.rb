@@ -11,8 +11,8 @@ module MLBAtBat
         @gateway = @gateway_class.new
       end
 
-      def get_schedule(sport_id, game_date)
-        data = @gateway.schedule(sport_id, game_date)
+      def get_schedule(sport_id, date)
+        data = @gateway.schedule(sport_id, date)
         build_entity(data)
       end
 
@@ -32,19 +32,19 @@ module MLBAtBat
         def build_entity
           MLBAtBat::Entity::Schedule.new(
             id: nil,
-            game_date: game_date,
-            game_pk: game_pk,
+            # date: date,
+            pk: pk,
             away_team: away_team,
             home_team: home_team,
             live_game: live_game
           )
         end
 
-        def game_date
-          @data['dates'][0]['date']
-        end
+        # def date
+        #   @data['dates'][0]['date']
+        # end
 
-        def game_pk
+        def pk
           @data['dates'][0]['games'][0]['gamePk']
         end
 
@@ -59,7 +59,7 @@ module MLBAtBat
         end
 
         def live_game
-          @live_game_mapper.live_game_info(game_pk)
+          @live_game_mapper.live_game_info(pk)
         end
       end
     end

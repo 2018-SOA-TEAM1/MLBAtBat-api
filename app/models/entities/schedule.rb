@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'live_game.rb'
+require_relative 'livegame.rb'
 
 module MLBAtBat
   module Entity
@@ -9,11 +9,15 @@ module MLBAtBat
       include Dry::Types.module
 
       attribute :id,                       Integer.optional
-      attribute :game_date,                Strict::String
-      attribute :game_pk,                  Strict::Integer
+      attribute :pk,                       Strict::Integer
       attribute :home_team,                Strict::String
       attribute :away_team,                Strict::String
       attribute :live_game,                LiveGame
+
+      # those don't want to store in database
+      def to_attr_hash
+        to_hash.reject { |key, _| [:id, :live_game].include? key }
+      end
     end
   end
 end

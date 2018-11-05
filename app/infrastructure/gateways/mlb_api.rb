@@ -10,9 +10,9 @@ module MLBAtBat
         @cache = cache
       end
 
-      def schedule(sport_id, game_date)
+      def schedule(sport_id, date)
         Request.new(@cache).data("v1/schedule?sportId=#{sport_id}" \
-                                 "&date=#{game_date}").parse
+                                 "&date=#{date}").parse
       end
 
       def live_game(game_pk)

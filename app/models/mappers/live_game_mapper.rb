@@ -23,13 +23,13 @@ module MLBAtBat
       class DataMapper
         def initialize(data, game_pk)
           @data = data
-          @game_pk = game_pk
+          @pk = game_pk
         end
 
         def build_entity
           Entity::LiveGame.new(
             id: nil,
-            game_pk: @game_pk,
+            pk: @pk,
             date: date,
             current_hitter_name: current_hitter_name,
             detailed_state: detailed_state,
