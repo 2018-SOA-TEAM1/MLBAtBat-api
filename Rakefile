@@ -11,8 +11,14 @@ task :gen do
   sh 'ruby mlb_stats_info.rb'
 end
 
+desc 'Run tests once'
+Rake::TestTask.new(:spec) do |t|
+  t.pattern = 'spec/*_spec.rb'
+  t.warning = false
+end
+
 desc 'run tests'
-task :spec do
+task :gateway_spec do
   sh 'ruby spec/gateway_mlb_api_spec.rb'
 end
 
