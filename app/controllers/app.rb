@@ -43,6 +43,12 @@ module MLBAtBat
             # Get schedule (game_info) from database instead of Github
             game_info = Repository::For.klass(Entity::Schedule)
               .find_date(date)
+
+            # domain branch
+            # game_pk = game_info.game_pk
+            # whole_game = Mapper::WholeGame.new.get_game(game_pk)
+            
+
             view 'game_info', locals: { game_info: game_info }
           end
         end

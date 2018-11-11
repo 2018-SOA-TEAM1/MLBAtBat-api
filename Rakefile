@@ -27,6 +27,11 @@ task :spec_db do
   sh 'ruby spec/gateway_database_spec.rb'
 end
 
+desc 'run domain tests'
+task :spec_domain do
+  sh 'ruby spec/domain_speccc.rb'
+end
+
 desc 'Keep rerunning tests upon changes'
 task :respec do
   sh "rerun -c 'rake spec' --ignore 'coverage/*'"
