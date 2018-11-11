@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-module MLBAtMat
+module MLBAtBat
   module Mapper
     # WholeGame Mapper: MLB API -> WholeGame entity
     class WholeGame
@@ -22,19 +22,20 @@ module MLBAtMat
         def initialize(data, game_pk)
           @data = data
           @pk = game_pk
+          @live_game_mapper = LiveGameMapper.new(
+            gateway_class
+          )
         end
 
         def build_entity
           Entity::WholeGame.new(
             pk: @pk,
-            date: date,
-            liveData: liveData,
-            
+            liveData: liveData
           )
         end
 
         def liveData
-          data['liveData']
+          @data['liveData']
         end
       
       end

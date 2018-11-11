@@ -1,6 +1,17 @@
-# MLBAtBat
+# Architecture (2018.11.11 update)
+#### wholegame_mapper (root mapper)
+- innings_mapper
+- players_mapper
+- gcms_mapper (game changing moments)
+#### wholegame (root)
+- innings -> inning -> plays
+- players
+- game-changing-mements
 
-Application that notifies you that your favorite player is at bat. Use it to keep following game when you are working!
+
+# MLBAtBat (2018.11.10 update)
+
+Application that notifies you that your favorite player is at bat. Use it to keep following game when you are working! Besides, you can get game changing moments informariton and discuss with others on message board.
 
 ## Overview
 
@@ -12,6 +23,11 @@ You can also see game **schedule** on  **MLBAtBat**, and several **live game** d
 
 ## Short-term usability goals
 - Pull data from MLB stats API, get live game information.
+ 
+## Mid-term objectives 
+- Send notification when interested hitter is going to be at bat.
+- Record and show any game changing moments on board.
+- Let multiple users discuss under game changing boards.
 
 ## Long-term goals
 - Interact with users, enable them to set notification moments.

@@ -10,10 +10,8 @@ module MLBAtBat
       include Dry::Types.module
 
       attribute :id,                       Integer.optional
-      attribute :date,                     Strict::String
-      attribute :home_team,                Strict::String
-      attribute :away_team,                Strict::String
-      attribute :live_game,                LiveGame
+      attribute :liveData,                 Strict::Hash
+
 
     end
   end
