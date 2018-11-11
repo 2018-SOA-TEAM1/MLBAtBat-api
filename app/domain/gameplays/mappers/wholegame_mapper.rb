@@ -1,4 +1,9 @@
 # frozen_string_literal: true
+
+require_relative 'inning_mapper.rb'
+require_relative 'player_mapper.rb'
+require_relative 'gcm_mapper.rb'
+
 module MLBAtBat
   module Mapper
     # WholeGame Mapper: MLB API -> WholeGame entity
@@ -22,31 +27,31 @@ module MLBAtBat
         def initialize(data, game_pk)
           @data = data
           @pk = game_pk
-          @innings_mapper = InningsMapper.new()
-          @players_mapper = PlayersMapper.new()
-          @gcms_mapper = GameChangingMomentsMapper.new()
+          @inning_mapper = Inning.new()
+          @player_mapper = Player.new()
+          @gcm_mapper = GameChangingMoment.new()
         end
 
         def build_entity
           Entity::WholeGame.new(
             pk: @pk,
-            innings: liveData,
-            players: players,
-            gcms: gcms
+            innings: innings,
+            # players: players,
+            # gcms: gcms
           )
         end
 
         def innings
-          @innings_mapper.get_innings(@data['liveData']['plays']['allPlays'])
+          @inning_mapper.get_innings(@data['liveData']['plays']['allPlays'])
         end
 
-        def players
-          @players_mapper.get_players(@data['gameData'])
-        end
+        # def players
+        #   @player_mapper.get_players(@data['gameData'])
+        # end
 
-        def gcms
-          @gcms_mapper.get_gcms(@data['liveData']['plays']['allPlays'])
-        end
+        # def gcms
+        #   @gcm_mapper.get_gcms(@data['liveData']['plays']['allPlays'])
+        # end
       
       end
     end

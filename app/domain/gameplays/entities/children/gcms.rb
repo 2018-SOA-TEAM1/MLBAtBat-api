@@ -2,7 +2,7 @@
 
 require 'dry-types'
 require 'dry-struct'
-require './gcm.rb'
+require_relative './gcm.rb'
 
 module MLBAtBat
   module Entity

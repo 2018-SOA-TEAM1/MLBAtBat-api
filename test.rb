@@ -24,6 +24,6 @@ mlb_response[mlb_live_url] = call_mlb_url(mlb_live_url)
 data = mlb_response[mlb_live_url].parse
 
 #puts data.keys
-liveData = data['liveData']
-puts liveData.keys
+liveData = data['liveData']['plays']['allPlays']
+puts liveData[0]
 
