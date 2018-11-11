@@ -1,12 +1,12 @@
 # Architecture (2018.11.11 update)
 #### wholegame_mapper (root mapper)
-- innings_mapper
-- players_mapper
-- gcms_mapper (game changing moments)
+- innings_mapper -> inning_mapper -> plays_mapper -> play_mapper
+- players_mapper -> player_mapper
+- game_changing_moments_mapper (game changing moments)
 #### wholegame (root)
-- innings -> inning -> plays
-- players
-- game-changing-mements
+- innings -> inning -> plays -> play
+- players -> player
+- game_changing_mements
 
 
 # MLBAtBat (2018.11.10 update)

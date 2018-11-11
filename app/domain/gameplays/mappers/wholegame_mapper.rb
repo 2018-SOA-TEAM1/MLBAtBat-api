@@ -22,20 +22,30 @@ module MLBAtBat
         def initialize(data, game_pk)
           @data = data
           @pk = game_pk
-          @live_game_mapper = LiveGameMapper.new(
-            gateway_class
-          )
+          @innings_mapper = InningsMapper.new()
+          @players_mapper = PlayersMapper.new()
+          @gcms_mapper = GameChangingMomentsMapper.new()
         end
 
         def build_entity
           Entity::WholeGame.new(
             pk: @pk,
-            liveData: liveData
+            innings: liveData,
+            players: players,
+            gcms: gcms
           )
         end
 
-        def liveData
-          @data['liveData']
+        def innings
+          @innings_mapper.get_innings(@data['liveData']['plays']['allPlays'])
+        end
+
+        def players
+          @players_mapper.get_players(@data['gameData'])
+        end
+
+        def gcms
+          @gcms_mapper.get_gcms(@data['liveData']['plays']['allPlays'])
         end
       
       end
