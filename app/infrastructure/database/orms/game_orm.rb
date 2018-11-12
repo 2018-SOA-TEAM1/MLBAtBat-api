@@ -7,8 +7,7 @@ module MLBAtBat
     # Object-Relational Mapper for games
     class GameOrm < Sequel::Model(:games)
       many_to_one   :schedule,
-                    class: :'MLBAtBat::Database::ScheduleOrm',
-                    key: :g_pk
+                    class: :'MLBAtBat::Database::ScheduleOrm'
 
       plugin :timestamps, update_on_create: true
     end
