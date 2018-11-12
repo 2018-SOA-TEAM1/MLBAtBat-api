@@ -4,7 +4,7 @@ require 'http'
 require 'yaml'
 
 NON_EXIST_PK = '600000'
-GAME_DATE = '07/17/2018'
+GAME_DATE = '07/10/2018'
 
 def mlb_api_path(path)
   'https://statsapi.mlb.com/api/' + path
@@ -25,26 +25,34 @@ mlb_response[mlb_schedule_url] = call_mlb_url(mlb_schedule_url)
 schedule = mlb_response[mlb_schedule_url].parse
 
 mlb_results['date'] = schedule['dates'][0]['date']
-mlb_results['game_pk'] = schedule['dates'][0]['games'][0]['gamePk']
-mlb_results['away_team'] = schedule['dates'][0]['games'][0]['teams'] \
-                                   ['away']['team']['name']
-mlb_results['home_team'] = schedule['dates'][0]['games'][0]['teams'] \
-                                   ['home']['team']['name']
+mlb_results['total_games'] = schedule['dates'][0]['totalGames']
 
-# use geme_pk to get current game status
-game_pk = mlb_results['game_pk']
-live_api_path = "v1.1/game/#{game_pk}/feed/live"
-mlb_live_url = mlb_api_path(live_api_path)
-mlb_response[mlb_live_url] = call_mlb_url(mlb_live_url)
-live_data = mlb_response[mlb_live_url].parse
+# use game_pk to get current games status
+live_games = []
+total_games = mlb_results['total_games']
 
-mlb_results['detailed_state'] = live_data['gameData']['status']['detailedState']
-mlb_results['current_player'] = live_data['liveData']['plays']['currentPlay'] \
-                                          ['matchup']['batter']['fullName']
-mlb_results['home_team_status'] = live_data['liveData']['linescore']['teams'] \
-                                           ['home']
-mlb_results['away_team_status'] = live_data['liveData']['linescore']['teams'] \
-                                           ['away']
+(0...total_games).each do |game_idx|
+  game_pk = schedule['dates'][0]['games'][game_idx]['gamePk']
+  live_api_path = "v1.1/game/#{game_pk}/feed/live"
+  mlb_live_url = mlb_api_path(live_api_path)
+  mlb_response[mlb_live_url] = call_mlb_url(mlb_live_url)
+  game = mlb_response[mlb_live_url].parse
+
+  live_game = {}
+  live_game['date'] = game['gameData']['datetime']['originalDate']
+  live_game['detailed_state'] = game['gameData']['status']['detailedState']
+  live_game['current_player'] = game['liveData']['plays']['currentPlay'] \
+                                            ['matchup']['batter']['fullName']
+  live_game['home_team_name'] = game['gameData']['teams']['home']['name']
+  live_game['away_team_name'] = game['gameData']['teams']['away']['name']
+  live_game['home_team_status'] = game['liveData']['linescore']['teams'] \
+                                            ['home']
+  live_game['away_team_status'] = game['liveData']['linescore']['teams'] \
+                                            ['away']
+  live_games << live_game
+end
+
+mlb_results['live_games'] = live_games
 
 ## BAD requests
 bad_api_path = "v1.1/game/#{NON_EXIST_PK}/feed/live"

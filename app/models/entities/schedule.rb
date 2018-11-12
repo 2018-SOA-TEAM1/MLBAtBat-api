@@ -9,14 +9,13 @@ module MLBAtBat
       include Dry::Types.module
 
       attribute :id,                       Integer.optional
-      attribute :pk,                       Strict::Integer
-      attribute :home_team,                Strict::String
-      attribute :away_team,                Strict::String
-      attribute :live_game,                LiveGame
+      attribute :date,                     Strict::String
+      attribute :total_games,              Strict::Integer
+      attribute :live_games,               Strict::Array.of(LiveGame)
 
       # those don't want to store in database
       def to_attr_hash
-        to_hash.reject { |key, _| [:id, :live_game].include? key }
+        to_hash.reject { |key, _| %i[id live_game].include? key }
       end
     end
   end
