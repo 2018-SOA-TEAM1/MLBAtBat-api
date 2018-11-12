@@ -1,15 +1,199 @@
 ---
-date: '2018-07-17'
-game_pk: 530856
-away_team: American League All-Stars
-home_team: National League All-Stars
-detailed_state: Final
-current_player: Lorenzo Cain
-home_team_status:
-  runs: 6
-  hits: 7
-  errors: 1
-away_team_status:
-  runs: 8
-  hits: 13
-  errors: 0
+date: '2018-07-10'
+total_games: 15
+live_games:
+- date: '2018-07-10'
+  detailed_state: Final
+  current_player: Jonathan Schoop
+  home_team_name: Baltimore Orioles
+  away_team_name: New York Yankees
+  home_team_status:
+    runs: 6
+    hits: 10
+    errors: 0
+  away_team_status:
+    runs: 5
+    hits: 8
+    errors: 1
+- date: '2018-07-10'
+  detailed_state: Final
+  current_player: Francisco Cervelli
+  home_team_name: Pittsburgh Pirates
+  away_team_name: Washington Nationals
+  home_team_status:
+    runs: 1
+    hits: 7
+    errors: 0
+  away_team_status:
+    runs: 5
+    hits: 12
+    errors: 1
+- date: '2018-07-10'
+  detailed_state: Final
+  current_player: Francisco Lindor
+  home_team_name: Cleveland Indians
+  away_team_name: Cincinnati Reds
+  home_team_status:
+    runs: 4
+    hits: 6
+    errors: 0
+  away_team_status:
+    runs: 7
+    hits: 8
+    errors: 2
+- date: '2018-07-10'
+  detailed_state: Final
+  current_player: Ronny Rodriguez
+  home_team_name: Tampa Bay Rays
+  away_team_name: Detroit Tigers
+  home_team_status:
+    runs: 5
+    hits: 6
+    errors: 0
+  away_team_status:
+    runs: 2
+    hits: 5
+    errors: 0
+- date: '2018-07-10'
+  detailed_state: Final
+  current_player: Brian Anderson
+  home_team_name: Miami Marlins
+  away_team_name: Milwaukee Brewers
+  home_team_status:
+    runs: 4
+    hits: 9
+    errors: 1
+  away_team_status:
+    runs: 8
+    hits: 9
+    errors: 1
+- date: '2018-07-10'
+  detailed_state: Final
+  current_player: Amed Rosario
+  home_team_name: New York Mets
+  away_team_name: Philadelphia Phillies
+  home_team_status:
+    runs: 3
+    hits: 7
+    errors: 0
+  away_team_status:
+    runs: 7
+    hits: 13
+    errors: 0
+- date: '2018-07-10'
+  detailed_state: Final
+  current_player: Elvis Andrus
+  home_team_name: Boston Red Sox
+  away_team_name: Texas Rangers
+  home_team_status:
+    runs: 8
+    hits: 12
+    errors: 0
+  away_team_status:
+    runs: 4
+    hits: 7
+    errors: 1
+- date: '2018-07-10'
+  detailed_state: Final
+  current_player: Charlie Culberson
+  home_team_name: Atlanta Braves
+  away_team_name: Toronto Blue Jays
+  home_team_status:
+    runs: 2
+    hits: 8
+    errors: 3
+  away_team_status:
+    runs: 6
+    hits: 8
+    errors: 0
+- date: '2018-07-10'
+  detailed_state: Final
+  current_player: Joe Mauer
+  home_team_name: Minnesota Twins
+  away_team_name: Kansas City Royals
+  home_team_status:
+    runs: 4
+    hits: 9
+    errors: 0
+  away_team_status:
+    runs: 9
+    hits: 15
+    errors: 1
+- date: '2018-07-10'
+  detailed_state: Final
+  current_player: Alex Bregman
+  home_team_name: Houston Astros
+  away_team_name: Oakland Athletics
+  home_team_status:
+    runs: 6
+    hits: 10
+    errors: 0
+  away_team_status:
+    runs: 5
+    hits: 10
+    errors: 1
+- date: '2018-07-10'
+  detailed_state: Final
+  current_player: Leury Garcia
+  home_team_name: Chicago White Sox
+  away_team_name: St. Louis Cardinals
+  home_team_status:
+    runs: 2
+    hits: 5
+    errors: 1
+  away_team_status:
+    runs: 14
+    hits: 16
+    errors: 0
+- date: '2018-07-10'
+  detailed_state: Final
+  current_player: Chris Iannetta
+  home_team_name: Colorado Rockies
+  away_team_name: Arizona Diamondbacks
+  home_team_status:
+    runs: 3
+    hits: 9
+    errors: 0
+  away_team_status:
+    runs: 5
+    hits: 8
+    errors: 1
+- date: '2018-07-10'
+  detailed_state: Final
+  current_player: Ben Gamel
+  home_team_name: Los Angeles Angels
+  away_team_name: Seattle Mariners
+  home_team_status:
+    runs: 9
+    hits: 16
+    errors: 2
+  away_team_status:
+    runs: 3
+    hits: 7
+    errors: 2
+- date: '2018-07-10'
+  detailed_state: Final
+  current_player: Matt Kemp
+  home_team_name: San Diego Padres
+  away_team_name: Los Angeles Dodgers
+  home_team_status:
+    runs: 4
+    hits: 8
+    errors: 0
+  away_team_status:
+    runs: 1
+    hits: 4
+    errors: 0
+- date: '2018-07-10'
+  detailed_state: Final
+  current_player: Andrew McCutchen
+  home_team_name: San Francisco Giants
+  away_team_name: Chicago Cubs
+  home_team_status:
+    runs: 0
+    hits: 3
+    errors: 1
+  away_team_status:
+    runs: 2
+    hits: 6
+    errors: 0

@@ -5,9 +5,8 @@ require 'sequel'
 Sequel.migration do
   change do
     create_table(:schedules) do
-      Integer     :game_pk, primary_key: true
-      String      :home_team
-      String      :away_team
+      Integer     :date, primary_key: true
+      Integer     :total_games
 
       DateTime :created_at
       DateTime :updated_at

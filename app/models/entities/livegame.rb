@@ -6,11 +6,12 @@ module MLBAtBat
     class LiveGame < Dry::Struct
       include Dry::Types.module
 
-      # attribute :id,                   Integer.optional
-      attribute :pk,                   Strict::Integer
+      attribute :id,                   Integer.optional
       attribute :date,                 Strict::String
       attribute :current_hitter_name,  Strict::String
       attribute :detailed_state,       Strict::String
+      attribute :home_team_name,       Strict::String
+      attribute :away_team_name,       Strict::String
       attribute :home_team_runs,       Strict::Integer
       attribute :home_team_hits,       Strict::Integer
       attribute :home_team_errors,     Strict::Integer
