@@ -9,7 +9,7 @@ module MLBAtBat
     class Play < Dry::Struct
       include Dry::Types.module
 
-      attribute :patBatIndex,  Strict::Integer    
+      attribute :atBatIndex,  Strict::Integer    
     
     end
   end

@@ -26,7 +26,7 @@ module MLBAtBat
       class DataMapper
         def initialize(data, game_pk)
           @data = data
-          @pk = game_pk
+          @game_pk = game_pk
           @inning_mapper = Inning.new()
           @player_mapper = Player.new()
           @gcm_mapper = GameChangingMoment.new()
@@ -34,7 +34,7 @@ module MLBAtBat
 
         def build_entity
           Entity::WholeGame.new(
-            pk: @pk,
+            game_pk: @game_pk,
             innings: innings,
             # players: players,
             # gcms: gcms

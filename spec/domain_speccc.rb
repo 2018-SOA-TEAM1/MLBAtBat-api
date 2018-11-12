@@ -27,11 +27,11 @@ describe 'Integration Tests of MLB API and Database' do
       .new
       .get_schedule(SPORT_ID, GAME_DATE)
       rebuilt_schedule = MLBAtBat::Repository::For.entity(schedule).create(schedule)
-      _(rebuilt_schedule.pk).must_equal(schedule.pk)
+      # _(rebuilt_schedule.pk).must_equal(schedule.pk)
 
       # branch domain
-      pk = schedule.pk
-      whole_game = MLBAtMat::Mapper::WholeGame.new.get_whole_game(game_pk)
+      game_pk = schedule.pk
+      whole_game = MLBAtBat::Mapper::WholeGame.new.get_whole_game(game_pk)
     #   _(whole_game.inngings_num).must_equal(10)
     #   _(whole_game.live_play.homeScore).must_equal(8)
     #   _(whole_game.live_play.awayScore).must_equal(6)

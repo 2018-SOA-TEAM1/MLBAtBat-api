@@ -2,9 +2,9 @@
 
 require 'dry-types'
 require 'dry-struct'
-require_relative '../children/innings.rb'
-require_relative '../children/players.rb'
-require_relative '../children/gcms.rb'
+require_relative '../children/inning.rb'
+require_relative '../children/player.rb'
+require_relative '../children/gcm.rb'
 
 module MLBAtBat
   module Entity
@@ -12,10 +12,10 @@ module MLBAtBat
     class WholeGame < Dry::Struct
       include Dry::Types.module
 
-      attribute :id,                       Integer.optional
-      attribute :innings,                  Innings
-      attribute :players,                  Players
-      attribute :gcms,                     GameChangingMoments
+      attribute :game_pk,                Strict::Integer
+      attribute :innings,                Strict::Array
+      # attribute :players,              Strict::Array.of(Player)
+      # attribute :gcms,                 Strict::Array.of(GameChangingMoment)
 
     end
   end
