@@ -9,42 +9,42 @@
         span.game_info.attribute Date:
       .col-lg-8.col-md-10.col-sm-6
         span.game_info.state
-          = game_info.live_games[0].date
+          = game_info.date
     .row.top-buffer
       .col-lg-4.col-md-2.col-sm-2
         span.game_info.attribute State:
       .col-lg-8.col-md-10.col-sm-6
         span.game_info.state
-          = game_info.live_games[0].detailed_state
+          = game_info.detailed_state
     .row.top-buffer
       .col-lg-4.col-md-2.col-sm-2
         span.game_info.attribute Last Hitter's Name:
       .col-lg-8.col-md-10.col-sm-6
         span.game_info.state
-          = game_info.live_games[0].current_hitter_name
+          = game_info.current_hitter_name
     .row.top-buffer
       .col-lg-4.col-md-2.col-sm-2
         span.game_info.attribute Home Team Status:
       .col-lg-8.col-md-10.col-sm-6
         .row
           span.game_info.state style="padding-left: 15px;"
-            ="runs - #{game_info.live_games[0].home_team_runs}"
+            ="runs - #{game_info.home_team_runs}"
         .row
           span.game_info.state style="padding-left: 15px;"
-            ="hits - #{game_info.live_games[0].home_team_hits}"
+            ="hits - #{game_info.home_team_hits}"
         .row
           span.game_info.state style="padding-left: 15px;"
-            ="errors - #{game_info.live_games[0].home_team_errors}"
+            ="errors - #{game_info.home_team_errors}"
     .row.top-buffer
       .col-lg-4.col-md-2.col-sm-2
         span.game_info.attribute Away Team Status:
       .col-lg-8.col-md-10.col-sm-6
         .row
           span.game_info.state style="padding-left: 15px;"
-            ="runs - #{game_info.live_games[0].away_team_runs}"
+            ="runs - #{game_info.away_team_runs}"
         .row
           span.game_info.state style="padding-left: 15px;"
-            ="hits - #{game_info.live_games[0].away_team_hits}"
+            ="hits - #{game_info.away_team_hits}"
         .row
           span.game_info.state style="padding-left: 15px;"
-            ="errors - #{game_info.live_games[0].away_team_errors}"
+            ="errors - #{game_info.away_team_errors}"
