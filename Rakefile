@@ -23,11 +23,19 @@ task :web do
   sh 'rake db:drop'
   sh 'rake db:migrate'
   sh 'rackup'
+desc 'run tests'
+task :gateway_spec do
+  sh 'ruby spec/gateway_mlb_api_spec.rb'
 end
 
 desc 'run db tests'
 task :spec_db do
   sh 'ruby spec/gateway_database_spec.rb'
+end
+
+desc 'run domain tests'
+task :spec_domain do
+  sh 'ruby spec/domain_speccc.rb'
 end
 
 desc 'Keep rerunning tests upon changes'
