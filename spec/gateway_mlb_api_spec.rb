@@ -21,7 +21,8 @@ describe 'Tests MLBAtBat libiary' do
     end
 
     it 'HAPPY: schedule should provide correct game date' do
-      _(@schedule.date).must_equal CORRECT['date']
+      _(@schedule.date).must_equal CORRECT['date'] \
+        .split('-').join('').to_i
     end
 
     it 'HAPPY: schedule should provide correct total game numbers' do
@@ -40,7 +41,8 @@ describe 'Tests MLBAtBat libiary' do
     it 'HAPPY: live game should provide correct game informations' do
       (0...@total_games).each do |game_idx|
         _(@live_games[game_idx].date).must_equal \
-          CORRECT['live_games'][game_idx]['date']
+          CORRECT['live_games'][game_idx]['date'] \
+          .split('-').join('').to_i
 
         _(@live_games[game_idx].detailed_state).must_equal \
           CORRECT['live_games'][game_idx]['detailed_state']

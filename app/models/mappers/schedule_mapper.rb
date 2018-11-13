@@ -47,7 +47,9 @@ module MLBAtBat
         end
 
         def date
-          @data['dates'][0]['date']
+          # Transform into integer
+          # 2018-11-13 -> 20181113
+          @data['dates'][0]['date'].split('-').join('').to_i
         end
 
         def total_games

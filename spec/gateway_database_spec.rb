@@ -28,9 +28,8 @@ describe 'Integration Tests of MLB API and Database' do
       .get_schedule(SPORT_ID, GAME_DATE)
       rebuilt = MLBAtBat::Repository::For.entity(schedule).create(schedule)
  
-      _(rebuilt.pk).must_equal(schedule.pk)
-      _(rebuilt.home_team).must_equal(schedule.home_team)
-      _(rebuilt.away_team).must_equal(schedule.away_team)
+      _(rebuilt.date).must_equal(schedule.date)
+      _(rebuilt.total_games).must_equal(schedule.total_games)
     end    
 
     it 'HAPPY: should be able to save mlb livegame data to database' do
@@ -38,14 +37,15 @@ describe 'Integration Tests of MLB API and Database' do
       schedule = MLBAtBat::MLB::ScheduleMapper
       .new
       .get_schedule(SPORT_ID, GAME_DATE)
-      game = schedule.live_game
+      game = schedule.find_team_name(SEARCH_TEAM_NAME)
 
-      rebuilt = MLBAtBat::Repository::For.entity(schedule).create(schedule)
-      rebuilt_game = rebuilt.live_game
+      rebuilt_schedule = MLBAtBat::Repository::For.entity(schedule).create(schedule)
+      rebuilt_game = rebuilt_schedule.find_team_name(SEARCH_TEAM_NAME)
 
       _(rebuilt_game.date).must_equal(game.date)
       _(rebuilt_game.detailed_state).must_equal(game.detailed_state)
       _(rebuilt_game.home_team_runs).must_equal(game.home_team_runs)
+
     end    
   end
 
