@@ -2,6 +2,7 @@
 
 require 'roda'
 require 'slim'
+require 'pry'
 
 module MLBAtBat
   # Web App
@@ -15,8 +16,8 @@ module MLBAtBat
 
       # GET /
       routing.root do
-        schedules = Repository::For.klass(Entity::Schedule).all
-        view 'home', locals: { schedules: schedules }
+        games = Repository::For.klass(Entity::LiveGame).all
+        view 'home', locals: { games: games }
       end
 
       routing.on 'game_info' do
@@ -24,11 +25,11 @@ module MLBAtBat
           # GET /game_info/
           routing.post do
             date = routing.params['game_date']
+            team_name = routing.params['team_name']
             # routing.halt 400 unless pk.to_i.positive?
-            # game_info is Entity:Schedule
             game_info = MLB::ScheduleMapper.new.get_schedule(1, date)
             # Add schedule to database
-            Repository::For.entity(game_info).create(game_info)
+            Repository::For.entity(game_info).create(game_info, team_name)
 
             date = date.split('/').join('_')
             routing.redirect "game_info/#{date}"
@@ -37,7 +38,6 @@ module MLBAtBat
 
         routing.on String do |date|
           # GET /game_info/date
-          # puts date
           routing.get do
             date = date.split('_').join('/')
             # Get schedule (game_info) from database instead of Github

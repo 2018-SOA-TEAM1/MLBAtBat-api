@@ -32,34 +32,32 @@ module MLBAtBat
         def build_entity
           MLBAtBat::Entity::Schedule.new(
             id: nil,
-            # date: date,
-            pk: pk,
-            away_team: away_team,
-            home_team: home_team,
-            live_game: live_game
+            date: date,
+            total_games: total_games,
+            live_games: live_games
           )
         end
 
-        # def date
-        #   @data['dates'][0]['date']
-        # end
-
-        def pk
-          @data['dates'][0]['games'][0]['gamePk']
+        def pks
+          out = []
+          @data['dates'][0]['games'].each do |game|
+            out << game['gamePk']
+          end
+          out
         end
 
-        def away_team
-          @data['dates'][0]['games'][0]['teams'] \
-               ['away']['team']['name']
+        def date
+          # Transform into integer
+          # 2018-11-13 -> 20181113
+          @data['dates'][0]['date'].split('-').join('').to_i
         end
 
-        def home_team
-          @data['dates'][0]['games'][0]['teams'] \
-               ['home']['team']['name']
+        def total_games
+          @data['dates'][0]['totalGames']
         end
 
-        def live_game
-          @live_game_mapper.live_game_info(pk)
+        def live_games
+          @live_game_mapper.load_several(pks)
         end
       end
     end

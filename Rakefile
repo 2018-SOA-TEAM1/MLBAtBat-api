@@ -17,6 +17,14 @@ Rake::TestTask.new(:spec) do |t|
   t.warning = false
 end
 
+desc 'Clean db and rerun server'
+task :web do
+  sh 'clear'
+  sh 'rake db:drop'
+  sh 'rake db:migrate'
+  sh 'rackup'
+end
+
 desc 'run tests'
 task :gateway_spec do
   sh 'ruby spec/gateway_mlb_api_spec.rb'

@@ -6,17 +6,18 @@ Sequel.migration do
   change do
     create_table(:games) do
       primary_key :id
-      foreign_key :g_pk, :schedules, key: :game_pk
+      foreign_key :game_date, :schedules, key: :date
 
-      String      :date
       String      :current_hitter_name
       String      :detailed_state
-      Integer      :home_team_runs
-      Integer      :home_team_hits
-      Integer      :home_team_errors
-      Integer      :away_team_runs
-      Integer      :away_team_hits
-      Integer      :away_team_errors
+      String      :home_team_name
+      String      :away_team_name
+      Integer     :home_team_runs
+      Integer     :home_team_hits
+      Integer     :home_team_errors
+      Integer     :away_team_runs
+      Integer     :away_team_hits
+      Integer     :away_team_errors
 
       DateTime :created_at
       DateTime :updated_at

@@ -17,69 +17,69 @@ describe 'Tests MLBAtBat libiary' do
   describe 'Schedule information' do
     before do
       @schedule = MLBAtBat::MLB::ScheduleMapper.new
-                                               .get_schedule(SPORT_ID,
-                                                             GAME_DATE)
+        .get_schedule(SPORT_ID, GAME_DATE)
     end
 
-    it 'HAPPY: should provide correct game pk' do
-      _(@schedule.pk).must_equal CORRECT['game_pk']
+    it 'HAPPY: schedule should provide correct game date' do
+      _(@schedule.date).must_equal CORRECT['date'] \
+        .split('-').join('').to_i
     end
 
-    it 'HAPPY: should provide correct home team name' do
-      _(@schedule.home_team).must_equal CORRECT['home_team']
-    end
-
-    it 'HAPPY: should provide correct away team name' do
-      _(@schedule.away_team).must_equal CORRECT['away_team']
+    it 'HAPPY: schedule should provide correct total game numbers' do
+      _(@schedule.total_games).must_equal CORRECT['total_games']
     end
   end
 
   describe 'Live game information' do
     before do
       @schedule = MLBAtBat::MLB::ScheduleMapper.new
-                                               .get_schedule(SPORT_ID,
-                                                             GAME_DATE)
-      @live_game = @schedule.live_game
+        .get_schedule(SPORT_ID, GAME_DATE)
+      @live_games = @schedule.live_games
+      @total_games = @schedule.total_games
     end
 
-    it 'HAPPY: shoud provide correct game date' do
-      _(@live_game.date).must_equal CORRECT['date']
-    end
+    it 'HAPPY: live game should provide correct game informations' do
+      (0...@total_games).each do |game_idx|
+        _(@live_games[game_idx].date).must_equal \
+          CORRECT['live_games'][game_idx]['date'] \
+          .split('-').join('').to_i
 
-    it 'HAPPY: shoud provide correct game state' do
-      _(@live_game.detailed_state).must_equal CORRECT['detailed_state']
-    end
+        _(@live_games[game_idx].detailed_state).must_equal \
+          CORRECT['live_games'][game_idx]['detailed_state']
 
-    it 'HAPPY: shoud provide correct hitter name' do
-      _(@live_game.current_hitter_name).must_equal CORRECT['current_player']
-    end
+        _(@live_games[game_idx].current_hitter_name).must_equal \
+          CORRECT['live_games'][game_idx]['current_player']
 
-    it 'HAPPY: shoud provide correct home team status' do
-      _(@live_game.home_team_runs).must_equal CORRECT['home_team_status'] \
-                                                     ['runs']
-      _(@live_game.home_team_hits).must_equal CORRECT['home_team_status'] \
-                                                     ['hits']
-      _(@live_game.home_team_errors).must_equal CORRECT['home_team_status'] \
-                                                       ['errors']
-    end
+        _(@live_games[game_idx].home_team_name).must_equal \
+          CORRECT['live_games'][game_idx]['home_team_name']
 
-    it 'HAPPY: shoud provide correct away team status' do
-      _(@live_game.away_team_runs).must_equal CORRECT['away_team_status'] \
-                                                     ['runs']
-      _(@live_game.away_team_hits).must_equal CORRECT['away_team_status'] \
-                                                     ['hits']
-      _(@live_game.away_team_errors).must_equal CORRECT['away_team_status'] \
-                                                       ['errors']
-    end
+        _(@live_games[game_idx].away_team_name).must_equal \
+          CORRECT['live_games'][game_idx]['away_team_name']
 
-    it 'HAPPY: shoud provide correct away team status' do
-      _(@live_game.current_hitter_name).must_equal CORRECT['current_player']
+        _(@live_games[game_idx].home_team_runs).must_equal \
+          CORRECT['live_games'][game_idx]['home_team_status']['runs']
+
+        _(@live_games[game_idx].home_team_hits).must_equal \
+          CORRECT['live_games'][game_idx]['home_team_status']['hits']
+
+        _(@live_games[game_idx].home_team_errors).must_equal \
+          CORRECT['live_games'][game_idx]['home_team_status']['errors']
+
+        _(@live_games[game_idx].away_team_runs).must_equal \
+          CORRECT['live_games'][game_idx]['away_team_status']['runs']
+
+        _(@live_games[game_idx].away_team_hits).must_equal \
+          CORRECT['live_games'][game_idx]['away_team_status']['hits']
+
+        _(@live_games[game_idx].away_team_errors).must_equal \
+          CORRECT['live_games'][game_idx]['away_team_status']['errors']
+      end
     end
 
     it 'SAD: shoud raise exception if given wrong gamePk' do
       proc do
         @live_game = MLBAtBat::MLB::LiveGameMapper.new
-                                                  .live_game_info(WRONG_PK_ID)
+          .live_game_info(WRONG_PK_ID)
       end.must_raise MLBAtBat::MLB::Api::Response::InternalServerError
     end
   end

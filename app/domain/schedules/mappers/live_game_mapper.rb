@@ -10,6 +10,14 @@ module MLBAtBat
         @gateway = @gateway_class.new
       end
 
+      def load_several(pks)
+        entities = []
+        pks.each do |pk|
+          entities << live_game_info(pk)
+        end
+        entities
+      end
+
       def live_game_info(game_pk)
         build_entity(game_pk)
       end
@@ -29,10 +37,11 @@ module MLBAtBat
         def build_entity
           Entity::LiveGame.new(
             id: nil,
-            pk: @pk,
             date: date,
             current_hitter_name: current_hitter_name,
             detailed_state: detailed_state,
+            home_team_name: home_team_name,
+            away_team_name: away_team_name,
             home_team_runs: home_team_runs,
             home_team_hits: home_team_hits,
             home_team_errors: home_team_errors,
@@ -43,7 +52,8 @@ module MLBAtBat
         end
 
         def date
-          @data['gameData']['datetime']['originalDate']
+          @data['gameData']['datetime']['originalDate'] \
+            .split('-').join('').to_i
         end
 
         def current_hitter_name
@@ -53,6 +63,14 @@ module MLBAtBat
 
         def detailed_state
           @data['gameData']['status']['detailedState']
+        end
+
+        def home_team_name
+          @data['gameData']['teams']['home']['name']
+        end
+
+        def away_team_name
+          @data['gameData']['teams']['away']['name']
         end
 
         def home_team_runs
