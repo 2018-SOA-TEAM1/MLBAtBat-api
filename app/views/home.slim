@@ -1,37 +1,43 @@
 .container
   form role="form" action="/game_info" method='POST' id='show-gmae-info'
     .row.vertical-align.query-bar
-      .col-md-2.col-sm-3
+      .col-md-5.col-sm-5
         .text-right Game Date:
-      .col-md-8.col-sm-6
         input {
           type='text' name='game_date'
           id='game_date_input' class="form-control"
           placeholder="e.g. 07/17/2018"
         }
-      .col-md-2.col-sm-3
+      .col-md-5.col-sm-5
+        .text-right Team Name:
+        input {
+          type='text' name='team_name'
+          id='team_name_input' class="form-control"
+          placeholder="e.g. Baltimore Orioles"
+        }
+      .col-md-2.col-sm-5
         button {
           type='submit' id='game-date-submit' class='submit'
           value='submit' class="btn btn-success"
         } Show Game Info.
     .row
      .col-md-12.blank-row
-    - if schedules.any?
-        table class="table table-hover" id="schedules_table"
+    - if games.any?
+        table class="table table-hover" id="games_table"
           thead
             tr
               th Date
               th Home Team
               th Away Team
           tbody
-            - schedules.each.with_index do |schedule, index|
+            - games.each.with_index do |game, index|
               tr class="table-row project_row"
                 td id='td_date'
-                  span class="schedule_date" id="schedule[#{index}].owner"
-                    = schedule.live_game.date
+                  span class="game_date" id="game[#{index}].owner"
+                    = game.date
                 td id='td_home_team'
-                  span class="schedule_home_team" id="schedule[#{index}].name"
-                    = schedule.home_team
+                  span class="game_home_team" id="game[#{index}].name"
+                    = game.home_team_name
                 td id='td_away_team'
-                  span class="schedule_away_team" id="schedule[#{index}].contributors"
-                    = schedule.away_team
+                  span class="gamee_away_team" id="game[#{index}].contributors"
+                    = game.away_team_name
