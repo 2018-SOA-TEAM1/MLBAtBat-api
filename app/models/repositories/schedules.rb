@@ -59,9 +59,6 @@ module MLBAtBat
           # 2018-11-13 -> 2018_11_13
           # Correspond to db string constraint
           temp_hash = @entity.to_attr_hash
-          temp_date = temp_hash[:date]
-          temp_hash[:date] = temp_date.split('-').join('o')
-
           Database::ScheduleOrm.unrestrict_primary_key
           Database::ScheduleOrm.create(temp_hash)
         end
@@ -70,8 +67,7 @@ module MLBAtBat
           # should create schedule first and then game
           db_schhedule = create_schedule
           @entity.live_games.each do |live_game|
-            g = LiveGames.db_find_or_create(live_game)
-            #puts g.game_date
+            LiveGames.db_find_or_create(live_game)
           end
           db_schhedule
         end

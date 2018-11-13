@@ -52,7 +52,8 @@ module MLBAtBat
         end
 
         def date
-          @data['gameData']['datetime']['originalDate']
+          @data['gameData']['datetime']['originalDate'] \
+          .split('-').join('').to_i
         end
 
         def current_hitter_name

@@ -9,7 +9,7 @@ module MLBAtBat
       include Dry::Types.module
 
       attribute :id,                       Integer.optional
-      attribute :date,                     Strict::String
+      attribute :date,                     Strict::Integer
       attribute :total_games,              Strict::Integer
       attribute :live_games,               Strict::Array.of(LiveGame)
 

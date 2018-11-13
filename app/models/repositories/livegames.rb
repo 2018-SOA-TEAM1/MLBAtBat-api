@@ -33,11 +33,10 @@ module MLBAtBat
         # to make date -> game_date
         temp_hash = entity.to_attr_hash
         temp_date = temp_hash.delete(:date)
-        temp_date = temp_date.split('-').join('o')
         temp_hash[:game_date] = temp_date
-        puts temp_date
+        
         g = Database::GameOrm.find_or_create(temp_hash)
-        puts g.game_date
+       
       end
     end
   end
