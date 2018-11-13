@@ -6,28 +6,38 @@ module MLBAtBat
     class LiveGames
       def self.rebuild_entity(db_record)
         return nil unless db_record
-
+ 
         Entity::LiveGame.new(
-          pk:                  db_record.g_pk,
-          date:                db_record.date,
+          id:                  db_record.id,
+          date:                db_record.game_date,
           current_hitter_name: db_record.current_hitter_name,
           detailed_state:      db_record.detailed_state,
+          home_team_name:      db_record.home_team_name,
+          away_team_name:      db_record.away_team_name,
           home_team_runs:      db_record.home_team_runs,
           home_team_hits:      db_record.home_team_hits,
           home_team_errors:    db_record.home_team_errors,
           away_team_runs:      db_record.away_team_runs,
           away_team_hits:      db_record.away_team_hits,
-          away_team_errors:    db_record.away_team_errors
+          away_team_errors:    db_record.away_team_errors,
         )
       end
 
-      def self.db_find_or_create(entity)
-        # to make pk -> g_pk
-        temp_hash = entity.to_hash
-        temp_pk = temp_hash.delete(:pk)
-        temp_hash[:g_pk] = temp_pk
+      def self.rebuild_many(db_records)
+        db_records.map do |db_livegame|
+          LiveGames.rebuild_entity(db_livegame)
+        end
+      end
 
-        Database::GameOrm.find_or_create(temp_hash)
+      def self.db_find_or_create(entity)
+        # to make date -> game_date
+        temp_hash = entity.to_attr_hash
+        temp_date = temp_hash.delete(:date)
+        temp_date = temp_date.split('-').join('o')
+        temp_hash[:game_date] = temp_date
+        puts temp_date
+        g = Database::GameOrm.find_or_create(temp_hash)
+        puts g.game_date
       end
     end
   end

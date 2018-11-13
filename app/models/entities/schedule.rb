@@ -15,7 +15,14 @@ module MLBAtBat
 
       # those don't want to store in database
       def to_attr_hash
-        to_hash.reject { |key, _| %i[id live_game].include? key }
+        to_hash.reject { |key, _| %i[id live_games].include? key }
+      end
+
+      def find_team_name(team_name)
+        live_games.each do |live_game|
+          return live_game if (live_game.home_team_name == team_name \
+            ||  live_game.away_team_name == team_name) 
+        end
       end
     end
   end

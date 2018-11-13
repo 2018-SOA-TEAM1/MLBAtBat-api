@@ -12,8 +12,8 @@ module MLBAtBat
 
       def self.create(entity)
         err_msg = '(Under development) Sorry: this date Game already exists'
-        raise err_msg if find(entity)
-
+        # raise err_msg if find(entity)
+        
         db_schedule = PersistProject.new(entity).call
         rebuild_entity(db_schedule)
       end
@@ -23,9 +23,8 @@ module MLBAtBat
 
         Entity::Schedule.new(
           db_record.to_hash.merge(
-            live_game: LiveGames.rebuild_entity(db_record.game),
-            id: db_record.game.id,
-            pk: db_record.game_pk
+            id: db_record.id,
+            live_games: LiveGames.rebuild_many(db_record.games),
           )
         )
       end
@@ -34,8 +33,9 @@ module MLBAtBat
         find_pk(entity.pk)
       end
 
-      def self.find_pk(game_pk)
+      def self.find_team_name(game_pk)
         db_record = Database::ScheduleOrm.first(game_pk: game_pk)
+        return db_record if db_record
         rebuild_entity(db_record)
       end
 
@@ -56,10 +56,12 @@ module MLBAtBat
         end
 
         def create_schedule
-          # change pk -> game_pk
+          # 2018-11-13 -> 2018_11_13
+          # Correspond to db string constraint
           temp_hash = @entity.to_attr_hash
-          game_pk = temp_hash.delete(:pk)
-          temp_hash[:game_pk] = game_pk
+          temp_date = temp_hash[:date]
+          temp_hash[:date] = temp_date.split('-').join('o')
+
           Database::ScheduleOrm.unrestrict_primary_key
           Database::ScheduleOrm.create(temp_hash)
         end
@@ -67,7 +69,10 @@ module MLBAtBat
         def call
           # should create schedule first and then game
           db_schhedule = create_schedule
-          LiveGames.db_find_or_create(@entity.live_game)
+          @entity.live_games.each do |live_game|
+            g = LiveGames.db_find_or_create(live_game)
+            #puts g.game_date
+          end
           db_schhedule
         end
       end

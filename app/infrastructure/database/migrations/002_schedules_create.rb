@@ -5,7 +5,7 @@ require 'sequel'
 Sequel.migration do
   change do
     create_table(:schedules) do
-      Integer     :date, primary_key: true
+      String      :date, primary_key: true
       Integer     :total_games
 
       DateTime :created_at

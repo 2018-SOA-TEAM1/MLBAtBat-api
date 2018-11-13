@@ -19,9 +19,9 @@ module MLBAtBat
       attribute :away_team_hits,       Strict::Integer
       attribute :away_team_errors,     Strict::Integer
 
-      # def to_attr_hash
-      #   to_hash.reject { |key, _| [:id].include? key }
-      # end
+      def to_attr_hash
+        to_hash.reject { |key, _| [:id].include? key }
+      end
     end
   end
 end
