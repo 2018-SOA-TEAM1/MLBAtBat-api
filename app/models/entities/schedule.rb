@@ -20,8 +20,8 @@ module MLBAtBat
 
       def find_team_name(team_name)
         live_games.each do |live_game|
-          return live_game if (live_game.home_team_name == team_name \
-            ||  live_game.away_team_name == team_name) 
+          test_array = [live_game.home_team_name, live_game.away_team_name]
+          return live_game if test_array.include?(team_name)
         end
       end
     end

@@ -13,7 +13,7 @@ module MLBAtBat
       def self.create(entity)
         err_msg = '(Under development) Sorry: this date Game already exists'
         # raise err_msg if find(entity)
-        
+
         db_schedule = PersistProject.new(entity).call
         rebuild_entity(db_schedule)
       end
@@ -24,7 +24,7 @@ module MLBAtBat
         Entity::Schedule.new(
           db_record.to_hash.merge(
             id: db_record.id,
-            live_games: LiveGames.rebuild_many(db_record.games),
+            live_games: LiveGames.rebuild_many(db_record.games)
           )
         )
       end
@@ -36,6 +36,7 @@ module MLBAtBat
       def self.find_team_name(game_pk)
         db_record = Database::ScheduleOrm.first(game_pk: game_pk)
         return db_record if db_record
+
         rebuild_entity(db_record)
       end
 

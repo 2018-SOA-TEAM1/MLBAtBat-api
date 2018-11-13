@@ -6,7 +6,7 @@ module MLBAtBat
     class LiveGames
       def self.rebuild_entity(db_record)
         return nil unless db_record
- 
+
         Entity::LiveGame.new(
           id:                  db_record.id,
           date:                db_record.game_date,
@@ -19,7 +19,7 @@ module MLBAtBat
           home_team_errors:    db_record.home_team_errors,
           away_team_runs:      db_record.away_team_runs,
           away_team_hits:      db_record.away_team_hits,
-          away_team_errors:    db_record.away_team_errors,
+          away_team_errors:    db_record.away_team_errors
         )
       end
 
@@ -34,9 +34,8 @@ module MLBAtBat
         temp_hash = entity.to_attr_hash
         temp_date = temp_hash.delete(:date)
         temp_hash[:game_date] = temp_date
-        
-        g = Database::GameOrm.find_or_create(temp_hash)
-       
+
+        Database::GameOrm.find_or_create(temp_hash)
       end
     end
   end
