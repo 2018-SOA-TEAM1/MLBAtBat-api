@@ -10,6 +10,19 @@ module MLBAtBat
         end
       end
 
+      def self.find(date, team_name)
+        date_split = date.split('/')
+        temp_date = date_split[2] + date_split[0] + date_split[1]
+        temp_date = temp_date.to_i
+        first = Database::GameOrm.find(game_date: temp_date, home_team_name: team_name)
+        if first.nil?
+          second = Database::GameOrm.find(game_date: temp_date, away_team_name: team_name)d
+          return rebuild_entity(second)
+        else
+          return rebuild_entity(first)
+        end
+      end
+
       def self.rebuild_entity(db_record)
         return nil unless db_record
 

@@ -32,23 +32,18 @@ module MLBAtBat
             Repository::For.entity(game_info).create(game_info, team_name)
 
             date = date.split('/').join('_')
-            routing.redirect "game_info/#{date}"
+            team_name = team_name.split(' ').join('_')
+            routing.redirect "game_info/#{date}/#{team_name}"
           end
         end
 
-        routing.on String do |date|
-          # GET /game_info/date
+        routing.on String, String do |date, team_name|
+          # GET /game_info/date/team_name
           routing.get do
             date = date.split('_').join('/')
-            # Get schedule (game_info) from database instead of Github
-            game_info = Repository::For.klass(Entity::Schedule)
-              .find_date(date)
-
-            # domain branch
-            # game_pk = game_info.game_pk
-            # whole_game = Mapper::WholeGame.new.get_game(game_pk)
-            
-
+            team_name = team_name.split('_').join(' ')
+            game_info = Repository::For.klass(Entity::LiveGame)
+              .find(date, team_name)            
             view 'game_info', locals: { game_info: game_info }
           end
         end
