@@ -28,9 +28,9 @@ module MLBAtBat
             team_name = routing.params['team_name']
             # routing.halt 400 unless pk.to_i.positive?
             game_info = MLB::ScheduleMapper.new.get_schedule(1, date)
-            # Add schedule to database
+            # Add schedule (and game) to database
             Repository::For.entity(game_info).create(game_info, team_name)
-            # for test
+            
             date = date.split('/').join('_')
             team_name = team_name.split(' ').join('_')
             routing.redirect "game_info/#{date}/#{team_name}"

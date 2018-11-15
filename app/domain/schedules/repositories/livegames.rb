@@ -16,7 +16,7 @@ module MLBAtBat
         temp_date = temp_date.to_i
         first = Database::GameOrm.find(game_date: temp_date, home_team_name: team_name)
         if first.nil?
-          second = Database::GameOrm.find(game_date: temp_date, away_team_name: team_name)d
+          second = Database::GameOrm.find(game_date: temp_date, away_team_name: team_name)
           return rebuild_entity(second)
         else
           return rebuild_entity(first)

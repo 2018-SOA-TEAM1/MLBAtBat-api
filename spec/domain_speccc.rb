@@ -22,15 +22,13 @@ describe 'Integration Tests of MLB API and Database' do
     end
     
     it 'HAPPY: should be able to save mlb schedule data to database' do
-      
       schedule = MLBAtBat::MLB::ScheduleMapper
       .new
       .get_schedule(SPORT_ID, GAME_DATE)
-      rebuilt_schedule = MLBAtBat::Repository::For.entity(schedule).create(schedule)
-      # _(rebuilt_schedule.pk).must_equal(schedule.pk)
-
-      # branch domain
+ 
+    # branch domain
       game_pk = schedule.pk
+      puts "game_pk is #{game_pk}"
       whole_game = MLBAtBat::Mapper::WholeGame.new.get_whole_game(game_pk)
     #   _(whole_game.inngings_num).must_equal(10)
     #   _(whole_game.live_play.homeScore).must_equal(8)
