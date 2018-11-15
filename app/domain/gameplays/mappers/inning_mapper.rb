@@ -10,7 +10,7 @@ module MLBAtBat
           
         end
 
-        def self.get_inning_of_play (single_play)
+        def get_inning_of_play (single_play)
           single_play['about']['inning']
         end
 
@@ -38,8 +38,8 @@ module MLBAtBat
           return innings
         end
 
-        def self.build_entity(plays)
-          DataMapper.new(plays).build_entity
+        def build_entity(plays)
+          DataMapper.new().build_entity(plays)
         end
 
         # Extracts entity specific elements from data structure

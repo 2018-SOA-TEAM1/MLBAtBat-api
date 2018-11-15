@@ -3,5 +3,5 @@ coverage/
 .bundle/
 *.db
 _snippets/
-fixtures/cassettes/
-fixtures/*.yml
+spec/fixtures/cassettes/
+spec/fixtures/*.yml

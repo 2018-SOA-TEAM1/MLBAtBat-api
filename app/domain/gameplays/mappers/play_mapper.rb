@@ -12,8 +12,8 @@ module MLBAtBat
         plays.map {|play| rebuild_entity(play)}
       end
 
-      def self.rebuild_entity(play)
-        DataMapper.new(play).build_entity
+      def rebuild_entity(play)
+        DataMapper.new().build_entity(play)
       end
 
       # Extracts entity specific elements from data structure
