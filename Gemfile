@@ -8,6 +8,7 @@ gem 'econfig', '~> 2.1'
 gem 'puma', '~> 3.11'
 gem 'roda', '~> 3.8'
 gem 'slim', '~> 3.0'
+gem "rack", ">= 2.0.6"
 
 # Entity gems
 gem 'dry-struct', '~> 0.5'

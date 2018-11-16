@@ -90,7 +90,7 @@ GEM
       method_source (~> 0.9.0)
     public_suffix (3.0.3)
     puma (3.12.0)
-    rack (2.0.5)
+    rack (2.0.6)
     rainbow (3.0.0)
     rake (12.3.1)
     rb-fsevent (0.10.3)
@@ -165,6 +165,7 @@ DEPENDENCIES
   minitest-rg (~> 5.2)
   pry
   puma (~> 3.11)
+  rack (>= 2.0.6)
   rake
   reek
   rerun (~> 0.13)
