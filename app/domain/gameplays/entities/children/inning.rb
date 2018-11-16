@@ -11,7 +11,10 @@ module MLBAtBat
       include Dry::Types.module
 
       attribute :plays,      Strict::Array.of(Play)
-    
+      attribute :home_runs,  Strict::Integer
+      attribute :away_runs,  Strict::Integer
+      
+      
     end
   end
 end

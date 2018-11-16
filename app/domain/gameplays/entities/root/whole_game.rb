@@ -15,7 +15,7 @@ module MLBAtBat
       attribute :game_pk,                Strict::Integer
       attribute :innings,                Strict::Array
       # attribute :players,              Strict::Array.of(Player)
-      # attribute :gcms,                 Strict::Array.of(GameChangingMoment)
+      attribute :gcms,                 Strict::Array.of(GameChangingMoment)
 
     end
   end

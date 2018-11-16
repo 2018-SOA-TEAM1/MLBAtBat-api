@@ -9,7 +9,10 @@ module MLBAtBat
     class GameChangingMoment < Dry::Struct
       include Dry::Types.module
 
-      attribute :inning_number,  Strict::Integer    
+      attribute :atBatIndex,    Strict::Integer
+      attribute :inning_index,  Strict::Integer
+      attribute :description,   Strict::String  
+      attribute :event,         Strict::String
     
     end
   end
