@@ -33,6 +33,10 @@ describe 'Integration Tests of MLB API and Database' do
       end
       # igore inning 0 (empty)
       _(whole_game.innings.length - 1).must_equal(9)
+      _(whole_game.home_runs).must_equal(CORRECT['live_games'][0] \
+        ['home_team_status']['runs'])
+      _(whole_game.away_runs).must_equal(CORRECT['live_games'][0] \
+        ['away_team_status']['runs'])
     end    
 
 
