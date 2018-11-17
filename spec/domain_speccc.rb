@@ -20,14 +20,14 @@ describe 'Integration Tests of MLB API and Database' do
     before do
       DatabaseHelper.wipe_database
     end
-    
+
     it 'HAPPY: should be able to create gcm and have correct inning number' do
       game_pk = MLBAtBat::MLB::ScheduleMapper
-      .new
-      .get_gamepk(GAME_DATE, SEARCH_TEAM_NAME)
- 
+        .new
+        .get_gamepk(GAME_DATE, SEARCH_TEAM_NAME)
+
       whole_game = MLBAtBat::Mapper::WholeGame.new.get_whole_game(game_pk)
-      
+
       whole_game.gcms.each do |gcm|
         _(gcm.event).must_equal('Home Run')
       end
@@ -37,11 +37,6 @@ describe 'Integration Tests of MLB API and Database' do
         ['home_team_status']['runs'])
       _(whole_game.away_runs).must_equal(CORRECT['live_games'][0] \
         ['away_team_status']['runs'])
-    end    
-
-
+    end
   end
-
-
-
 end

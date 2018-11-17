@@ -53,7 +53,7 @@ module MLBAtBat
         end
 
         def innings
-          @inning_mapper.get_innings()
+          @inning_mapper.innings()
         end
 
         # def players

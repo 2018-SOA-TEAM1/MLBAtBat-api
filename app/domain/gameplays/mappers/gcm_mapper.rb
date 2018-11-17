@@ -54,7 +54,7 @@ module MLBAtBat
 
         def event
           @play.event
-        end        
+        end
       end
     end
   end
