@@ -32,15 +32,14 @@ module MLBAtBat
           @all_plays = all_plays
           @live_data = live_data
           @inning_mapper = Inning.new(all_plays, live_data)
-          @player_mapper = Player.new()
-          @gcm_mapper = GameChangingMoment.new()
+          @player_mapper = Player.new
+          @gcm_mapper = GameChangingMoment.new
         end
 
         def build_entity
-          entity_innings = innings
           Entity::WholeGame.new(
             game_pk: @game_pk,
-            innings: entity_innings,
+            innings: innings,
             home_runs: home_runs,
             home_hits: home_hits,
             home_errors: home_errors,
@@ -48,43 +47,43 @@ module MLBAtBat
             away_hits: away_hits,
             away_errors: away_errors,
             # players: players,
-            gcms: gcms(entity_innings)
+            gcms: gcms
           )
         end
 
         def innings
-          @inning_mapper.innings()
+          @inning_mapper.innings
         end
 
         # def players
         #   @player_mapper.get_players(@data['gameData'])
         # end
 
-        def gcms(innings)
+        def gcms
           @gcm_mapper.get_gcms(innings)
         end
 
-        def home_runs()
+        def home_runs
           @live_data['linescore']['teams']['home']['runs']
         end
 
-        def home_hits()
+        def home_hits
           @live_data['linescore']['teams']['home']['hits']
         end
 
-        def home_errors()
+        def home_errors
           @live_data['linescore']['teams']['home']['errors']
         end
 
-        def away_runs()
+        def away_runs
           @live_data['linescore']['teams']['away']['runs']
         end
 
-        def away_hits()
+        def away_hits
           @live_data['linescore']['teams']['away']['hits']
         end
 
-        def away_errors()
+        def away_errors
           @live_data['linescore']['teams']['away']['errors']
         end
       end

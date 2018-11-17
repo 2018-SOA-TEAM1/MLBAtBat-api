@@ -3,26 +3,24 @@
 module MLBAtBat
   module Mapper
     class GameChangingMoment
-      def initialize()
-        
-      end
+      def initialize() end
 
       def get_gcms(innings)
         @innings = innings
-        gcms = Array.new()
+        gcms = []
         # remove inning 0
-        for inning_index in 1..innings.length - 1
+        (1..innings.length - 1).each do |inning_index|
           plays = innings[inning_index].plays
           plays.each do |play|
             # condition for choosing gcm
             gcms.push(build_entity(play)) if play.home_run_boolean == true
           end
         end
-        return gcms
+        gcms
       end
 
       def build_entity(play)
-        DataMapper.new(play).build_entity()
+        DataMapper.new(play).build_entity
       end
 
       # Extracts entity specific elements from data structure
@@ -31,7 +29,7 @@ module MLBAtBat
           @play = play
         end
 
-        def build_entity()
+        def build_entity
           Entity::GameChangingMoment.new(
             atBatIndex: atBatIndex,
             inning_index: inning_index,

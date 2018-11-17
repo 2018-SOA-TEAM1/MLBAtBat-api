@@ -17,6 +17,7 @@ module MLBAtBat
       # GET /
       routing.root do
         games = Repository::For.klass(Entity::LiveGame).all
+        # whole_game = MLB::Mapper::WholeGame.new.build_entity(@game_pk)
         view 'home', locals: { games: games }
       end
 
@@ -26,11 +27,11 @@ module MLBAtBat
           routing.post do
             date = routing.params['game_date']
             team_name = routing.params['team_name']
-            # routing.halt 400 unless pk.to_i.positive?
             game_info = MLB::ScheduleMapper.new.get_schedule(1, date)
+            @game_pk = MLB::ScheduleMapper.new.get_gamepk(date, team_name)
             # Add schedule (and game) to database
             Repository::For.entity(game_info).create(game_info, team_name)
-            
+
             date = date.split('/').join('_')
             team_name = team_name.split(' ').join('_')
             routing.redirect "game_info/#{date}/#{team_name}"
@@ -43,7 +44,7 @@ module MLBAtBat
             date = date.split('_').join('/')
             team_name = team_name.split('_').join(' ')
             game_info = Repository::For.klass(Entity::LiveGame)
-              .find(date, team_name)            
+              .find(date, team_name)
             view 'game_info', locals: { game_info: game_info }
           end
         end

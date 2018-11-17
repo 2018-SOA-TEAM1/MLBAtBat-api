@@ -2,14 +2,14 @@
   form role="form" action="/game_info" method='POST' id='show-gmae-info'
     .row.vertical-align.query-bar
       .col-md-5.col-sm-5
-        .text-right Game Date:
+        .text-right Game Date
         input {
           type='text' name='game_date'
           id='game_date_input' class="form-control"
-          placeholder="e.g. 07/17/2018"
+          placeholder="e.g. 07/10/2018"
         }
       .col-md-5.col-sm-5
-        .text-right Team Name:
+        .text-right Team Name
         input {
           type='text' name='team_name'
           id='team_name_input' class="form-control"
@@ -23,21 +23,44 @@
     .row
      .col-md-12.blank-row
     - if games.any?
-        table class="table table-hover" id="games_table"
-          thead
-            tr
-              th Date
-              th Home Team
-              th Away Team
-          tbody
-            - games.each.with_index do |game, index|
-              tr class="table-row project_row"
-                td id='td_date'
-                  span class="game_date" id="game[#{index}].owner"
-                    = game.date
-                td id='td_home_team'
-                  span class="game_home_team" id="game[#{index}].name"
-                    = game.home_team_name
-                td id='td_away_team'
-                  span class="gamee_away_team" id="game[#{index}].contributors"
-                    = game.away_team_name
+      table class="table table-hover" id="games_table"
+        thead
+          tr
+            - (1..9).each do |i|
+              th #{i}
+            th R
+            th H
+            th E
+        tbody
+          - games.each.with_index do |game, index|
+            tr class="table-row project_row"
+              td id='td_date'
+                span class="game_date" id="game[#{index}].owner"
+                  = 0
+              td id='td_home_team'
+                span class="game_home_team" id="game[#{index}].name"
+                  = game.home_team_name
+              td id='td_away_team'
+                span class="gamee_away_team" id="game[#{index}].contributors"
+                  = game.away_team_name
+    .row
+     .col-md-12.blank-row
+    - if games.any?
+      table class="table table-hover" id="games_table"
+        thead
+          tr
+            th Date
+            th Home Team
+            th Away Team
+        tbody
+          - games.each.with_index do |game, index|
+            tr class="table-row project_row"
+              td id='td_date'
+                span class="game_date" id="game[#{index}].owner"
+                  = game.date
+              td id='td_home_team'
+                span class="game_home_team" id="game[#{index}].name"
+                  = game.home_team_name
+              td id='td_away_team'
+                span class="gamee_away_team" id="game[#{index}].contributors"
+                  = game.away_team_name
