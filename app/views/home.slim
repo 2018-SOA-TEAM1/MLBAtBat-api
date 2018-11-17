@@ -32,19 +32,18 @@
             th H
             th E
         tbody
-          - games.each.with_index do |game, index|
-            tr class="table-row project_row"
-              td id='td_date'
-                span class="game_date" id="game[#{index}].owner"
-                  - puts index
-                  = whole_game.innings[index].home_runs
-                  / = 0
-              td id='td_home_team'
-                span class="game_home_team" id="game[#{index}].name"
-                  = game.home_team_name
-              td id='td_away_team'
-                span class="gamee_away_team" id="game[#{index}].contributors"
-                  = game.away_team_name
+          tr class="table-row project_row"
+            - whole_game.innings.each.with_index do |inning, index|
+              - if index != 0
+                  td id='td_date'
+                    span class="game_date" id="game[#{index}].owner"
+                      = inning.home_runs
+          tr class="table-row project_row"
+            - whole_game.innings.each.with_index do |inning, index|
+              - if index != 0
+                  td id='td_date'
+                    span class="game_date" id="game[#{index}].owner"
+                      = inning.away_runs
     .row
      .col-md-12.blank-row
     - if games.any?
