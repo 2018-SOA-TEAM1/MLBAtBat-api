@@ -8,6 +8,7 @@ Sequel.migration do
       primary_key :id
       foreign_key :game_date, :schedules, key: :date
 
+      Integer     :game_pk
       String      :current_hitter_name
       String      :detailed_state
       String      :home_team_name

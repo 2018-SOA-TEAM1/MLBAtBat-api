@@ -8,6 +8,7 @@ module MLBAtBat
 
       attribute :id,                   Integer.optional
       attribute :date,                 Strict::Integer
+      attribute :game_pk,              Strict::Integer
       attribute :current_hitter_name,  Strict::String
       attribute :detailed_state,       Strict::String
       attribute :home_team_name,       Strict::String

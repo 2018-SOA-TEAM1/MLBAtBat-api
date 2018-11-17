@@ -29,6 +29,7 @@ module MLBAtBat
         Entity::LiveGame.new(
           id:                  db_record.id,
           date:                db_record.game_date,
+          game_pk:             db_record.game_pk,
           current_hitter_name: db_record.current_hitter_name,
           detailed_state:      db_record.detailed_state,
           home_team_name:      db_record.home_team_name,
