@@ -36,7 +36,9 @@
             tr class="table-row project_row"
               td id='td_date'
                 span class="game_date" id="game[#{index}].owner"
-                  = 0
+                  - puts index
+                  = whole_game.innings[index].home_runs
+                  / = 0
               td id='td_home_team'
                 span class="game_home_team" id="game[#{index}].name"
                   = game.home_team_name

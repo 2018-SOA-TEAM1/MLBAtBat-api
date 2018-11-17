@@ -10,6 +10,11 @@ module MLBAtBat
         end
       end
 
+      def self.first
+        db_game = Database::GameOrm.first
+        rebuild_entity(db_game)
+      end
+
       def self.find(date, team_name)
         date_split = date.split('/')
         temp_date = date_split[2] + date_split[0] + date_split[1]
