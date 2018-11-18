@@ -21,6 +21,10 @@
           value='submit' class="btn btn-success"
         } Show Game Info.
     .row
+      .col-md-12.blank-row.top-buffer.text-left.bottom-buffer
+        span class="title"
+          = "Line Score"
+    .row
      .col-md-12.blank-row
     - if games.any?
       table class="table table-hover" id="linescore"
@@ -70,6 +74,10 @@
               span class="errors"
                 = whole_game.away_errors
     .row
+      .col-md-12.blank-row.top-buffer.text-left.bottom-buffer
+        span class="title"
+          = "Searching Logs"
+    .row
      .col-md-12.blank-row
     - if games.any?
       table class="table table-hover" id="games_table"
@@ -90,6 +98,10 @@
               td id='td_away_team'
                 span class="gamee_away_team" id="game[#{index}].contributors"
                   = game.away_team_name
+    .row
+      .col-md-12.blank-row.top-buffer.text-left.bottom-buffer
+        span class="title"
+          = "Game Changing Events"
     .row
      .col-md-12.blank-row
     - if games.any?

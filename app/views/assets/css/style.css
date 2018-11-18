@@ -49,8 +49,21 @@ h1 {
                               horizontally inside the column */
 }
 
+.title {
+  font-weight: bolder;
+  font-size: 40px;
+}
+
 .top-buffer { 
   margin-top:20px; 
+}
+
+.text-left {
+  margin-left: 10px;
+}
+
+.bottom-buffer {
+  margin-bottom: 10px;
 }
 
 .text-right {
