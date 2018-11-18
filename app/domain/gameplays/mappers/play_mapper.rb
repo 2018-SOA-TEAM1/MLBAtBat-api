@@ -22,7 +22,7 @@ module MLBAtBat
           @play = play
         end
 
-        def build_entity()
+        def build_entity
           Entity::Play.new(
             atBatIndex: atBatIndex,
             inning_index: inning_index,
@@ -32,19 +32,19 @@ module MLBAtBat
           )
         end
 
-        def atBatIndex()
+        def atBatIndex
           @play['atBatIndex']
         end
 
-        def inning_index()
+        def inning_index
           @play['about']['inning']
         end
 
-        def description()
+        def description
           @play['result']['description']
         end
 
-        def home_run_boolean()
+        def home_run_boolean
           event = @play['result']['event']
           if event == 'Home Run'
             return true
@@ -53,7 +53,7 @@ module MLBAtBat
           end
         end
 
-        def event()
+        def event
           @play['result']['event']
         end
       end

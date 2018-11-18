@@ -11,9 +11,8 @@ module MLBAtBat
 
       attribute :atBatIndex,    Strict::Integer
       attribute :inning_index,  Strict::Integer
-      attribute :description,   Strict::String  
+      attribute :description,   Strict::String
       attribute :event,         Strict::String
-    
     end
   end
 end

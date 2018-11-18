@@ -90,3 +90,24 @@
               td id='td_away_team'
                 span class="gamee_away_team" id="game[#{index}].contributors"
                   = game.away_team_name
+    .row
+     .col-md-12.blank-row
+    - if games.any?
+      table class="table table-hover" id="game_changing_moments"
+        thead
+          tr
+            th Inning
+            th Event
+            th Description
+        tbody
+          - whole_game.gcms.each.with_index do |gcm, index|
+            tr class="table-row"
+              td id='td_inning'
+                span class="gcm_inning"
+                  = gcm.inning_index
+              td id='td_event'
+                span class="gcm_event"
+                  = gcm.description
+              td id='td_description'
+                span class="gcm_description"
+                  = gcm.event
