@@ -27,7 +27,7 @@
         thead
           tr
             th
-            - (1..9).each do |i|
+            - (1..whole_game.innings.length-1).each do |i|
               th #{i}
             th R
             th H
@@ -36,7 +36,7 @@
           tr class="table-row"
             td id='home_team_name'
               span class="team-name"
-                = "home team name"
+                = whole_game.home_team_name
             - whole_game.innings.each.with_index do |inning, index|
               - if index != 0
                   td id='td_score'
@@ -54,7 +54,7 @@
           tr class="table-row"
             td id='away_team_name'
               span class="team-name"
-                = "away team name"
+                = whole_game.away_team_name
             - whole_game.innings.each.with_index do |inning, index|
               - if index != 0
                   td id='td_score'
@@ -107,7 +107,7 @@
                   = gcm.inning_index
               td id='td_event'
                 span class="gcm_event"
-                  = gcm.description
+                  = gcm.event
               td id='td_description'
                 span class="gcm_description"
-                  = gcm.event
+                  = gcm.description

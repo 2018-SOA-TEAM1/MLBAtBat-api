@@ -18,15 +18,15 @@ module MLBAtBat
       # GET /
       routing.root do
         games = Repository::For.klass(Entity::LiveGame).all
-        if games.any? && @whole_game.nil?
+        if games.any? && $whole_game.nil?
           first_game = Repository::For.klass(Entity::LiveGame).first
           date = first_game.date.to_s
           date = (date[4...6] + '/' + date[6...8] + '/' + date[0...4])
           team_name = first_game.home_team_name
           game_pk = MLB::ScheduleMapper.new.get_gamepk(date, team_name)
-          @whole_game = Mapper::WholeGame.new.get_whole_game(game_pk)
+          $whole_game = Mapper::WholeGame.new.get_whole_game(game_pk)
         end
-        view 'home', locals: { games: games, whole_game: @whole_game }
+        view 'home', locals: { games: games, whole_game: $whole_game }
       end
 
       routing.on 'game_info' do
@@ -39,7 +39,7 @@ module MLBAtBat
  
             # build whole game
             game_pk = MLB::ScheduleMapper.new.get_gamepk(date, team_name)
-            @whole_game = Mapper::WholeGame.new.build_entity(game_pk)
+            $whole_game = Mapper::WholeGame.new.build_entity(game_pk)
             # Add schedule (and game) to database
             Repository::For.entity(game_info).create(game_info, team_name)
 
