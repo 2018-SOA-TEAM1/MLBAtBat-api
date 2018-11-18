@@ -29,6 +29,7 @@ module MLBAtBat
                         game_teams['home']['team']['name']]
           return game['gamePk'] if name_array.include? team_name
         end
+        nil
       end
 
       def build_entity(data)
