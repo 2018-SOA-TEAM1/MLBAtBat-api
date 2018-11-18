@@ -40,9 +40,10 @@ module MLBAtBat
             # build whole game
             game_pk = MLB::ScheduleMapper.new.get_gamepk(date, team_name)
             $whole_game = Mapper::WholeGame.new.build_entity(game_pk)
+
             # Add schedule (and game) to database
             Repository::For.entity(game_info).create(game_info, team_name)
-
+            
             date = date.split('/').join('_')
             team_name = team_name.split(' ').join('_')
             routing.redirect "game_info/#{date}/#{team_name}"
