@@ -37,6 +37,10 @@ describe 'Integration Tests of MLB API and Database' do
         ['home_team_status']['runs'])
       _(whole_game.away_runs).must_equal(CORRECT['live_games'][0] \
         ['away_team_status']['runs'])
+      _(whole_game.home_team_name).must_equal(CORRECT['live_games'][0] \
+        ['home_team_name'])
+      _(whole_game.away_team_name).must_equal(CORRECT['live_games'][0] \
+        ['away_team_name'])
     end
   end
 end

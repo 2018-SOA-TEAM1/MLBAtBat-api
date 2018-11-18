@@ -46,6 +46,8 @@ module MLBAtBat
             away_runs: away_runs,
             away_hits: away_hits,
             away_errors: away_errors,
+            home_team_name: home_team_name,
+            away_team_name: away_team_name,
             # players: players,
             gcms: gcms
           )
@@ -85,6 +87,14 @@ module MLBAtBat
 
         def away_errors
           @live_data['linescore']['teams']['away']['errors']
+        end
+
+        def home_team_name
+          @data['gameData']['teams']['home']['name']
+        end
+
+        def away_team_name
+          @data['gameData']['teams']['away']['name']
         end
       end
     end

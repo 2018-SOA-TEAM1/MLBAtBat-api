@@ -22,6 +22,9 @@ module MLBAtBat
       attribute :away_runs,              Strict::Integer
       attribute :away_hits,              Strict::Integer
       attribute :away_errors,            Strict::Integer
+      attribute :home_team_name,         Strict::String
+      attribute :away_team_name,         Strict::String
+
     end
   end
 end
