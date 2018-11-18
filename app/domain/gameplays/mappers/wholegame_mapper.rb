@@ -27,32 +27,75 @@ module MLBAtBat
         def initialize(data, game_pk)
           @data = data
           @game_pk = game_pk
-          @inning_mapper = Inning.new()
-          @player_mapper = Player.new()
-          @gcm_mapper = GameChangingMoment.new()
+          all_plays = data['liveData']['plays']['allPlays']
+          live_data = data['liveData']
+          @all_plays = all_plays
+          @live_data = live_data
+          @inning_mapper = Inning.new(all_plays, live_data)
+          @player_mapper = Player.new
+          @gcm_mapper = GameChangingMoment.new
         end
 
         def build_entity
           Entity::WholeGame.new(
             game_pk: @game_pk,
             innings: innings,
+            home_runs: home_runs,
+            home_hits: home_hits,
+            home_errors: home_errors,
+            away_runs: away_runs,
+            away_hits: away_hits,
+            away_errors: away_errors,
+            home_team_name: home_team_name,
+            away_team_name: away_team_name,
             # players: players,
-            # gcms: gcms
+            gcms: gcms
           )
         end
 
         def innings
-          @inning_mapper.get_innings(@data['liveData']['plays']['allPlays'])
+          @inning_mapper.innings
         end
 
         # def players
         #   @player_mapper.get_players(@data['gameData'])
         # end
 
-        # def gcms
-        #   @gcm_mapper.get_gcms(@data['liveData']['plays']['allPlays'])
-        # end
-      
+        def gcms
+          @gcm_mapper.get_gcms(innings)
+        end
+
+        def home_runs
+          @live_data['linescore']['teams']['home']['runs']
+        end
+
+        def home_hits
+          @live_data['linescore']['teams']['home']['hits']
+        end
+
+        def home_errors
+          @live_data['linescore']['teams']['home']['errors']
+        end
+
+        def away_runs
+          @live_data['linescore']['teams']['away']['runs']
+        end
+
+        def away_hits
+          @live_data['linescore']['teams']['away']['hits']
+        end
+
+        def away_errors
+          @live_data['linescore']['teams']['away']['errors']
+        end
+
+        def home_team_name
+          @data['gameData']['teams']['home']['name']
+        end
+
+        def away_team_name
+          @data['gameData']['teams']['away']['name']
+        end
       end
     end
   end

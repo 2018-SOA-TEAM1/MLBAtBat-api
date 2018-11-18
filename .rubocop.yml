@@ -32,3 +32,8 @@ Style/SymbolArray:
 Layout/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented
+
+Style/GlobalVars:
+  Enabled: true
+  Exclude: 
+    - app/controllers/app.rb

@@ -9,7 +9,11 @@ module MLBAtBat
     class Play < Dry::Struct
       include Dry::Types.module
 
-      attribute :atBatIndex,  Strict::Integer    
+      attribute :atBatIndex,       Strict::Integer    
+      attribute :inning_index,     Strict::Integer
+      attribute :description,      Strict::String 
+      attribute :home_run_boolean, Strict::Bool
+      attribute :event,            Strict::String
     
     end
   end

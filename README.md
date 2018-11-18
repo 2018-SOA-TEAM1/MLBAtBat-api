@@ -1,10 +1,10 @@
 # Architecture (2018.11.11 update)
 #### wholegame_mapper (root mapper)
-- innings_mapper -> inning_mapper -> plays_mapper -> play_mapper
-- players_mapper -> player_mapper
+- inning_mapper -> play_mapper
+- player_mapper
 - game_changing_moments_mapper (game changing moments)
 #### wholegame (root)
-- innings -> inning -> plays -> play
+- inning -> play
 - players -> player
 - game_changing_mements
 

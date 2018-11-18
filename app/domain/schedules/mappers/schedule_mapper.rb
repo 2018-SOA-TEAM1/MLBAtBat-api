@@ -18,16 +18,16 @@ module MLBAtBat
 
       def get_gamepk(game_date, team_name)
         data = @gateway.schedule(1, game_date)
-        games = data["dates"][0]["games"]
+        games = data['dates'][0]['games']
         search_pk(games, team_name)
       end
 
       def search_pk(games, team_name)
         games.each do |game|
-          game_teams = game["teams"]
-          name_array = [game_teams['away']['team']['name'], \
-          game_teams['home']['team']['name']]
-         return game["gamePk"] if name_array.include? team_name
+          game_teams = game['teams']
+          name_array = [game_teams['away']['team']['name'],
+                        game_teams['home']['team']['name']]
+          return game['gamePk'] if name_array.include? team_name
         end
       end
 

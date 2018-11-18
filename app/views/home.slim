@@ -2,14 +2,14 @@
   form role="form" action="/game_info" method='POST' id='show-gmae-info'
     .row.vertical-align.query-bar
       .col-md-5.col-sm-5
-        .text-right Game Date:
+        .text-right Game Date
         input {
           type='text' name='game_date'
           id='game_date_input' class="form-control"
-          placeholder="e.g. 07/17/2018"
+          placeholder="e.g. 07/10/2018"
         }
       .col-md-5.col-sm-5
-        .text-right Team Name:
+        .text-right Team Name
         input {
           type='text' name='team_name'
           id='team_name_input' class="form-control"
@@ -21,23 +21,105 @@
           value='submit' class="btn btn-success"
         } Show Game Info.
     .row
+      .col-md-12.blank-row.top-buffer.text-left.bottom-buffer
+        span class="title"
+          = "Line Score"
+    .row
      .col-md-12.blank-row
     - if games.any?
-        table class="table table-hover" id="games_table"
-          thead
-            tr
-              th Date
-              th Home Team
-              th Away Team
-          tbody
-            - games.each.with_index do |game, index|
-              tr class="table-row project_row"
-                td id='td_date'
-                  span class="game_date" id="game[#{index}].owner"
-                    = game.date
-                td id='td_home_team'
-                  span class="game_home_team" id="game[#{index}].name"
-                    = game.home_team_name
-                td id='td_away_team'
-                  span class="gamee_away_team" id="game[#{index}].contributors"
-                    = game.away_team_name
+      table class="table table-hover" id="linescore"
+        thead
+          tr
+            th
+            - (1..whole_game.innings.length-1).each do |i|
+              th #{i}
+            th R
+            th H
+            th E
+        tbody
+          tr class="table-row"
+            td id='home_team_name'
+              span class="team-name"
+                = whole_game.home_team_name
+            - whole_game.innings.each.with_index do |inning, index|
+              - if index != 0
+                  td id='td_score'
+                    span class="score" id="inning[#{index}].score"
+                      = inning.home_runs
+            td id='home_team_runs'
+              span class="runs"
+                = whole_game.home_runs
+            td id='home_team_hits'
+              span class="hits"
+                = whole_game.home_hits
+            td id='home_team_errors'
+              span class="errors"
+                = whole_game.home_errors
+          tr class="table-row"
+            td id='away_team_name'
+              span class="team-name"
+                = whole_game.away_team_name
+            - whole_game.innings.each.with_index do |inning, index|
+              - if index != 0
+                  td id='td_score'
+                    span class="score" id="inning[#{index}].score"
+                      = inning.away_runs
+            td id='away_team_runs'
+              span class="runs"
+                = whole_game.away_runs
+            td id='away_team_hits'
+              span class="hits"
+                = whole_game.away_hits
+            td id='away_team_errors'
+              span class="errors"
+                = whole_game.away_errors
+    .row
+      .col-md-12.blank-row.top-buffer.text-left.bottom-buffer
+        span class="title"
+          = "Searching Logs"
+    .row
+     .col-md-12.blank-row
+    - if games.any?
+      table class="table table-hover" id="games_table"
+        thead
+          tr
+            th Date
+            th Home Team
+            th Away Team
+        tbody
+          - games.each.with_index do |game, index|
+            tr class="table-row"
+              td id='td_date'
+                span class="game_date" id="game[#{index}].owner"
+                  = game.date
+              td id='td_home_team'
+                span class="game_home_team" id="game[#{index}].name"
+                  = game.home_team_name
+              td id='td_away_team'
+                span class="gamee_away_team" id="game[#{index}].contributors"
+                  = game.away_team_name
+    .row
+      .col-md-12.blank-row.top-buffer.text-left.bottom-buffer
+        span class="title"
+          = "Game Changing Events"
+    .row
+     .col-md-12.blank-row
+    - if games.any?
+      table class="table table-hover" id="game_changing_moments"
+        thead
+          tr
+            th Inning
+            th Event
+            th Description
+        tbody
+          - whole_game.gcms.each.with_index do |gcm, index|
+            tr class="table-row"
+              td id='td_inning'
+                span class="gcm_inning"
+                  = gcm.inning_index
+              td id='td_event'
+                span class="gcm_event"
+                  = gcm.event
+              td id='td_description'
+                span class="gcm_description"
+                  = gcm.description

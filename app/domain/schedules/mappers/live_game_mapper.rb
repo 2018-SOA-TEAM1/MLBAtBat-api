@@ -38,6 +38,7 @@ module MLBAtBat
           Entity::LiveGame.new(
             id: nil,
             date: date,
+            game_pk: game_pk,
             current_hitter_name: current_hitter_name,
             detailed_state: detailed_state,
             home_team_name: home_team_name,
@@ -54,6 +55,10 @@ module MLBAtBat
         def date
           @data['gameData']['datetime']['originalDate'] \
             .split('-').join('').to_i
+        end
+
+        def game_pk
+          @data['gamePk']
         end
 
         def current_hitter_name

@@ -10,6 +10,11 @@ module MLBAtBat
         end
       end
 
+      def self.first
+        db_game = Database::GameOrm.first
+        rebuild_entity(db_game)
+      end
+
       def self.find(date, team_name)
         date_split = date.split('/')
         temp_date = date_split[2] + date_split[0] + date_split[1]
@@ -29,6 +34,7 @@ module MLBAtBat
         Entity::LiveGame.new(
           id:                  db_record.id,
           date:                db_record.game_date,
+          game_pk:             db_record.game_pk,
           current_hitter_name: db_record.current_hitter_name,
           detailed_state:      db_record.detailed_state,
           home_team_name:      db_record.home_team_name,
