@@ -23,27 +23,52 @@
     .row
      .col-md-12.blank-row
     - if games.any?
-      table class="table table-hover" id="games_table"
+      table class="table table-hover" id="linescore"
         thead
           tr
+            th
             - (1..9).each do |i|
               th #{i}
             th R
             th H
             th E
         tbody
-          tr class="table-row project_row"
+          tr class="table-row"
+            td id='home_team_name'
+              span class="team-name"
+                = "home team name"
             - whole_game.innings.each.with_index do |inning, index|
               - if index != 0
-                  td id='td_date'
-                    span class="game_date" id="game[#{index}].owner"
+                  td id='td_score'
+                    span class="score" id="inning[#{index}].score"
                       = inning.home_runs
-          tr class="table-row project_row"
+            td id='home_team_runs'
+              span class="runs"
+                = whole_game.home_runs
+            td id='home_team_hits'
+              span class="hits"
+                = whole_game.home_hits
+            td id='home_team_errors'
+              span class="errors"
+                = whole_game.home_errors
+          tr class="table-row"
+            td id='away_team_name'
+              span class="team-name"
+                = "away team name"
             - whole_game.innings.each.with_index do |inning, index|
               - if index != 0
-                  td id='td_date'
-                    span class="game_date" id="game[#{index}].owner"
+                  td id='td_score'
+                    span class="score" id="inning[#{index}].score"
                       = inning.away_runs
+            td id='away_team_runs'
+              span class="runs"
+                = whole_game.away_runs
+            td id='away_team_hits'
+              span class="hits"
+                = whole_game.away_hits
+            td id='away_team_errors'
+              span class="errors"
+                = whole_game.away_errors
     .row
      .col-md-12.blank-row
     - if games.any?
@@ -55,7 +80,7 @@
             th Away Team
         tbody
           - games.each.with_index do |game, index|
-            tr class="table-row project_row"
+            tr class="table-row"
               td id='td_date'
                 span class="game_date" id="game[#{index}].owner"
                   = game.date

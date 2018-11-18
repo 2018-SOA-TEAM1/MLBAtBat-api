@@ -10,6 +10,10 @@ h1 {
   cursor: pointer;
 }
 
+.team-name {
+  font-weight: bold
+}
+
 .posting.body {
   font-size: 1.2em;
 }
@@ -20,10 +24,6 @@ h1 {
 
 .project.detail {
   color: grey;
-}
-
-.game_info.subtitle {
-
 }
 
 .game_info.title {
