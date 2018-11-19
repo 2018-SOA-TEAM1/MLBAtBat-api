@@ -79,6 +79,10 @@ h1 {
   padding: 5px 5px 5px 5px;
 }
 
+.btn {
+  background-color: rgb(180, 174, 174);
+}
+
 footer {
   padding: 0.5in;
   font-size:12px;

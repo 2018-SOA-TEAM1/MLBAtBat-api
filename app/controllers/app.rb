@@ -9,7 +9,8 @@ module MLBAtBat
   class App < Roda
     # plugins
     plugin :render, engine: 'slim', views: 'app/views'
-    plugin :assets, css: 'style.css', path: 'app/views/assets'
+    plugin :assets, path: 'app/views/assets',
+                    css: 'style.css', js: 'datepicker.js'
     plugin :halt
 
     route do |routing|
@@ -36,14 +37,14 @@ module MLBAtBat
             date = routing.params['game_date']
             team_name = routing.params['team_name']
             game_info = MLB::ScheduleMapper.new.get_schedule(1, date)
- 
+
             # build whole game
             game_pk = MLB::ScheduleMapper.new.get_gamepk(date, team_name)
             $whole_game = Mapper::WholeGame.new.build_entity(game_pk)
 
             # Add schedule (and game) to database
             Repository::For.entity(game_info).create(game_info, team_name)
-            
+
             date = date.split('/').join('_')
             team_name = team_name.split(' ').join('_')
             routing.redirect "game_info/#{date}/#{team_name}"
