@@ -2,16 +2,22 @@
 
 require 'roda'
 require 'slim'
+require 'slim/include'
 require 'pry'
+require 'date'
 
 module MLBAtBat
   # Web App
   class App < Roda
     # plugins
+    plugin :halt
+    plugin :flash
+    plugin :all_verbs
     plugin :render, engine: 'slim', views: 'app/views'
     plugin :assets, path: 'app/views/assets',
                     css: 'style.css', js: 'datepicker.js'
-    plugin :halt
+
+    use Rack::MethodOverride
 
     route do |routing|
       routing.assets # load CSS
@@ -27,7 +33,12 @@ module MLBAtBat
           game_pk = MLB::ScheduleMapper.new.get_gamepk(date, team_name)
           $whole_game = Mapper::WholeGame.new.get_whole_game(game_pk)
         end
-        view 'home', locals: { games: games, whole_game: $whole_game }
+        if valid_date?(routing.cookies['date'])
+          date = routing.cookies['date']
+          team_name = MLB::ScheduleMapper.new.get_team_name(date)
+        end
+        view 'home', locals: { games: games, whole_game: $whole_game,
+                               team_name: team_name }
       end
 
       routing.on 'game_info' do
@@ -62,6 +73,12 @@ module MLBAtBat
           end
         end
       end
+    end
+
+    def valid_date?(str, format = '%m/%d/%Y')
+      Date.strptime(str, format)
+    rescue StandardError
+      false
     end
   end
 end
