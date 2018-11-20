@@ -1,7 +1,7 @@
 # frozen_string_literal: false
 
 source 'https://rubygems.org'
-ruby '2.5.1'
+ruby '2.5.3'
 
 # Web application related
 gem 'econfig', '~> 2.1'
@@ -24,6 +24,10 @@ gem 'sequel'
 group :development, :test do
   gem 'database_cleaner'
   gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg', '~> 0.18'
 end
 
 # Debugging
