@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'spec_helper.rb'
+require_relative 'helpers/spec_helper.rb'
 require_relative 'helpers/vcr_helper.rb'
 require_relative 'helpers/database_helper.rb'
 
@@ -44,10 +44,6 @@ describe 'Integration Tests of MLB API and Database' do
       _(rebuilt_game.detailed_state).must_equal(game.detailed_state)
       _(rebuilt_game.home_team_runs).must_equal(game.home_team_runs)
       _(rebuilt_game.game_pk).must_equal(game.game_pk)
-
     end
   end
-
-
-
 end

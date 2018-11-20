@@ -17,6 +17,12 @@ Rake::TestTask.new(:spec) do |t|
   t.warning = false
 end
 
+desc 'Run acceptance tests'
+task :spec_accept do
+  puts 'NOTE: run `rake run:test` in another process'
+  sh 'ruby spec/acceptance_spec_.rb'
+end
+
 desc 'Clean db and rerun server'
 task :web do
   sh 'clear'
