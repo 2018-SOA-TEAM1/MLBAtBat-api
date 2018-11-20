@@ -2,18 +2,22 @@
 
 require 'roda'
 require 'slim'
-require 'pry'
 require 'slim/include'
+require 'pry'
+require 'date'
 
 module MLBAtBat
   # Web App
   class App < Roda
     # plugins
-    plugin :render, engine: 'slim', views: 'app/presentation/views'
-    plugin :assets, css: 'style.css', path: 'app/presentation/assets'
     plugin :halt
     plugin :flash
     plugin :all_verbs
+    plugin :render, engine: 'slim', views: 'app/presentation/views'
+    plugin :assets, path: 'app/presentation/assets',
+                    css: 'style.css', js: 'datepicker.js'
+
+    use Rack::MethodOverride
 
     route do |routing|
       routing.assets # load CSS
@@ -39,6 +43,10 @@ module MLBAtBat
             game_pk = MLB::ScheduleMapper.new.get_gamepk(date, team_name)
             $whole_game = Mapper::WholeGame.new.get_whole_game(game_pk)
           end
+          if valid_date?(routing.cookies['date'])
+            date = routing.cookies['date']
+            team_name = MLB::ScheduleMapper.new.get_team_name(date)
+          end
         rescue StandardError
           flash[:error] = 'Having trouble getting game from db'
           routing.redirect '/'
@@ -47,7 +55,7 @@ module MLBAtBat
         # show particular game information in homepage
         viewable_games = Views::GamesList.new(games)
         games.any? && viewable_whole_game = Views::WholeGame.new($whole_game)
-        view 'home', locals: { games: viewable_games,
+        view 'home', locals: { games: viewable_games, team_name: team_name,
                                whole_game: viewable_whole_game }
       end
 
@@ -62,19 +70,21 @@ module MLBAtBat
             begin
               game_info = MLB::ScheduleMapper.new.get_schedule(1, date)
             rescue StandardError
-              flash[:error] = 'Can not get schedule from ScheduleMapper (through api).'
+              flash[:error] = 'Can not get schedule from ScheduleMapper 
+                (through api).'
               routing.redirect '/'
             end
 
-            # get game_pk from mapper 
+            # get game_pk from mapper
             begin
               game_pk = MLB::ScheduleMapper.new.get_gamepk(date, team_name)
               if game_pk.nil?
-                flash[:error] = 'Can not find game in searched date.'
+                flash[:error] = 'Can not find game in
+                  given search date and team name.'
                 routing.redirect '/'
               end
             rescue StandardError
-              flash[:error] = 'Can not get game_pk from ScheduleMapper mapper 
+              flash[:error] = 'Can not get game_pk from ScheduleMapper mapper
                 (through api).'
               routing.redirect '/'
             end
@@ -83,7 +93,7 @@ module MLBAtBat
             begin
               $whole_game = Mapper::WholeGame.new.build_entity(game_pk)
             rescue StandardError
-              flash[:error] = 'Can not get wholegame from WholeGame mapper.' 
+              flash[:error] = 'Can not get wholegame from WholeGame mapper.'
               routing.redirect '/'
             end
 
@@ -123,6 +133,12 @@ module MLBAtBat
           end
         end
       end
+    end
+
+    def valid_date?(str, format = '%m/%d/%Y')
+      Date.strptime(str, format)
+    rescue StandardError
+      false
     end
   end
 end

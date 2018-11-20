@@ -16,6 +16,18 @@ module MLBAtBat
         build_entity(data)
       end
 
+      def get_team_name(date)
+        data = @gateway.schedule(1, date)
+        games = data['dates'][0]['games']
+        team_name = []
+        games.each do |game|
+          game_teams = game['teams']
+          team_name << game_teams['home']['team']['name']
+          team_name << game_teams['away']['team']['name']
+        end
+        team_name
+      end
+
       def get_gamepk(game_date, team_name)
         data = @gateway.schedule(1, game_date)
         games = data['dates'][0]['games']

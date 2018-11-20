@@ -26,7 +26,7 @@ describe 'Integration Tests of MLB API and Database' do
         .new
         .get_schedule(SPORT_ID, GAME_DATE)
       rebuilt = MLBAtBat::Repository::For.entity(schedule).create(schedule)
- 
+
       _(rebuilt.date).must_equal(schedule.date)
       _(rebuilt.total_games).must_equal(schedule.total_games)
     end
@@ -37,7 +37,8 @@ describe 'Integration Tests of MLB API and Database' do
         .get_schedule(SPORT_ID, GAME_DATE)
       game = schedule.find_team_name(SEARCH_TEAM_NAME)
 
-      rebuilt_schedule = MLBAtBat::Repository::For.entity(schedule).create(schedule)
+      rebuilt_schedule = MLBAtBat::Repository::For.entity(schedule)
+        .create(schedule)
       rebuilt_game = rebuilt_schedule.find_team_name(SEARCH_TEAM_NAME)
 
       _(rebuilt_game.date).must_equal(game.date)
