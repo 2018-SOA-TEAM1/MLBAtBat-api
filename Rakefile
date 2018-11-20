@@ -60,7 +60,6 @@ namespace :db do
   task :config do
     require 'sequel'
     require_relative 'config/environment.rb' # load config info
-    require_relative 'spec/helpers/database_helper.rb'
     # rubocop:disable SingleLineMethods
     def app; MLBAtBat::App; end
     # rubocop:enable  SingleLineMethods
