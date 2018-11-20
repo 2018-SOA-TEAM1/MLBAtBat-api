@@ -43,8 +43,12 @@ module MLBAtBat
           flash[:error] = 'Having trouble getting game from db'
           routing.redirect '/'
         end
+
         # show particular game information in homepage
-        view 'home', locals: { games: games, whole_game: $whole_game }
+        viewable_games = Views::GamesList.new(games)
+        games.any? && viewable_whole_game = Views::WholeGame.new($whole_game)
+        view 'home', locals: { games: viewable_games,
+                               whole_game: viewable_whole_game }
       end
 
       routing.on 'game_info' do
@@ -109,12 +113,13 @@ module MLBAtBat
                 .find(date, team_name)
             rescue StandardError
               flash[:error] = 'Can not get game from db using date
-                and team_name.' 
+                and team_name.'
               routing.redirect '/'
             end
 
+            viewable_game_info = Views::GameInfo.new(game_info)
             # show game information which is from db
-            view 'game_info', locals: { game_info: game_info }
+            view 'game_info', locals: { game_info: viewable_game_info }
           end
         end
       end

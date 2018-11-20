@@ -31,7 +31,7 @@
         thead
           tr
             th
-            - (1..whole_game.innings.length-1).each do |i|
+            - (1..whole_game.innings_num).each do |i|
               th #{i}
             th R
             th H
@@ -41,10 +41,10 @@
             td id='home_team_name'
               span class="team-name"
                 = whole_game.home_team_name
-            - whole_game.innings.each.with_index do |inning, index|
-              - if index != 0
-                  td id='td_score'
-                    span class="score" id="inning[#{index}].score"
+            - whole_game.each_inning do |inning|
+              - if inning.index != 0
+                  td id='td_home_score'
+                    span class="score" id="#{inning.index_str}.home_score"
                       = inning.home_runs
             td id='home_team_runs'
               span class="runs"
@@ -59,10 +59,10 @@
             td id='away_team_name'
               span class="team-name"
                 = whole_game.away_team_name
-            - whole_game.innings.each.with_index do |inning, index|
-              - if index != 0
-                  td id='td_score'
-                    span class="score" id="inning[#{index}].score"
+            - whole_game.each_inning do |inning|
+              - if inning.index != 0
+                  td id='td_away_score'
+                    span class="score" id="#{inning.index_str}.away_score"
                       = inning.away_runs
             td id='away_team_runs'
               span class="runs"
@@ -87,16 +87,16 @@
             th Home Team
             th Away Team
         tbody
-          - games.each.with_index do |game, index|
+          - games.each do |game|
             tr class="table-row"
               td id='td_date'
-                span class="game_date" id="game[#{index}].owner"
+                span class="game_date" id="#{game.index_str}.owner"
                   = game.date
               td id='td_home_team'
-                span class="game_home_team" id="game[#{index}].name"
+                span class="game_home_team" id="#{game.index_str}.name"
                   = game.home_team_name
               td id='td_away_team'
-                span class="gamee_away_team" id="game[#{index}].contributors"
+                span class="gamee_away_team" id="#{game.index_str}.contributors"
                   = game.away_team_name
     .row
       .col-md-12.blank-row.top-buffer.text-left.bottom-buffer
@@ -112,7 +112,7 @@
             th Event
             th Description
         tbody
-          - whole_game.gcms.each.with_index do |gcm, index|
+          - whole_game.each_gcm do |gcm|
             tr class="table-row"
               td id='td_inning'
                 span class="gcm_inning"
