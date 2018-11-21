@@ -1,0 +1,3 @@
+en:
+  errors:
+    date: 'Invalid date. Please follow mm/dd/yyyy'

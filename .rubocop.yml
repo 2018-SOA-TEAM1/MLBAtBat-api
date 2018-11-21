@@ -36,4 +36,4 @@ Layout/MultilineMethodCallIndentation:
 Style/GlobalVars:
   Enabled: true
   Exclude: 
-    - app/controllers/app.rb
+    - app/application/controllers/app.rb
