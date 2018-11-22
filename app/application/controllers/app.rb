@@ -52,7 +52,7 @@ module MLBAtBat
             date_request = Forms::DateRequest.call(routing.params)
 
             input = { date: date_request, team_name: team_name }
-            search_game = Service::FindGame.new.call(input)
+            search_game = Service::SearchGame.new.call(input)
             if search_game.failure?
               flash[:error] = search_game.failure
               routing.redirect '/'
@@ -72,14 +72,12 @@ module MLBAtBat
             team_name = team_name.split('_').join(' ')
 
             # find particular game from db
-            begin
-              game_info = Repository::For.klass(Entity::LiveGame)
-                .find(date, team_name)
-            rescue StandardError
-              flash[:error] = 'Can not get game from db using date
-                and team_name.'
+            find_game = Service::FindGame.new.call(date, team_name)
+            if find_game.failure?
+              flash[:error] = find_game.failure
               routing.redirect '/'
             end
+            game_info = find_game.value!
 
             viewable_game_info = Views::GameInfo.new(game_info)
             # show game information which is from db
