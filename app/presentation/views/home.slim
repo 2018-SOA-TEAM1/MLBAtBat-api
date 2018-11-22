@@ -40,20 +40,20 @@
       table class="table table-hover" id="linescore"
         thead
           tr
-            th
+            th id="linescore_score"
             - (1..whole_game.innings_num).each do |i|
-              th #{i}
+              th.inning.index #{i} 
             th R
             th H
             th E
         tbody
-          tr class="table-row"
+          tr class="table-row" id='home_linescore'
             td id='home_team_name'
               span class="team-name"
                 = whole_game.home_team_name
             - whole_game.each_inning do |inning|
               - if inning.index != 0
-                  td id='td_home_score'
+                  td.home.score
                     span class="score" id="#{inning.index_str}.home_score"
                       = inning.home_runs
             td id='home_team_runs'
@@ -71,7 +71,7 @@
                 = whole_game.away_team_name
             - whole_game.each_inning do |inning|
               - if inning.index != 0
-                  td id='td_away_score'
+                  td.away.score
                     span class="score" id="#{inning.index_str}.away_score"
                       = inning.away_runs
             td id='away_team_runs'
@@ -124,12 +124,12 @@
         tbody
           - whole_game.each_gcm do |gcm|
             tr class="table-row"
-              td id='td_inning'
+              td.td_inning
                 span class="gcm_inning"
                   = gcm.inning_index
-              td id='td_event'
+              td.td_event
                 span class="gcm_event"
                   = gcm.event
-              td id='td_description'
+              td.td_description
                 span class="gcm_description"
                   = gcm.description

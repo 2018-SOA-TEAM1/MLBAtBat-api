@@ -59,8 +59,21 @@ describe 'Acceptance Tests' do
         _(@browser.table(id: 'linescore').present?).must_equal true
         _(@browser.table(id: 'games_table').present?).must_equal true
         _(@browser.table(id: 'game_changing_moments').present?).must_equal true
+
+        # THEN: user should see correct # of innings' scores
+        home_score_cols = @browser.table(id: 'linescore').tr(id: 'home_linescore')
+          .tds.select do |col|
+          col.class_name == 'home score'
+        end
+        _(home_score_cols.count).must_equal 9
+
+        # THEN: user should see correct # of innings' score
+        gcm_cols = @browser.table(id: 'game_changing_moments').trs
+          .select do |col|
+          col.td(class: %w[td_inning]).present?
+        end
+        _(gcm_cols.count).must_equal 3
       end
     end
-
   end
 end
