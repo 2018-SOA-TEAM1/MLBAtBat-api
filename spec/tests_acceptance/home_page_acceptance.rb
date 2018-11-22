@@ -1,12 +1,11 @@
 # frozen_string_literal: true
 
-require_relative '../helpers/spec_helper.rb'
-require_relative '../helpers/database_helper.rb'
-require_relative '../helpers/vcr_helper.rb'
-require 'headless'
-require 'watir'
+require_relative '../helpers/acceptance_helper.rb'
+require_relative 'pages/home_page.rb'
 
 describe 'Acceptance Tests' do
+  include PageObject::PageFactory
+
   DatabaseHelper.setup_database_cleaner
 
   before do
@@ -24,55 +23,42 @@ describe 'Acceptance Tests' do
     describe 'Visit Homepage' do
       it '(HAPPY) should not see game information if none created' do
         # GIVEN: user is on the home page without any games
-        @browser.goto homepage
+        visit HomePage do |page|
+          _(page.title_heading).must_equal 'MLBAtBat'
+          _(page.date_input_element.present?).must_equal true
+          _(page.team_name_input_element.present?).must_equal true
+          _(page.search_button_element.present?).must_equal true
+          _(page.linescore_table_element.exists?).must_equal false
 
-        # THEN: user should see basic headers, no projects and a welcome message
-        _(@browser.h1(id: 'main_header').text).must_equal 'MLBAtBat'
-        _(@browser.text_field(id: 'datepicker').present?).must_equal true
-        _(@browser.text_field(id: 'team_name_input').present?).must_equal true
-        _(@browser.button(id: 'game_date_submit').present?).must_equal true
-        _(@browser.table(id: 'linescore').exists?).must_equal false
-
-        _(@browser.div(id: 'flash_bar_success').present?).must_equal true
-        _(@browser.div(id: 'flash_bar_success').text.downcase) \
-          .must_include 'started'
+          _(page.notice_message_element.present?).must_equal true
+          _(page.notice_message.downcase).must_include 'started'
+        end
       end
     end
 
     describe 'Add particular game' do
       it '(HAPPY) should see tables after search in subpage' do
-        # GIVEN: user is on the home page without any games
-        @browser.goto homepage
-
-        # WHEN: they add a project URL and submit
-        @browser.text_field(id: 'datepicker').set(GAME_DATE)
-        @browser.text_field(id: 'team_name_input').set(SEARCH_TEAM_NAME)
-        @browser.button(id: 'game_date_submit').click
+        visit HomePage do |page|
+          good_date = GAME_DATE
+          good_team_name = SEARCH_TEAM_NAME
+          page.search_new_game(good_date, good_team_name)
+        end
 
         # WHEN: back to homepage
         Watir::Wait.until do
           @browser.h2(class: 'h2_title').present?
         end
-        @browser.goto homepage
+        visit HomePage do |page|
+          _(page.linescore_table_element.exists?).must_equal true
+          _(page.games_table_element.exists?).must_equal true
+          _(page.gcms_table_element.exists?).must_equal true
 
-        _(@browser.text_field(id: 'datepicker').present?).must_equal true
-        _(@browser.table(id: 'linescore').present?).must_equal true
-        _(@browser.table(id: 'games_table').present?).must_equal true
-        _(@browser.table(id: 'game_changing_moments').present?).must_equal true
+          # THEN: user should see correct # of innings' scores
+          _(page.home_scores.count).must_equal 9
 
-        # THEN: user should see correct # of innings' scores
-        home_score_cols = @browser.table(id: 'linescore').tr(id: 'home_linescore')
-          .tds.select do |col|
-          col.class_name == 'home score'
+          # THEN: user should see correct # of gcms
+          _(page.gcms.count).must_equal 3
         end
-        _(home_score_cols.count).must_equal 9
-
-        # THEN: user should see correct # of innings' score
-        gcm_cols = @browser.table(id: 'game_changing_moments').trs
-          .select do |col|
-          col.td(class: %w[td_inning]).present?
-        end
-        _(gcm_cols.count).must_equal 3
       end
     end
   end
