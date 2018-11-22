@@ -28,7 +28,7 @@ describe 'Acceptance Tests' do
 
         # THEN: user should see basic headers, no projects and a welcome message
         _(@browser.h1(id: 'main_header').text).must_equal 'MLBAtBat'
-        _(@browser.text_field(id: 'game_date_input').present?).must_equal true
+        _(@browser.text_field(id: 'datepicker').present?).must_equal true
         _(@browser.text_field(id: 'team_name_input').present?).must_equal true
         _(@browser.button(id: 'game_date_submit').present?).must_equal true
         _(@browser.table(id: 'linescore').exists?).must_equal false
@@ -45,7 +45,7 @@ describe 'Acceptance Tests' do
         @browser.goto homepage
 
         # WHEN: they add a project URL and submit
-        @browser.text_field(id: 'game_date_input').set(GAME_DATE)
+        @browser.text_field(id: 'datepicker').set(GAME_DATE)
         @browser.text_field(id: 'team_name_input').set(SEARCH_TEAM_NAME)
         @browser.button(id: 'game_date_submit').click
 
@@ -55,11 +55,12 @@ describe 'Acceptance Tests' do
         end
         @browser.goto homepage
 
-        _(@browser.text_field(id: 'game_date_input').present?).must_equal true
+        _(@browser.text_field(id: 'datepicker').present?).must_equal true
         _(@browser.table(id: 'linescore').present?).must_equal true
         _(@browser.table(id: 'games_table').present?).must_equal true
         _(@browser.table(id: 'game_changing_moments').present?).must_equal true
       end
     end
+
   end
 end
