@@ -1,6 +1,6 @@
 # MLBAtBat Web API ![Build Status](https://travis-ci.org/ISS-SOA/codepraise-api.svg?branch=master)
 
-Web API that allowsGithub *projects* to be *appraised* for inidividual *contributions* by *members* of a team.
+Web API that allows MLB game information to be got and stored.
 
 ## Routes
 

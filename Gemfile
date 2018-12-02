@@ -4,6 +4,10 @@ source 'https://rubygems.org'
 ruby '2.5.1'
 
 # PRESENTATION LAYER
+gem 'multi_json'
+gem 'roar'
+
+# PRESENTATION LAYER
 gem 'slim', '~> 3.0'
 
 # APPLICATION LAYER
