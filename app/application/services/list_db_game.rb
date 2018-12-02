@@ -9,13 +9,19 @@ module MLBAtBat
     class ListDbGame
       include Dry::Monads::Result::Mixin
 
+      DB_ERR_MSG = 'Having trouble accessing the database'
+
       def whole_game
         game_pk = gamepk
         whole_game = Mapper::WholeGame.new.get_whole_game(game_pk)
 
-        Success(whole_game)
+        Success(Value::Result.new(status: :ok, message: whole_game))
       rescue StandardError
-        Failure('Could not access database')
+        Failure(
+          Value::Result.new(
+            status: :internal_error, 
+            message: DB_ERR_MSG)
+        )
       end
 
       def gamepk

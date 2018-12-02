@@ -13,7 +13,6 @@ module MLBAtBat
       attribute :plays,      Strict::Array.of(Play)
       attribute :home_runs,  Strict::Integer
       attribute :away_runs,  Strict::Integer
-
     end
   end
 end

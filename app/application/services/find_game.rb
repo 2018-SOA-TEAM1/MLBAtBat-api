@@ -9,12 +9,18 @@ module MLBAtBat
     class FindGame
       include Dry::Monads::Result::Mixin
 
+      DB_ERR_MSG = 'Having trouble accessing the database'
+
       def call(date, team_name)
         game_info = Repository::For.klass(Entity::LiveGame)
           .find(date, team_name)
-        Success(game_info)
+        Success(Value::Result.new(status: :ok, message: game_info))
       rescue StandardError
-        Failure('Can not get game from db using date and team_name.')
+        Failure(
+          Value::Result.new(
+            status: :internal_error, 
+            message: DB_ERR_MSG)
+        )
       end
     end
   end
