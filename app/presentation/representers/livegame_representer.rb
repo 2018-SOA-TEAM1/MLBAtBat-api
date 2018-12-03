@@ -11,6 +11,8 @@ module MLBAtBat
     #   Representer::LiveGame.new(live_game).to_json
     class LiveGame < Roar::Decorator
       include Roar::JSON
+      include Roar::Hypermedia
+      include Roar::Decorator::HypermediaConsumer
 
       property :date
       property :game_pk
@@ -25,9 +27,9 @@ module MLBAtBat
       property :away_team_hits
       property :away_team_errors
 
-      link :self do
-        "#{Api.config.API_HOST}/projects/#{game_date}/#{game_team_name}"
-      end
+      # link :self do
+      #   "#{Api.config.API_HOST}/projects/#{game_date}/#{game_team_name}"
+      # end
 
       def game_date
         represented.date

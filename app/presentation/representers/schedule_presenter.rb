@@ -18,7 +18,7 @@ module MLBAtBat
       property :total_games
       collection :live_games, extend: Representer::LiveGame, class: OpenStruct
 
-      property :find_team_name
+      # property :find_team_name
 
       # Place link in LiveGame presenter?
 

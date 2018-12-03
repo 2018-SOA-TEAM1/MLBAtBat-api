@@ -19,8 +19,9 @@ module MLBAtBat
       rescue StandardError
         Failure(
           Value::Result.new(
-            status: :internal_error, 
-            message: DB_ERR_MSG)
+            status: :internal_error,
+            message: DB_ERR_MSG
+          )
         )
       end
 

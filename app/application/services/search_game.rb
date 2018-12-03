@@ -30,7 +30,7 @@ module MLBAtBat
       #   end
       # end
 
-      # Expects input[:owner_nadateme] and input[:team_name]
+      # Expects input[:date] and input[:team_name]
       def find_game_pk(input)
         input[:game_pk] = MLB::ScheduleMapper.new.get_gamepk(
           input[:date],
@@ -47,8 +47,9 @@ module MLBAtBat
       rescue StandardError
         Failure(
           Value::Result.new(
-            status: :internal_error, 
-            message: WHOLEGAME_MAPPER_ERR_MSG)
+            status: :internal_error,
+            message: WHOLEGAME_MAPPER_ERR_MSG
+          )
         )
       end
 
@@ -58,8 +59,9 @@ module MLBAtBat
       rescue StandardError
         Failure(
           Value::Result.new(
-            status: :internal_error, 
-            message: SCHEDULE_MAPPER_ERR_MSG)
+            status: :internal_error,
+            message: SCHEDULE_MAPPER_ERR_MSG
+          )
         )
       end
 
@@ -70,8 +72,9 @@ module MLBAtBat
       rescue StandardError
         Failure(
           Value::Result.new(
-            status: :internal_error, 
-            message: DB_ERR_MSG)
+            status: :internal_error,
+            message: DB_ERR_MSG
+          )
         )
       end
     end
