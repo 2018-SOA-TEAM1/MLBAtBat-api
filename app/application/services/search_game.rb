@@ -4,7 +4,7 @@ require 'dry/transaction'
 
 module MLBAtBat
   module Service
-    # Transaction to store project from Github API to database
+    # Transaction to store project from MLB API to database
     class SearchGame
       include Dry::Transaction
 

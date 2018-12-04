@@ -5,7 +5,7 @@ require 'dry/monads'
 
 module MLBAtBat
   module Service
-    # Retrieves array of all listed project entities
+    # Retrieves list of game_info
     class ListGames
       include Dry::Monads::Result::Mixin
 
