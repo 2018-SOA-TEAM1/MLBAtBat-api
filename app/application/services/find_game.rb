@@ -14,12 +14,11 @@ module MLBAtBat
       def call(date, team_name)
         game_info = Repository::For.klass(Entity::LiveGame)
           .find(date, team_name)
+        if game_info.nil?
+          return Failure(Value::Result.new(status: :not_found, message: DB_ERR_MSG))
+        end
+
         Success(Value::Result.new(status: :ok, message: game_info))
-      rescue StandardError
-        Failure(Value::Result.new(
-                  status: :internal_error,
-                  message: DB_ERR_MSG
-                ))
       end
     end
   end

@@ -8,7 +8,6 @@ module MLBAtBat
     class SearchGame
       include Dry::Transaction
 
-      # step :validate_input
       step :find_game_pk
       step :find_whole_game
       step :find_schedule
@@ -20,15 +19,6 @@ module MLBAtBat
       WHOLEGAME_MAPPER_ERR_MSG = 'Can not get wholegame from WholeGame mapper.'
       SCHEDULE_MAPPER_ERR_MSG = 'Can not get schedule from ScheduleMapper'
       DB_ERR_MSG = 'Having trouble accessing the database'
-
-      # def validate_input(input)
-      #   if input[:date].success?
-      #     date = input[:date][:game_date]
-      #     Success(date: date, team_name: input[:team_name])
-      #   else
-      #     Failure(input[:date].errors.values.join('; '))
-      #   end
-      # end
 
       # Expects input[:date] and input[:team_name]
       def find_game_pk(input)

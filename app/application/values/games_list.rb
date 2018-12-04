@@ -3,9 +3,9 @@
 require 'dry-types'
 require 'dry-struct'
 
-module CodePraise
+module MLBAtBat
   module Value
     # List of projects
-    GamesList = Struct.new(:games)
+    GamesList = Struct.new(:livegames)
   end
 end

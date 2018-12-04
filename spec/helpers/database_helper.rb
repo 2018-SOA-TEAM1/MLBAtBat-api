@@ -11,8 +11,8 @@ class DatabaseHelper
   end
 
   def self.wipe_database
-    MLBAtBat::App.DB.run('PRAGMA foreign_keys = OFF')
+    MLBAtBat::Api.DB.run('PRAGMA foreign_keys = OFF')
     DatabaseCleaner.clean
-    MLBAtBat::App.DB.run('PRAGMA foreign_keys = ON')
+    MLBAtBat::Api.DB.run('PRAGMA foreign_keys = ON')
   end
 end

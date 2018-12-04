@@ -4,8 +4,8 @@ require 'roda'
 require 'econfig'
 
 module MLBAtBat
-  # Configuration for the App
-  class App < Roda
+  # Environment-specific configuration
+  class Api < Roda
     plugin :environments
 
     extend Econfig::Shortcut
@@ -23,8 +23,14 @@ module MLBAtBat
       end
     end
 
-    configure :development, :test do
+    configure :development, :test, :app_test do
       ENV['DATABASE_URL'] = 'sqlite://' + config.DB_FILENAME
+    end
+
+    configure :app_test do
+      require_relative '../spec/helpers/vcr_helper.rb'
+      VcrHelper.setup_vcr
+      VcrHelper.configure_vcr_for_mlb
     end
 
     configure :production do

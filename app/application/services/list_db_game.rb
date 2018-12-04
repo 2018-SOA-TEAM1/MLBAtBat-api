@@ -11,7 +11,7 @@ module MLBAtBat
 
       DB_ERR_MSG = 'Having trouble accessing the database'
 
-      def whole_game
+      def call
         game_pk = gamepk
         whole_game = Mapper::WholeGame.new.get_whole_game(game_pk)
 
@@ -19,7 +19,7 @@ module MLBAtBat
       rescue StandardError
         Failure(
           Value::Result.new(
-            status: :internal_error,
+            status: :not_found,
             message: DB_ERR_MSG
           )
         )
