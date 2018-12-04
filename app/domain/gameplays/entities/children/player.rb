@@ -9,8 +9,7 @@ module MLBAtBat
     class Player < Dry::Struct
       include Dry::Types.module
 
-      attribute :name,  Strict::String   
-    
+      attribute :name, Strict::String
     end
   end
 end

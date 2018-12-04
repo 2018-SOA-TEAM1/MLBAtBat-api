@@ -1,34 +1,34 @@
-# Architecture (2018.11.11 update)
-#### wholegame_mapper (root mapper)
-- inning_mapper -> play_mapper
-- player_mapper
-- game_changing_moments_mapper (game changing moments)
-#### wholegame (root)
-- inning -> play
-- players -> player
-- game_changing_mements
+# MLBAtBat Web API ![Build Status](https://travis-ci.org/ISS-SOA/codepraise-api.svg?branch=master)
 
+Web API that allows MLB game information to be got and stored.
 
-# MLBAtBat (2018.11.10 update)
+## Routes
 
-Application that notifies you that your favorite player is at bat. Use it to keep following game when you are working! Besides, you can get game changing moments informariton and discuss with others on message board.
+### Root check
 
-## Overview
+`GET /`
 
-MLBAtBat will pull data from MLB stats api and use it to notify you game changing moments when you can't keep watching game because you are working.  
+Status:
 
-Imagine you want to focus on working and follow MLB game at the same time. Although you can watch MLB gameday to get text information, it disturbs you a lot because you have to open a page or open your phone for several times. **MLBAtBat** will only notify you certain game changing moments that you want to follow.
+- 200: API server running (happy)
 
-You can also see game **schedule** on  **MLBAtBat**, and several **live game** data, including current hitter's name and score board.
+### Get a previously stored game
+(Need to get resource from MLB API)
+(Becuase we make a live api, the result would always change, so use POST not GET ?)
+`POST /games/{game_date}/{team_name}`
 
-## Short-term usability goals
-- Pull data from MLB stats API, get live game information.
- 
-## Mid-term objectives 
-- Send notification when interested hitter is going to be at bat.
-- Record and show any game changing moments on board.
-- Let multiple users discuss under game changing boards.
+Status
 
-## Long-term goals
-- Interact with users, enable them to set notification moments.
-- Let users interact with each other, chatting under some special events.
+- 200: game returned (happy)
+- 404: game not found (sad)
+- 500: problems wuth MLB data api (bad)
+
+### Store a particular game information
+
+`POST /game_info/{game_date}/{team_name}`
+
+Status
+
+- 201: game_info stored (happy)
+- 404: game not found (sad)
+- 500: problems wuth MLB data api (bad)

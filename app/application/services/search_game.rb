@@ -8,7 +8,6 @@ module MLBAtBat
     class SearchGame
       include Dry::Transaction
 
-      step :validate_input
       step :find_game_pk
       step :find_whole_game
       step :find_schedule
@@ -16,46 +15,57 @@ module MLBAtBat
 
       private
 
-      def validate_input(input)
-        if input[:date].success?
-          date = input[:date][:game_date]
-          Success(date: date, team_name: input[:team_name])
-        else
-          Failure(input[:date].errors.values.join('; '))
-        end
-      end
+      NO_GAME_PK_MSG = 'Can not get game_pk from ScheduleMapper mapper.'
+      WHOLEGAME_MAPPER_ERR_MSG = 'Can not get wholegame from WholeGame mapper.'
+      SCHEDULE_MAPPER_ERR_MSG = 'Can not get schedule from ScheduleMapper'
+      DB_ERR_MSG = 'Having trouble accessing the database'
 
+      # Expects input[:date] and input[:team_name]
       def find_game_pk(input)
-        game_pk = MLB::ScheduleMapper.new.get_gamepk(input[:date],
-                                                     input[:team_name])
-        Success(game_pk: game_pk, date: input[:date],
-                team_name: input[:team_name])
+        input[:game_pk] = MLB::ScheduleMapper.new.get_gamepk(
+          input[:date],
+          input[:team_name]
+        )
+        Success(input)
       rescue StandardError
-        Failure('Can not get game_pk from ScheduleMapper mapper.')
+        Failure(Value::Result.new(status: :bad_request, message: NO_GAME_PK_MSG))
       end
 
       def find_whole_game(input)
-        whole_game = Mapper::WholeGame.new.build_entity(input[:game_pk])
-        Success(whole_game: whole_game, date: input[:date],
-                team_name: input[:team_name])
+        input[:whole_game] = Mapper::WholeGame.new.build_entity(input[:game_pk])
+        Success(input)
       rescue StandardError
-        Failure('Can not get wholegame from WholeGame mapper.')
+        Failure(
+          Value::Result.new(
+            status: :internal_error,
+            message: WHOLEGAME_MAPPER_ERR_MSG
+          )
+        )
       end
 
       def find_schedule(input)
-        game_info = MLB::ScheduleMapper.new.get_schedule(1, input[:date])
-        Success(whole_game: input[:whole_game], game_info: game_info,
-                team_name: input[:team_name])
+        input[:game_info] = MLB::ScheduleMapper.new.get_schedule(1, input[:date])
+        Success(input)
       rescue StandardError
-        Failure('Can not get schedule from ScheduleMapper')
+        Failure(
+          Value::Result.new(
+            status: :internal_error,
+            message: SCHEDULE_MAPPER_ERR_MSG
+          )
+        )
       end
 
       def store_game(input)
         Repository::For.entity(input[:game_info]).create(input[:game_info],
                                                          input[:team_name])
-        Success(input[:whole_game])
+        Success(Value::Result.new(status: :created, message: input[:whole_game]))
       rescue StandardError
-        Failure('Having trouble adding schedule/game into db.')
+        Failure(
+          Value::Result.new(
+            status: :internal_error,
+            message: DB_ERR_MSG
+          )
+        )
       end
     end
   end

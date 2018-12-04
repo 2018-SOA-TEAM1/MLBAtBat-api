@@ -14,7 +14,6 @@ module MLBAtBat
       attribute :description,      Strict::String 
       attribute :home_run_boolean, Strict::Bool
       attribute :event,            Strict::String
-    
     end
   end
 end

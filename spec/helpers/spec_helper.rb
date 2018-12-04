@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-ENV['RACK_ENV'] = 'test'
+ENV['RACK_ENV'] ||= 'test'
 
 require 'simplecov'
 SimpleCov.start
@@ -10,6 +10,8 @@ require 'yaml'
 require 'minitest/autorun'
 require 'minitest/rg'
 
+require 'pry' # for debugging
+
 require_relative '../../init.rb'
 
 SPORT_ID = 1
@@ -18,8 +20,3 @@ GAME_DATE = '07/10/2018'
 SEARCH_TEAM_NAME = 'Baltimore Orioles'
 CORRECT = YAML.safe_load(File.read('spec/fixtures/mlb_results.yml'))
 RESPONSE = YAML.load(File.read('spec/fixtures/mlb_response.yml'))
-
-# Helper methods
-def homepage
-  MLBAtBat::App.config.APP_HOST
-end

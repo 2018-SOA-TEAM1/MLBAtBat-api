@@ -9,12 +9,19 @@ module MLBAtBat
     class ListGames
       include Dry::Monads::Result::Mixin
 
-      def call
-        games = Repository::For.klass(Entity::LiveGame).all
+      DB_ERR_MSG = 'Could not access database'
 
-        Success(games)
+      def call
+        Repository::For.klass(Entity::LiveGame).all
+          .yield_self { |games| Value::GamesList.new(games) }
+          .yield_self do |list|
+            Success(Value::Result.new(status: :ok, message: list))
+          end
       rescue StandardError
-        Failure('Could not access database')
+        Failure(Value::Result.new(
+                  status: :internal_error,
+                  message: DB_ERR_MSG
+                ))
       end
     end
   end
