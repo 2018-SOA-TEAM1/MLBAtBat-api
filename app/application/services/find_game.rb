@@ -5,7 +5,7 @@ require 'dry/monads'
 
 module MLBAtBat
   module Service
-    # Retrieves array of all listed project entities
+    # Retrieves the searched Livegame entity
     class FindGame
       include Dry::Monads::Result::Mixin
 
