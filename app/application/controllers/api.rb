@@ -30,7 +30,12 @@ module MLBAtBat
           routing.on String, String do |game_date, team_name|
             # POST /games/{game_date}/{team_name}
             game_date = game_date.split('-').join('/')
+
             team_name = team_name.split('-').join(' ')
+            # when transmit request, space would be replaced by '%20'
+            # so we have to convert it backd
+            team_name.sub! '%20', ' '
+
             routing.post do
               input = { date: game_date, team_name: team_name }
               result = Service::SearchGame.new.call(input)
