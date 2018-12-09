@@ -41,8 +41,8 @@ describe 'Test API routes' do
         date: GAME_DATE, team_name: SEARCH_TEAM_NAME
       )
 
-      game_date = GAME_DATE.split('/').join('-')
-      team_name = SEARCH_TEAM_NAME.split(' ').join('-')
+      game_date = GAME_DATE.split('/').join('_')
+      team_name = SEARCH_TEAM_NAME.split(' ').join('_')
       post "/api/v1/games/#{game_date}/#{team_name}"
       _(last_response.status).must_equal 201
       search_game = JSON.parse last_response.body
@@ -55,7 +55,7 @@ describe 'Test API routes' do
       _(search_game['away_errors']).must_equal 1
       _(search_game['home_team_name']).must_equal 'Baltimore Orioles'
       _(search_game['away_team_name']).must_equal 'New York Yankees'
-      _(search_game['innings'].count).must_equal 9 + 1 # one null inning....
+      _(search_game['innings'].count).must_equal 9
       _(search_game['gcms'].count).must_equal 3
     end
 
@@ -64,8 +64,8 @@ describe 'Test API routes' do
         date: GAME_DATE, team_name: SEARCH_TEAM_NAME
       )
 
-      game_date = GAME_DATE.split('/').join('-')
-      team_name = SEARCH_TEAM_NAME.split(' ').join('-')
+      game_date = GAME_DATE.split('/').join('_')
+      team_name = SEARCH_TEAM_NAME.split(' ').join('_')
       get "/api/v1/games/#{game_date}/#{team_name}"
       _(last_response.status).must_equal 200
       live_game = JSON.parse last_response.body
@@ -89,8 +89,8 @@ describe 'Test API routes' do
       )
 
       invalid_date = '07/32/2018'
-      game_date = invalid_date.split('/').join('-')
-      team_name = SEARCH_TEAM_NAME.split(' ').join('-')
+      game_date = invalid_date.split('/').join('_')
+      team_name = SEARCH_TEAM_NAME.split(' ').join('_')
       get "/api/v1/games/#{game_date}/#{team_name}"
       _(last_response.status).must_equal 404
       _(JSON.parse(last_response.body)['status']).must_include 'not'
@@ -116,7 +116,7 @@ describe 'Test API routes' do
       _(first_game['away_errors']).must_equal 1
       _(first_game['home_team_name']).must_equal 'Baltimore Orioles'
       _(first_game['away_team_name']).must_equal 'New York Yankees'
-      _(first_game['innings'].count).must_equal 9 + 1 # one null inning....fuck
+      _(first_game['innings'].count).must_equal 9
       _(first_game['gcms'].count).must_equal 3
     end
 

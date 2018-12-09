@@ -29,12 +29,12 @@ module MLBAtBat
         routing.on 'games' do
           routing.on String, String do |game_date, team_name|
             # POST /games/{game_date}/{team_name}
-            game_date = game_date.split('-').join('/')
+            game_date = game_date.split('_').join('/')
 
-            team_name = team_name.split('-').join(' ')
+            team_name = team_name.split('_').join(' ')
             # when transmit request, space would be replaced by '%20'
             # so we have to convert it backd
-            team_name.sub! '%20', ' '
+            team_name = team_name.split('%20').join(' ')
 
             routing.post do
               input = { date: game_date, team_name: team_name }

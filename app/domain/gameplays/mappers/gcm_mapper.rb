@@ -2,6 +2,7 @@
 
 module MLBAtBat
   module Mapper
+    # Mapper for gcm
     class GameChangingMoment
       def initialize() end
 
@@ -9,7 +10,7 @@ module MLBAtBat
         @innings = innings
         gcms = []
         # remove inning 0
-        (1..innings.length - 1).each do |inning_index|
+        (0..innings.length - 1).each do |inning_index|
           plays = innings[inning_index].plays
           plays.each do |play|
             # condition for choosing gcm

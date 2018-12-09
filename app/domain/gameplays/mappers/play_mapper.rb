@@ -4,16 +4,12 @@ module MLBAtBat
   module Mapper
     # Mapper of play / plays
     class Play
-      def initialize()
-
-      end
-
       def get_plays(plays)
-        plays.map {|play| rebuild_entity(play)}
+        plays.map { |play| rebuild_entity(play) }
       end
 
       def rebuild_entity(play)
-        DataMapper.new(play).build_entity()
+        DataMapper.new(play).build_entity
       end
 
       # Extracts entity specific elements from data structure
