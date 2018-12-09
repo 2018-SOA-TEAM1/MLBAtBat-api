@@ -55,7 +55,7 @@ describe 'Test API routes' do
       _(search_game['away_errors']).must_equal 1
       _(search_game['home_team_name']).must_equal 'Baltimore Orioles'
       _(search_game['away_team_name']).must_equal 'New York Yankees'
-      _(search_game['innings'].count).must_equal 9 + 1 # one null inning....
+      _(search_game['innings'].count).must_equal 9
       _(search_game['gcms'].count).must_equal 3
     end
 
@@ -116,7 +116,7 @@ describe 'Test API routes' do
       _(first_game['away_errors']).must_equal 1
       _(first_game['home_team_name']).must_equal 'Baltimore Orioles'
       _(first_game['away_team_name']).must_equal 'New York Yankees'
-      _(first_game['innings'].count).must_equal 9 + 1 # one null inning....fuck
+      _(first_game['innings'].count).must_equal 9
       _(first_game['gcms'].count).must_equal 3
     end
 

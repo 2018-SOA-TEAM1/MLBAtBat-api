@@ -13,7 +13,7 @@ module MLBAtBat
       include Dry::Types.module
 
       attribute :game_pk,                Strict::Integer
-      attribute :innings,                Strict::Array
+      attribute :innings,                Strict::Array.of(Inning)
       # attribute :players,              Strict::Array.of(Player)
       attribute :gcms,                   Strict::Array.of(GameChangingMoment)
       attribute :home_runs,              Strict::Integer

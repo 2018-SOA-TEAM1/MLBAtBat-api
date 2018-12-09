@@ -11,23 +11,24 @@ module MLBAtBat
         @live_data = live_data
       end
 
+      # inning index 1 -> inning[0]
       def get_inning_of_play(single_play)
-        single_play['about']['inning']
+        single_play['about']['inning'] - 1
+      end
+
+      def num_of_inning
+        @all_plays[@all_plays.length - 1]['about']['inning']
       end
 
       def innings
         # get # of inning
-        num_of_inning = @all_plays[@all_plays.length - 1]['about']['inning']
-        plays = Array.new(num_of_inning + 1) { [] }
+        plays = Array.new(num_of_inning) { [] }
         # map each play into plays depending on inning
         @all_plays.map do |single_play|
           plays[get_inning_of_play(single_play)].push(single_play)
         end
-        innings = ['Null_inning']
-        # start from 1 for convenien
-        # add 0th null inning (not used)
-        (1..num_of_inning).each do |i|
-          # in livedata: inning[0] -> inning 1
+        innings = []
+        (0..num_of_inning - 1).each do |i|
           innings.push(build_entity(plays[i], i))
         end
         innings
