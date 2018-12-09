@@ -8,6 +8,7 @@ module MLBAtBat
     # plugins
     plugin :halt
     plugin :all_verbs
+    plugin :caching
     use Rack::MethodOverride
 
     route do |routing|
@@ -55,6 +56,7 @@ module MLBAtBat
 
             # GET /games/{game_date}/{team_name}
             routing.get do
+              response.cache_control public: true, max_age: 3600
               result = Service::FindGame.new.call(game_date, team_name)
 
               if result.failure?
@@ -74,6 +76,7 @@ module MLBAtBat
           routing.on 'first' do
             # GET /games/first
             routing.get do
+              response.cache_control public: true, max_age: 3600
               result = Service::ListDbGame.new.call
 
               if result.failure?
@@ -90,6 +93,7 @@ module MLBAtBat
           routing.is do
             # GET /games
             routing.get do
+              response.cache_control public: true, max_age: 3600
               result = Service::ListGames.new.call
 
               if result.failure?
