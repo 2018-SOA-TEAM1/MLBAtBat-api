@@ -13,7 +13,6 @@ module MLBAtBat
       include Roar::JSON
 
       property :game_pk
-      property :innings
       property :home_runs
       property :home_hits
       property :home_errors
@@ -22,6 +21,7 @@ module MLBAtBat
       property :away_errors
       property :home_team_name
       property :away_team_name
+      collection :innings, extend: Representer::Inning, class: OpenStruct
       collection :gcms, extend: Representer::GameChangingMoment, class: OpenStruct
     end
   end
