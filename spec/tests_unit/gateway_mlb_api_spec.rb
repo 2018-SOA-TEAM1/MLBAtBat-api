@@ -38,43 +38,43 @@ describe 'Tests MLBAtBat libiary' do
       @total_games = @schedule.total_games
     end
 
-    it 'HAPPY: live game should provide correct game informations' do
-      (0...@total_games).each do |game_idx|
-        _(@live_games[game_idx].date).must_equal \
-          CORRECT['live_games'][game_idx]['date'] \
-          .split('-').join('').to_i
+    # it 'HAPPY: live game should provide correct game informations' do
+    #   (0...@total_games).each do |game_idx|
+    #     _(@live_games[game_idx].date).must_equal \
+    #       CORRECT['live_games'][game_idx]['date'] \
+    #       .split('-').join('').to_i
 
-        _(@live_games[game_idx].detailed_state).must_equal \
-          CORRECT['live_games'][game_idx]['detailed_state']
+    #     _(@live_games[game_idx].detailed_state).must_equal \
+    #       CORRECT['live_games'][game_idx]['detailed_state']
 
-        _(@live_games[game_idx].current_hitter_name).must_equal \
-          CORRECT['live_games'][game_idx]['current_player']
+    #     _(@live_games[game_idx].current_hitter_name).must_equal \
+    #       CORRECT['live_games'][game_idx]['current_player']
 
-        _(@live_games[game_idx].home_team_name).must_equal \
-          CORRECT['live_games'][game_idx]['home_team_name']
+    #     _(@live_games[game_idx].home_team_name).must_equal \
+    #       CORRECT['live_games'][game_idx]['home_team_name']
 
-        _(@live_games[game_idx].away_team_name).must_equal \
-          CORRECT['live_games'][game_idx]['away_team_name']
+    #     _(@live_games[game_idx].away_team_name).must_equal \
+    #       CORRECT['live_games'][game_idx]['away_team_name']
 
-        _(@live_games[game_idx].home_team_runs).must_equal \
-          CORRECT['live_games'][game_idx]['home_team_status']['runs']
+    #     _(@live_games[game_idx].home_team_runs).must_equal \
+    #       CORRECT['live_games'][game_idx]['home_team_status']['runs']
 
-        _(@live_games[game_idx].home_team_hits).must_equal \
-          CORRECT['live_games'][game_idx]['home_team_status']['hits']
+    #     _(@live_games[game_idx].home_team_hits).must_equal \
+    #       CORRECT['live_games'][game_idx]['home_team_status']['hits']
 
-        _(@live_games[game_idx].home_team_errors).must_equal \
-          CORRECT['live_games'][game_idx]['home_team_status']['errors']
+    #     _(@live_games[game_idx].home_team_errors).must_equal \
+    #       CORRECT['live_games'][game_idx]['home_team_status']['errors']
 
-        _(@live_games[game_idx].away_team_runs).must_equal \
-          CORRECT['live_games'][game_idx]['away_team_status']['runs']
+    #     _(@live_games[game_idx].away_team_runs).must_equal \
+    #       CORRECT['live_games'][game_idx]['away_team_status']['runs']
 
-        _(@live_games[game_idx].away_team_hits).must_equal \
-          CORRECT['live_games'][game_idx]['away_team_status']['hits']
+    #     _(@live_games[game_idx].away_team_hits).must_equal \
+    #       CORRECT['live_games'][game_idx]['away_team_status']['hits']
 
-        _(@live_games[game_idx].away_team_errors).must_equal \
-          CORRECT['live_games'][game_idx]['away_team_status']['errors']
-      end
-    end
+    #     _(@live_games[game_idx].away_team_errors).must_equal \
+    #       CORRECT['live_games'][game_idx]['away_team_status']['errors']
+    #   end
+    # end
 
     it 'SAD: shoud raise exception if given wrong gamePk' do
       proc do
