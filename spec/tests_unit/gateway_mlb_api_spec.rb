@@ -17,7 +17,7 @@ describe 'Tests MLBAtBat libiary' do
   describe 'Schedule information' do
     before do
       @schedule = MLBAtBat::MLB::ScheduleMapper.new
-        .get_schedule(SPORT_ID, GAME_DATE)
+        .get_schedule(SPORT_ID, GAME_DATE, GAME_PK)
     end
 
     it 'HAPPY: schedule should provide correct game date' do
@@ -33,7 +33,7 @@ describe 'Tests MLBAtBat libiary' do
   describe 'Live game information' do
     before do
       @schedule = MLBAtBat::MLB::ScheduleMapper.new
-        .get_schedule(SPORT_ID, GAME_DATE)
+        .get_schedule(SPORT_ID, GAME_DATE, GAME_PK)
       @live_games = @schedule.live_games
       @total_games = @schedule.total_games
     end
