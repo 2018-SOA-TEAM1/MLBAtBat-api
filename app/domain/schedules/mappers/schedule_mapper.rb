@@ -11,9 +11,9 @@ module MLBAtBat
         @gateway = @gateway_class.new
       end
 
-      def get_schedule(sport_id, date)
+      def get_schedule(sport_id, date, game_pk)
         data = @gateway.schedule(sport_id, date)
-        build_entity(data)
+        build_entity(data, game_pk)
       end
 
       def get_team_name(date)
@@ -44,14 +44,15 @@ module MLBAtBat
         nil
       end
 
-      def build_entity(data)
-        DataMapper.new(data, @gateway_class).build_entity
+      def build_entity(data, game_pk)
+        DataMapper.new(data, @gateway_class, game_pk).build_entity
       end
 
       # Extracts entity specific elements from data structure
       class DataMapper
-        def initialize(data, gateway_class)
+        def initialize(data, gateway_class, game_pk)
           @data = data
+          @game_pk = game_pk.is_a?(Array) ? game_pk : [game_pk]
           @live_game_mapper = LiveGameMapper.new(
             gateway_class
           )
@@ -66,14 +67,6 @@ module MLBAtBat
           )
         end
 
-        def pks
-          out = []
-          @data['dates'][0]['games'].each do |game|
-            out << game['gamePk']
-          end
-          out
-        end
-
         def date
           # Transform into integer
           # 2018-11-13 -> 20181113
@@ -85,7 +78,7 @@ module MLBAtBat
         end
 
         def live_games
-          @live_game_mapper.load_several(pks)
+          @live_game_mapper.load_several(@game_pk)
         end
       end
     end

@@ -44,7 +44,7 @@ module MLBAtBat
       end
 
       def find_schedule(input)
-        input[:game_info] = MLB::ScheduleMapper.new.get_schedule(1, input[:date])
+        input[:game_info] = MLB::ScheduleMapper.new.get_schedule(1, input[:date], input[:game_pk])
         Success(input)
       rescue StandardError
         Failure(

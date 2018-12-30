@@ -48,9 +48,12 @@ module MLBAtBat
         end
 
         def build_entity
+          # in avoid of early end in top half 9 of inning
+          h_r = home_runs
+          h_r ||= 0
           Entity::Inning.new(
             plays: plays,
-            home_runs: home_runs,
+            home_runs: h_r,
             away_runs: away_runs
           )
         end
@@ -62,12 +65,12 @@ module MLBAtBat
         def home_runs
           # beacuse live_data inning start from 0
           # (represents inning 1)
-          @live_data['linescore']['innings'][@inning_index - 1] \
+          @live_data['linescore']['innings'][@inning_index] \
             ['home']['runs']
         end
 
         def away_runs
-          @live_data['linescore']['innings'][@inning_index - 1] \
+          @live_data['linescore']['innings'][@inning_index] \
             ['away']['runs']
         end
       end
