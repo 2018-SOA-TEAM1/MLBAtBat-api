@@ -41,8 +41,8 @@ module MLBAtBat
 
       use Rack::Cache,
           verbose: true,
-          metastore: config.REDISCLOUD_URL + '/0/metastore',
-          entitystore: config.REDISCLOUD_URL + '/0/entitystore'
+          metastore: config.REDIS_URL + '/0/metastore',
+          entitystore: config.REDIS_URL + '/0/entitystore'
     end
 
     configure :app_test do
