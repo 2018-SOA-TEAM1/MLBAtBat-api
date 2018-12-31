@@ -1,7 +1,6 @@
 config/secrets.yml
 coverage/
+*.db
 .bundle/
-app/infrastructure/database/local/*.db
 _snippets/
-spec/fixtures/cassettes/
-spec/fixtures/*.yml
+_cache/
