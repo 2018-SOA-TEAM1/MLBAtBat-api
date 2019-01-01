@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
-module CodePraise
+require 'roar/decorator'
+require 'roar/json'
+
+module MLBAtBat
   module Representer
     # Representer object for schedule requests
     class ScheduleRequest < Roar::Decorator

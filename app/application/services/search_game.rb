@@ -47,7 +47,7 @@ module MLBAtBat
       def find_schedule(input)
         input[:game_info] = MLB::ScheduleMapper.new.get_schedule(1, input[:date], input[:game_pk])
         # notify worker (for test now)
-        # notify_workers(input)
+        notify_workers(input)
         Success(input)
       rescue StandardError
         Failure(
@@ -72,19 +72,15 @@ module MLBAtBat
       end
 
       def notify_workers(input)
-        queues = [Api.config.SCHEDULE_QUEUE_URL]
-        queues.each do |queue_url|
-          Concurrent::Promise.execute do
-            Messaging::Queue.new(queue_url, Api.config)
-              .send(schedule_request_json(input))
-          end
-        end
+        queue_url = Api.config.SCHEDULE_QUEUE_URL
+        Messaging::Queue.new(queue_url, Api.config)
+          .send(schedule_request_json(input))
       end
 
       def schedule_request_json(input)
-        Value::ScheduleRequest.new(input[:date], input[:game_pk])
-          .yield_self { |request| Representer::ScheduleRequest.new(request) }
-          .yield_self(&:to_json)
+        request = Value::ScheduleRequest.new(input[:date], input[:game_pk])
+        request_representer = Representer::ScheduleRequest.new(request)
+        request_representer.to_json
       end
     end
   end
