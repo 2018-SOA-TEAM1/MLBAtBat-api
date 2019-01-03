@@ -56,7 +56,8 @@ module MLBAtBat
 
             # GET /games/{game_date}/{team_name}
             routing.get do
-              response.cache_control public: true, max_age: 60
+              # for test. worker frequency is 600 s
+              response.cache_control public: true, max_age: 600
               result = Service::FindGame.new.call(game_date, team_name)
 
               if result.failure?

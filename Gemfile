@@ -30,6 +30,9 @@ gem 'dry-types', '~> 0.5'
 # Networking
 gem 'http', '~> 3.0'
 
+# Queues
+gem 'aws-sdk-sqs', '~> 1'
+
 # Database
 gem 'hirb', '~> 0.7'
 gem 'sequel', '~> 5.13'
@@ -42,6 +45,10 @@ end
 group :production do
   gem 'pg', '~> 0.18'
 end
+
+# WORKERS
+gem 'shoryuken', '~> 4'
+gem 'faye', '~> 1'
 
 # DEBUGGING
 group :development, :test do
