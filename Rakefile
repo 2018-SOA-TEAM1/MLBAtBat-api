@@ -91,12 +91,8 @@ namespace :cache do
     end
 
     task :production => :config do
-      print 'Are you sure you wish to wipe the production cache? (y/n) '
-      if STDIN.gets.chomp.downcase == 'y'
-        puts 'Deleting production cache'
-        wiped = MLBAtBat::Cache::Client.new(@api.config).wipe
-        wiped.keys.each { |key| puts "Wiped: #{key}" }
-      end
+      puts 'Deleting production cache'
+      MLBAtBat::Cache::Client.new(@api.config).wipe
     end
   end
 end
