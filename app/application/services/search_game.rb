@@ -78,7 +78,7 @@ module MLBAtBat
       end
 
       def schedule_request_json(input)
-        request = Value::ScheduleRequest.new(input[:date], input[:game_pk])
+        request = Value::ScheduleRequest.new(input[:date], input[:team_name])
         request_representer = Representer::ScheduleRequest.new(request)
         request_representer.to_json
       end

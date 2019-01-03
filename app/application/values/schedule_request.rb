@@ -2,6 +2,6 @@
 
 module MLBAtBat
   module Value
-    ScheduleRequest = Struct.new :date, :game_pk
+    ScheduleRequest = Struct.new :date, :team_name
   end
 end
