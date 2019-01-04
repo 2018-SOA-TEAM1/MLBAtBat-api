@@ -56,7 +56,7 @@ describe 'Test API routes' do
       _(search_game['home_team_name']).must_equal 'Baltimore Orioles'
       _(search_game['away_team_name']).must_equal 'New York Yankees'
       _(search_game['innings'].count).must_equal 9
-      _(search_game['gcms'].count).must_equal 3
+      _(search_game['gcms'].count).must_equal 6
     end
 
     it 'should be able to retrieve particular game from database' do
@@ -117,7 +117,7 @@ describe 'Test API routes' do
       _(first_game['home_team_name']).must_equal 'Baltimore Orioles'
       _(first_game['away_team_name']).must_equal 'New York Yankees'
       _(first_game['innings'].count).must_equal 9
-      _(first_game['gcms'].count).must_equal 3
+      _(first_game['gcms'].count).must_equal 6
     end
 
     it 'should report error if there is no data in database' do
