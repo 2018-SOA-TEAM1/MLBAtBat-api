@@ -47,15 +47,15 @@ module MLBAtBat
           plays = innings[inning_index].plays
           plays.each do |play|
             score_condition = play_score_condition(play, last_play)
-            if play.home_run_boolean == true
-              # homerun in this play
-              gcms.push(build_entity(play))
-            elsif score_condition == 'tie'
+            if score_condition == 'tie'
               # tie
               gcms.push(build_entity(play, 'Tie Game'))
             elsif score_condition == 'reverse'
               # reverse
               gcms.push(build_entity(play, 'Reverse Game'))
+            elsif play.home_run_boolean == true
+              # homerun in this play
+              gcms.push(build_entity(play))
             end
             last_play = play
           end
