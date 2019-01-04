@@ -28,9 +28,6 @@ describe 'Integration Tests of MLB API and Database' do
 
       whole_game = MLBAtBat::Mapper::WholeGame.new.get_whole_game(game_pk)
 
-      whole_game.gcms.each do |gcm|
-        _(gcm.event).must_equal('Home Run')
-      end
       _(whole_game.innings.length).must_equal(9)
       _(whole_game.home_runs).must_equal(CORRECT['live_games'][0] \
         ['home_team_status']['runs'])
